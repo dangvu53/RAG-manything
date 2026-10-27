@@ -1,1 +1,1 @@
-"""Prompt component placeholder."""
+"""Versioned context-grounded prompt construction."""
