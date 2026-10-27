@@ -1,0 +1,8 @@
+{
+  "model": "Qwen/Qwen3-Embedding-0.6B",
+  "num_documents": 297,
+  "num_queries": 100,
+  "dense_dimension": 1024,
+  "normalized": true,
+  "query_prompt_name": "query"
+}
