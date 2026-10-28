@@ -34,10 +34,13 @@ class EvaluationSettings(BaseSettings):
 
 
 def load_rows(path: Path, require_response: bool = True) -> list[EvaluationRow]:
-    rows = [
-        EvaluationRow.model_validate_json(line)
-        for line in path.read_text(encoding="utf-8").splitlines() if line.strip()
-    ]
+    content = path.read_text(encoding="utf-8").strip()
+    try:
+        parsed = json.loads(content)
+        payloads = parsed if isinstance(parsed, list) else [parsed]
+    except json.JSONDecodeError:
+        payloads = [json.loads(line) for line in content.splitlines() if line.strip()]
+    rows = [EvaluationRow.model_validate(payload) for payload in payloads]
     if not rows:
         raise ValueError("Dataset must contain at least one row")
     if require_response and any(not row.response.strip() for row in rows):
@@ -149,7 +152,7 @@ def run_evaluation(rows: list[EvaluationRow], settings: EvaluationSettings) -> d
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Collect answers or run offline RAGAS evaluation")
-    parser.add_argument("dataset", type=Path, help="UTF-8 JSONL")
+    parser.add_argument("dataset", type=Path, help="UTF-8 JSON array or JSONL")
     parser.add_argument("--generate", action="store_true", help="Generate answers; skip scoring")
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
@@ -160,7 +163,14 @@ def main() -> int:
         if args.generate:
             with AnswerService(Settings()) as service:
                 completed = collect_responses(rows, service)
-            content = "\n".join(row.model_dump_json() for row in completed) + "\n"
+            if args.output.suffix.lower() == ".jsonl":
+                content = "\n".join(row.model_dump_json() for row in completed) + "\n"
+            else:
+                content = json.dumps(
+                    [row.model_dump(mode="json") for row in completed],
+                    ensure_ascii=False,
+                    indent=2,
+                ) + "\n"
         else:
             report = run_evaluation(rows, EvaluationSettings())
             content = json.dumps(report, ensure_ascii=False, indent=2, allow_nan=False) + "\n"

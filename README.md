@@ -421,8 +421,8 @@ RAGAS chỉ chấm phần answer, không chấm chất lượng retrieval trong 
 | Factual Correctness | Các phát biểu có khớp reference hay không |
 | Semantic Similarity | Answer có tương đồng ngữ nghĩa với reference hay không |
 
-Dataset JSONL gồm **user_input**, **retrieved_contexts**, **response**, **reference** và
-**latency_ms**.
+Dataset JSON array hoặc JSONL gồm **user_input**, **retrieved_contexts**, **response**,
+**reference** và **latency_ms**.
 
 Sinh answer thật và ghi latency:
 
