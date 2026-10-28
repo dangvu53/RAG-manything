@@ -17,6 +17,7 @@ retrieval reports can be pushed together with the code. New experiments should
 use a new subdirectory under `retrieval_runs/` and keep the input artifacts
 that produced the report.
 
-The current snapshot is about 252 MB across 47 files. Check individual file
+The current snapshot is about 930 MB across 210 files, including generated
+retrieval rankings and query-processing experiments. Check individual file
 limits before adding larger model artifacts; use Git LFS for files that exceed
 the hosting provider's limit.

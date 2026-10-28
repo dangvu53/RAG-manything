@@ -48,19 +48,24 @@ The source data was copied from `ViRE/data` into `data/`:
 
 - `data/benchmark_datasets/`: benchmark datasets from the ViRE repository, excluding `mock`.
 - `data/virhe4qa_subset/`: prepared ViRHE4QA data with 297 unique contexts and 100 queries.
-- `data/kaggle_artifacts/virhe4qa_model_sweep/`: current Kaggle model output.
+- `data/kaggle_artifacts/virhe4qa_model_sweep/`: embedding output used for Qdrant ingestion.
+- `data/kaggle_artifacts/virhe4qa_model_sweep_full.zip`: complete Kaggle output,
+  including reranker scores and timing logs.
 - `data/retrieval_runs/`: generated retrieval rankings and metric reports.
 
 The current Kaggle directory contains document/query vectors for BGE-M3,
 Qwen3-Embedding-0.6B, and Qwen3-Embedding-4B. It also contains the 29,700-pair
-reranker manifest, but no reranker score or timing files yet.
+reranker manifest. The complete zip also contains BGE-Reranker-v2-M3,
+Qwen3-Reranker-0.6B, and Qwen3-Reranker-4B score matrices for all 29,700 pairs,
+plus `model_timings.csv/json`.
 
 The complete `data/` directory is intentionally versioned and can be pushed
 with this repository. It contains benchmark source copies and the generated
 subset/Kaggle/retrieval outputs needed to reproduce the current baseline. The
-current snapshot is about 252 MB across 47 files; if a future model artifact
-exceeds the hosting provider's per-file limit, store that file with Git LFS
-instead of ignoring the whole data directory.
+current snapshot is about 930 MB across 210 files, including generated
+retrieval rankings. If a future model artifact exceeds the hosting provider's
+per-file limit, store that file with Git LFS instead of ignoring the whole data
+directory.
 
 ## Start Qdrant
 
@@ -231,6 +236,32 @@ first-gold rank `1`, and 5 queries failed to retrieve the gold chunk in the
 top 20. The run took about 208.8 seconds. These formulas match ViRE, but this
 is the prepared 297/100 subset rather than the complete paper benchmark.
 
+## Reranking and query processing experiments
+
+The complete Kaggle reranker scores were evaluated offline on the top 100
+candidates from the BGE-M3 hybrid baseline and the BM25+Qwen-4B candidate
+pipeline. The Qwen3-Reranker-4B was strongest: `P@1 = 86%`, `R@3 = 99%`,
+`R@10 = 100%`, and `MRR@10 = 92.27%`. The full comparison and six saved runs
+are in `data/retrieval_runs/reranking/`.
+
+The Kaggle timing log measured 29,700 reranker pairs. The measured score times
+were 1,654.35 s for BGE-Reranker-v2-M3, 4,008.59 s for Qwen3-Reranker-0.6B,
+and 11,658.57 s for Qwen3-Reranker-4B. The run configs include a linear
+estimate for 10,000 pairs (100 queries x top 100 candidates); it is an estimate,
+not a new inference run.
+
+Stopword cleaning was tested on the original 100 queries and reduced the BGE
+dense, sparse, and hybrid metrics, so it is not enabled by default. To test a
+dataset where query processing is more relevant, the repository now includes a
+local BGE-M3 ViHERMES experiment: 998 contexts, 1,561 questions, and hop levels
+1-5. Naive decomposition alone reduced quality, but a soft fusion
+`full_query_dense + max(decomposed_query_dense)` improved `HitRate@1` from
+66.11% to 68.42%, `Recall@10` from 69.81% to 71.91%, and `Recall@20` from
+78.46% to 80.89%. Results are under
+`data/retrieval_runs/query_processing/vihermes_bge_m3*`. A deterministic 80/20
+check selected `alpha=1.0` on the training portion and retained the gain on
+the 313-query holdout (`Recall@10`: 67.48% -> 70.91%).
+
 ## Planned extensions
 
 The current result is deliberately a clean retrieval baseline. The next
@@ -240,10 +271,11 @@ experiments are kept separate from it:
 - Add TF-IDF/BM25 and other full-text or sparse retrieval baselines.
 - Compare Qdrant fusion choices and standalone dense/sparse search.
 - Connect the external query-processing pipeline while keeping it switchable.
-- Generate and evaluate BGE/Qwen cross-encoder reranking scores after candidate retrieval.
+- Tune decomposition/rewrite fusion on held-out multi-hop queries.
+- Evaluate rerankers at smaller candidate limits and measure fresh online latency.
 
-Until those experiments are run, the reported baseline remains BGE-M3 hybrid
-RRF without query processing or reranking.
+The reported baseline remains BGE-M3 hybrid RRF without query processing or
+reranking; the experiment results above are kept separate from that baseline.
 
 ## Qdrant point shape
 
@@ -283,4 +315,14 @@ http://localhost:6333/dashboard
 ```
 
 It lets you inspect collections, payloads, vectors, and run searches. No separate UI container is needed.
+
+## Run one Qwen RAG query
+
+Set `RAG_API_URL`, `RAG_API_KEY`, and `QWEN_QDRANT_COLLECTION` in `.env`, start Qdrant and the Kaggle API notebook, then run this command from the workspace root:
+
+```powershell
+.\.venv\Scripts\python.exe .\RAG-manything\scripts\run_qwen_rag.py "Câu hỏi cần tìm" --top-k 3
+```
+
+This calls the Qwen embedding API, runs dense cosine search in Qdrant, then sends the retrieved payload `text` fields to the answer API. It returns the answer, retrieved payloads, and per-stage timings. The current Qwen collection is dense-only; BM25 is not part of this command because the local Qdrant 1.15.5 instance rejected native BM25 text queries during the trial. Use `--output data/retrieval_runs/one_query.json` to save the full result.
 

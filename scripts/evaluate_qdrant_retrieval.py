@@ -165,6 +165,12 @@ def main() -> int:
     parser.add_argument("--qdrant-url", default="http://localhost:6333")
     parser.add_argument("--mode", choices=("hybrid", "dense", "sparse"), default="hybrid")
     parser.add_argument("--fusion", choices=("rrf", "dbsf"), default="rrf")
+    parser.add_argument("--dense-vector-name", default="bge_m3_dense")
+    parser.add_argument(
+        "--query-dense-file",
+        default="bge_m3_query_dense.npy",
+        help="Dense query embedding filename relative to --artifacts-dir.",
+    )
     parser.add_argument("--ks", default="1,3,5,10,20,50,100")
     parser.add_argument("--prefetch-limit", type=int, default=100)
     parser.add_argument("--output-root", type=Path, default=PROJECT_ROOT / "data/retrieval_runs")
@@ -180,7 +186,7 @@ def main() -> int:
 
     artifact_dir = args.artifacts_dir.resolve()
     query_rows = read_rows(artifact_dir / "queries_manifest.csv")
-    query_dense = np.load(artifact_dir / "bge_m3_query_dense.npy", mmap_mode="r")
+    query_dense = np.load(artifact_dir / args.query_dense_file, mmap_mode="r")
     sparse_by_query = load_sparse_queries(artifact_dir / "bge_m3_query_sparse.jsonl")
     if query_dense.shape[0] != len(query_rows):
         raise ValueError(f"Dense query count {query_dense.shape[0]} != manifest count {len(query_rows)}")
@@ -200,6 +206,7 @@ def main() -> int:
         prefetch_limit=args.prefetch_limit,
         final_limit=max(ks),
         rerank_limit=max(20, max(ks)),
+        dense_vector_name=args.dense_vector_name,
     )
     store = QdrantStore.from_url(args.qdrant_url, collection_name=args.collection)
     searcher = HybridSearcher(store, config)
@@ -219,7 +226,7 @@ def main() -> int:
             query_text=row["question"],
             dense=query_dense[index].tolist(),
             sparse=sparse_by_query[query_id],
-            dense_vector_name="bge_m3_dense",
+            dense_vector_name=args.dense_vector_name,
             sparse_vector_name="bge_m3_sparse",
             query_id=query_id,
         )
@@ -259,6 +266,8 @@ def main() -> int:
         "qdrant_url": args.qdrant_url,
         "mode": args.mode,
         "fusion": args.fusion,
+        "dense_vector_name": args.dense_vector_name,
+        "query_dense_file": args.query_dense_file,
         "ks": ks,
         "prefetch_limit": args.prefetch_limit,
         "query_count": len(query_rows),

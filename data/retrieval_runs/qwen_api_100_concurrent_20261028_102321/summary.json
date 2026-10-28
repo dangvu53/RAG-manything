@@ -1,0 +1,344 @@
+{
+  "collection": "virhe4qa_qwen_api_30_fdd19f",
+  "collection_points": 297,
+  "queries_submitted": 100,
+  "queries_succeeded": 32,
+  "queries_failed": 68,
+  "concurrency_workers": 100,
+  "actual_model_gpu_batch_size": 1,
+  "answer_max_new_tokens": 512,
+  "top_k": 3,
+  "gold_contexts_unmapped": 0,
+  "wall_clock_s": 312.656,
+  "embedding_latency": {
+    "count": 100,
+    "mean_s": 4.96,
+    "p50_s": 4.508,
+    "p95_s": 9.363,
+    "min_s": 1.195,
+    "max_s": 10.003
+  },
+  "qdrant_search_latency": {
+    "count": 100,
+    "mean_s": 2.083,
+    "p50_s": 2.079,
+    "p95_s": 2.136,
+    "min_s": 2.036,
+    "max_s": 2.19
+  },
+  "answer_latency": {
+    "n": 32,
+    "mean_s": 151.302,
+    "p50_s": 152.971,
+    "p95_s": 273.514,
+    "max_s": 295.565
+  },
+  "end_to_end_latency": {
+    "n": 32,
+    "mean_s": 155.713,
+    "p50_s": 157.317,
+    "p95_s": 278.893,
+    "max_s": 301.081
+  },
+  "retrieval_hit_at_1": 0.65,
+  "retrieval_recall_at_3": 0.81,
+  "retrieval_mrr_at_3": 0.7233,
+  "failures": [
+    {
+      "query_id": 1,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 2,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 3,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 4,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 5,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 8,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 9,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 17,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 18,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 19,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 22,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 23,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 25,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 26,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 29,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 30,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 31,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 32,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 33,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 34,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 35,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 36,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 38,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 39,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 42,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 43,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 44,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 45,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 46,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 48,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 49,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 50,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 51,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 52,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 53,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 54,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 55,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 56,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 57,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 58,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 59,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 60,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 61,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 62,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 63,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 68,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 69,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 70,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 72,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 73,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 75,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 77,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 78,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 79,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 80,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 82,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 84,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 85,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 87,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 90,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 91,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 92,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 93,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 94,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 95,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 96,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 98,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    },
+    {
+      "query_id": 100,
+      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer"
+    }
+  ],
+  "note": "100 simultaneous client requests; each query independently calls embeddings, local Qdrant, and answer endpoints. Not GPU-batched inference.",
+  "retrieval_metrics_nfc": {
+    "queries_with_retrieval_result": 100,
+    "gold_contexts_mapped": 100,
+    "gold_contexts_unmapped_ids": [],
+    "hit_at_1": 0.65,
+    "recall_at_3": 0.81,
+    "mrr_at_3": 0.7233
+  },
+  "gold_contexts_unmapped_raw_normalization": 8,
+  "retrieval_metric_note": "Recomputed independently over all queries that completed Qdrant search; gold matching uses Unicode NFC and whitespace normalization. Answer failures do not exclude retrievals.",
+  "client_elapsed_all_queries": {
+    "count": 100,
+    "mean_s": 259.569,
+    "p50_s": 306.681,
+    "p95_s": 311.643,
+    "min_s": 14.26,
+    "max_s": 312.515
+  },
+  "answer_responses_succeeded": 32,
+  "retrieval_completed": 100,
+  "answer_http_503_count": 68,
+  "answer_failures_note": "68 answer calls returned HTTP 503 from the ngrok API during the 100-client burst. Their embeddings and Qdrant searches completed; per-query elapsed includes waiting until the 503 response.",
+  "end_to_end_latency_note": "Latency stats cover only the 32 requests that received an answer; client_elapsed_all_queries includes all 100 attempts."
+}

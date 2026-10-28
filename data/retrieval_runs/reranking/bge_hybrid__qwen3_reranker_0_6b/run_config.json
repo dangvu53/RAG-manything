@@ -1,0 +1,34 @@
+{
+  "created_at_utc": "2026-10-27T17:51:08.281541+00:00",
+  "mode": "precomputed_reranker_scores",
+  "reranker": "qwen3_reranker_0_6b",
+  "candidate_run": "D:\\AI Engineer Fresher - TPBank\\RAG-manything\\data\\retrieval_runs\\bge_m3_hybrid_rrf_100",
+  "candidate_limit": 100,
+  "query_count": 100,
+  "candidate_count": 100,
+  "missing_candidate_chunks": 0,
+  "gold_missing_from_candidates": 0,
+  "ks": [
+    1,
+    3,
+    5,
+    10,
+    20,
+    50,
+    100
+  ],
+  "evaluation_seconds": 0.020555000002786983,
+  "timing": {
+    "model": "Qwen/Qwen3-Reranker-0.6B",
+    "measured_pair_count": 29700.0,
+    "measured_score_seconds": 4008.5945,
+    "measured_pairs_per_second": 7.4091,
+    "model_load_seconds": 11.4114,
+    "total_measured_seconds": 4020.0059,
+    "candidate_pair_count": 10000,
+    "estimated_candidate_score_seconds": 1349.695117845118,
+    "estimated_load_plus_score_seconds": 1361.1065178451179,
+    "timing_note": "Score time is a linear estimate for 10,000 pairs from the measured 29,700-pair Kaggle run; it is not a new model inference run."
+  },
+  "scores_dir": "D:\\AI Engineer Fresher - TPBank\\RAG-manything\\data\\kaggle_artifacts\\virhe4qa_model_sweep_full"
+}

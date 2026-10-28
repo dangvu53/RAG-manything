@@ -1,0 +1,19 @@
+{
+  "model": "BAAI/bge-m3",
+  "cleaning": "remove_high_confidence_stopwords",
+  "stopword_count": 32,
+  "query_count": 100,
+  "dense_shape": [
+    100,
+    1024
+  ],
+  "batch_size": 8,
+  "max_length": 512,
+  "fp16": false,
+  "backend": "onnxruntime",
+  "onnx_model_dir": "C:\\Users\\admin\\.cache\\huggingface\\local_models\\bge-m3-onnx",
+  "model_load_seconds": 6.651495699999941,
+  "encode_seconds": 5.459809799998766,
+  "average_query_encode_seconds": 0.05459809799998766,
+  "source_artifacts_dir": "D:\\AI Engineer Fresher - TPBank\\RAG-manything\\data\\kaggle_artifacts\\virhe4qa_model_sweep"
+}

@@ -1,0 +1,29 @@
+{
+  "collection": "virhe4qa_qwen_api_30_fdd19f",
+  "collection_points": 297,
+  "queries_total": 100,
+  "answers_ready": 100,
+  "new_answer_requests_succeeded": 63,
+  "reused_successful_answers": 37,
+  "unanswered": 0,
+  "sequential_client_requests": true,
+  "client_concurrency": 1,
+  "new_embedding_or_search_calls": 0,
+  "answer_max_new_tokens": 512,
+  "answer_latency_new_sequential_requests": {
+    "count": 63,
+    "mean_s": 8.355,
+    "p50_s": 6.139,
+    "p95_s": 14.896,
+    "min_s": 2.12,
+    "max_s": 57.065
+  },
+  "answer_run_wall_clock_s": 526.469,
+  "retrieval_metrics_reused_results": {
+    "hit_at_1": 0.65,
+    "recall_at_3": 0.81,
+    "mrr_at_3": 0.7233
+  },
+  "failures": [],
+  "method": "Reused previous successful answers and saved retrieval top-3 candidates. Sent only unanswered /v1/answer calls sequentially and waited for each response before sending the next."
+}

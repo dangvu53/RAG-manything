@@ -1,0 +1,2 @@
+﻿query_id,question,gold_chunk_id,retrieved_chunk_ids
+query_057,Quy định đào tạo chương trình tài năng quy định điều gì?,chunk_0012,"[""chunk_0264"", ""chunk_0013"", ""chunk_0120"", ""chunk_0050"", ""chunk_0011"", ""chunk_0243"", ""chunk_0275"", ""chunk_0211"", ""chunk_0203"", ""chunk_0250"", ""chunk_0064"", ""chunk_0124"", ""chunk_0182"", ""chunk_0019"", ""chunk_0228"", ""chunk_0118"", ""chunk_0274"", ""chunk_0221"", ""chunk_0181"", ""chunk_0258""]"

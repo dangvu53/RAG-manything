@@ -1,0 +1,8 @@
+{
+  "queries_with_retrieval_result": 100,
+  "gold_contexts_mapped": 100,
+  "gold_contexts_unmapped_ids": [],
+  "hit_at_1": 0.65,
+  "recall_at_3": 0.81,
+  "mrr_at_3": 0.7233
+}

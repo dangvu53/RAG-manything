@@ -18,6 +18,12 @@ These instructions apply to the RAG-manything repository. The repository is the 
 - `scripts/ingest_kaggle_artifacts.py`: ingest document vectors into Qdrant.
 - `scripts/search_bge_m3.py`: interactive or fixed-query BGE-M3 hybrid search.
 - `scripts/evaluate_qdrant_retrieval.py`: batch retrieval and ViRE-style metrics.
+- `scripts/evaluate_rerankers.py`: evaluate saved Kaggle reranker matrices on
+  top-k retrieval candidates.
+- `scripts/evaluate_vihermes_query_processing.py`: local BGE-M3 full-query and
+  decomposition benchmark on multi-hop ViHERMES.
+- `scripts/tune_vihermes_query_fusion.py`: tune full-query/decomposition fusion
+  without re-encoding the dataset.
 - `notebooks/retrieval_model_sweep_kaggle.ipynb`: model artifact generation on Kaggle.
 - `data/benchmark_datasets/`: copied benchmark source data.
 - `data/virhe4qa_subset/`: the 297-context/100-query evaluation subset.
@@ -57,6 +63,9 @@ Query processing and reranking are optional injected stages. Neither is active i
 - The current headline metrics are `P@1`, `R@10`, `MRR@10`, `nDCG@10`, and `R@20`.
 - Metric values are stored in the `[0, 1]` range; report percentages only when presenting results as percentages.
 - `reranker_pair_manifest.csv` lists 29,700 pairs; it is not a score file.
+- `data/kaggle_artifacts/virhe4qa_model_sweep_full.zip` contains the three
+  reranker score matrices and `model_timings.csv/json`; its extracted sibling
+  is used for offline evaluation.
 - Do not mix document vectors from one manifest/version with query vectors from another.
 - The complete `data/` directory is intentionally versioned and should not be added back to `.gitignore`.
 - Put new experiment outputs in a distinct directory under `data/retrieval_runs/`.
@@ -85,11 +94,12 @@ docker compose -f .\RAG-manything\docker-compose.yml up -d qdrant
 
 ## Planned work
 
-The current baseline is intentionally limited to BGE-M3 hybrid RRF. Follow-up
-experiments may add Qwen/other embedding comparisons, TF-IDF/BM25 or other
-full-text search, alternative Qdrant fusion/search modes, the external query
-processor, and BGE/Qwen cross-encoder reranking. Keep those switches explicit
-and preserve the baseline run for comparison.
+The current baseline is intentionally limited to BGE-M3 hybrid RRF. Completed
+follow-up runs include Qwen/BM25 comparisons, all three saved rerankers, and a
+ViHERMES query-processing benchmark. Further experiments may add TF-IDF or
+other full-text search, alternative Qdrant fusion/search modes, and the
+external query processor. Keep those switches explicit and preserve the
+baseline run for comparison.
 
 ## Validation
 

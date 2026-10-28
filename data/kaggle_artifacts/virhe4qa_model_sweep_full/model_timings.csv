@@ -1,0 +1,22 @@
+model,phase,seconds,items,items_per_second
+BAAI/bge-m3,load model,31.2167,,
+BAAI/bge-m3,encode documents,24.5729,297.0,12.0865
+BAAI/bge-m3,encode queries,0.2356,100.0,424.4997
+Qwen/Qwen3-Embedding-0.6B,load model,12.208,,
+Qwen/Qwen3-Embedding-0.6B,encode documents,11.6873,297.0,25.4121
+Qwen/Qwen3-Embedding-0.6B,encode queries,0.585,100.0,170.9325
+Qwen/Qwen3-Embedding-4B,load model,58.6039,,
+Qwen/Qwen3-Embedding-4B,encode documents,85.3521,297.0,3.4797
+Qwen/Qwen3-Embedding-4B,encode queries,6.0,100.0,16.6667
+BAAI/bge-reranker-v2-m3,load model,17.5432,,
+BAAI/bge-reranker-v2-m3,"score 29,700 pairs",1654.3535,29700.0,17.9526
+Qwen/Qwen3-Reranker-0.6B,load model,11.4114,,
+Qwen/Qwen3-Reranker-0.6B,"score 29,700 pairs",4008.5945,29700.0,7.4091
+Qwen/Qwen3-Reranker-4B,load model,72.2713,,
+Qwen/Qwen3-Reranker-4B,"score 29,700 pairs",11658.5747,29700.0,2.5475
+BAAI/bge-m3,total measured time,56.0252,,
+Qwen/Qwen3-Embedding-0.6B,total measured time,24.4803,,
+Qwen/Qwen3-Embedding-4B,total measured time,149.956,,
+BAAI/bge-reranker-v2-m3,total measured time,1671.8967,,
+Qwen/Qwen3-Reranker-0.6B,total measured time,4020.0059,,
+Qwen/Qwen3-Reranker-4B,total measured time,11730.846,,

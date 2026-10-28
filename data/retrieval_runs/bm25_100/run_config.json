@@ -1,0 +1,26 @@
+{
+  "created_at_utc": "2026-10-27T15:38:59.422827+00:00",
+  "mode": "bm25",
+  "k1": 1.5,
+  "b": 0.75,
+  "tokenizer": "unicode_word_tokens_nfc_lowercase",
+  "ks": [
+    1,
+    3,
+    5,
+    10,
+    20,
+    50,
+    100
+  ],
+  "query_count": 100,
+  "collection_point_count": 297,
+  "max_retrieved_per_query": 100,
+  "index_build_seconds": 0.02183309999963967,
+  "search_elapsed_seconds": 0.13902710000002116,
+  "elapsed_seconds": 0.16086019999966084,
+  "average_query_seconds": 0.0013902710000002116,
+  "query_processor_enabled": false,
+  "reranking_enabled": false,
+  "artifact_dir": "D:\\AI Engineer Fresher - TPBank\\RAG-manything\\data\\kaggle_artifacts\\virhe4qa_model_sweep"
+}

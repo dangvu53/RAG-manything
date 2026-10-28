@@ -1,0 +1,25 @@
+{
+  "full_e2e_measured": {
+    "queries": 37,
+    "wall_clock_s": 459.792,
+    "mean_per_query_s": 12.426,
+    "p50_s": 10.136,
+    "p95_s": 19.212,
+    "embedding_mean_s": 0.707,
+    "qdrant_search_mean_s": 1.969,
+    "answer_mean_s": 9.75
+  },
+  "answer_only_measured": {
+    "queries": 63,
+    "wall_clock_s": 526.469,
+    "mean_answer_latency_s": 8.355
+  },
+  "full_100_serial_e2e_estimate": {
+    "formula": "measured full-E2E wall for 37 + measured sequential answer-only wall for 63 + estimated embedding/search for 63 using the 37-query sequential means",
+    "estimated_missing_embedding_search_s": 168.588,
+    "estimated_total_s": 1154.849,
+    "estimated_total_min": 19.25,
+    "status": "estimate_not_a_single_100_query_run"
+  },
+  "caveat": "The 63 query-embedding and Qdrant stages were reused from the earlier concurrent retrieval run; only the 37-query subset was rerun through full E2E sequentially."
+}

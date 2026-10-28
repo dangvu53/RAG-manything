@@ -1,0 +1,101 @@
+﻿query_id,question,processed_question
+query_001,Ai chịu trách nhiệm thực hiện kiểm tra và thanh tra nội bộ?,ai chịu trách nhiệm thực hiện kiểm tra thanh tra nội bộ
+query_002,Ai kiểm tra công tác tổ chức thi?,ai kiểm tra công tác tổ chức thi
+query_003,Ai là người quyết định mở ngành đào tạo?,ai người quyết định mở ngành đào tạo
+query_004,Ai là người ra quyết định về việc giao nhiệm vụ hướng dẫn KLTN?,ai người quyết định việc giao nhiệm vụ hướng dẫn kltn
+query_005,Ai quy định đơn giá tín chỉ học lại và học cải thiện?,ai quy định đơn giá tín chỉ học học cải thiện
+query_006,Ai xem xét biện pháp xử lý đối với trường hợp sinh viên không đủ điều kiện bảo vệ KLTN trước hội đồng?,ai xem xét biện pháp xử lý đối trường hợp sinh viên không đủ điều kiện bảo vệ kltn trước hội đồng
+query_007,Ban giám hiệu nhà trường có trách nhiệm gì?,ban giám hiệu nhà trường có trách nhiệm gì
+query_008,Chương trình giảng dạy tiếng Anh của mỗi CTĐT có sự khác nhau hay không?,chương trình giảng dạy tiếng anh ctđt có sự khác nhau hay không
+query_009,Chương trình song ngành gồm bao nhiêu phần?,chương trình song ngành gồm bao nhiêu phần
+query_010,Chương trình đào tạo tối thiểu của Trường yêu cầu sinh viên tích lũy bao nhiêu tín chỉ để tốt nghiệp trong chương trình đào tạo cử nhân?,chương trình đào tạo tối thiểu trường yêu cầu sinh viên tích lũy bao nhiêu tín chỉ tốt nghiệp chương trình đào tạo cử nhân
+query_011,Các giáo trình sẽ được gửi đi đâu sau khi được thẩm định?,giáo trình được gửi đi đâu được thẩm định
+query_012,Các nội dung trên khóa học vi phạm các quy định của pháp luật hiện hành có bị gì không?,nội dung trên khóa học vi phạm quy định pháp luật hiện hành có bị gì không
+query_013,Các phiếu TLTN chưa dùng có được CBCT trả cho cán bộ trực thi không?,phiếu tltn chưa dùng có được cbct trả cán bộ trực thi không
+query_014,Có bao nhiêu ủy viên của tổ soạn thảo đề án mở ngành đào tạo là đại diện ĐVCM?,có bao nhiêu ủy viên tổ soạn thảo đề án mở ngành đào tạo đại diện đvcm
+query_015,Có các nội dung nào được quy định trong phần làm khóa luận tốt nghiệp dành cho sinh viên chương trình tiên tiến?,có nội dung nào được quy định phần làm khóa luận tốt nghiệp dành sinh viên chương trình tiên tiến
+query_016,Có phải số hiệu của phôi được ghi theo thứ tự từ bé đến lớn không?,có phải số hiệu phôi được ghi thứ tự bé lớn không
+query_017,Có thể quy đổi số 30% tín chỉ của các môn học thạc sĩ được công nhận khi chuyển sang học thạc sĩ đối với chương trình ĐH-ThS được không?,có thể quy đổi số 30 tín chỉ môn học thạc sĩ được công nhận chuyển sang học thạc sĩ đối chương trình đh ths được không
+query_018,Có từ bao nhiêu thành viên trong hội đồng thẩm định đề án mở ngành tham gia họp hội đồng trở lên thì thư ký sẽ thực hiện tổ chức cuộc họp Hội đồng thẩm định?,có bao nhiêu thành viên hội đồng thẩm định đề án mở ngành tham gia họp hội đồng trở lên thư ký thực hiện tổ chức cuộc họp hội đồng thẩm định
+query_019,Cơ quan chuyên môn phụ trách các môn ngoại ngữ có trách nhiệm như thế nào?,cơ quan chuyên môn phụ trách môn ngoại ngữ có trách nhiệm thế nào
+query_020,Cập nhật về học phí có được thông tin đến cho sinh viên hệ ĐTTX không?,cập nhật học phí có được thông tin sinh viên hệ đttx không
+query_021,Giao tiếp bằng ngoại ngữ có phải một kỹ năng được kiểm tra trong các đợt kiểm tra năng lực tiếng Anh do Trung tâm Ngoại ngữ của Trường tổ chức không?,giao tiếp bằng ngoại ngữ có phải kỹ năng được kiểm tra đợt kiểm tra năng lực tiếng anh do trung tâm ngoại ngữ trường tổ chức không
+query_022,Giáo trình có số lượng xuất bản 500 quyển thì được hỗ trợ bao nhiêu đối với phí in?,giáo trình có số lượng xuất bản 500 quyển được hỗ trợ bao nhiêu đối phí in
+query_023,Giảng viên hệ ĐTTX góp phần làm những gì để phục vụ việc giảng dạy?,giảng viên hệ đttx góp phần làm gì phục vụ việc giảng dạy
+query_024,Hiệu trưởng có thể cấp văn bằng tốt nghiệp bậc tiến sĩ được không?,hiệu trưởng có thể cấp văn bằng tốt nghiệp bậc tiến sĩ được không
+query_025,Hằng năm phương thức tuyển sinh được công bố ở đâu?,hằng năm phương thức tuyển sinh được công bố ở đâu
+query_026,Hệ thống hỗ trợ học tập còn có tên gọi nào khác không?,hệ thống hỗ trợ học tập còn có tên gọi nào khác không
+query_027,Học bổng học tập được cấp căn cứ vào điều gì?,học bổng học tập được cấp căn cứ điều gì
+query_028,Học liệu điện tử sử dụng trong DHTT và DHKH phải như thế nào?,học liệu điện tử sử dụng dhtt dhkh phải thế nào
+query_029,Học phần cải thiện là gì?,học phần cải thiện gì
+query_030,Hồ sơ liên quan đến việc đặt trạm ĐTTX nằm ở đâu?,hồ sơ liên quan việc đặt trạm đttx nằm ở đâu
+query_031,Khi sinh viên hoàn tất quá trình học tập theo quy định thì Trường có trách nhiệm gì?,sinh viên hoàn tất quá trình học tập quy định trường có trách nhiệm gì
+query_032,Kết quả học tập của sinh viên có được ghi vào bảng điểm không?,kết quả học tập sinh viên có được ghi bảng điểm không
+query_033,Kết quả đăng ký học phần được thông báo ở đâu?,kết quả đăng ký học phần được thông báo ở đâu
+query_034,Lớp CTTN có học bù không?,lớp cttn có học bù không
+query_035,Lớp học được giảng dạy bằng tiếng nước ngoài có thể có TGLT không?,lớp học được giảng dạy bằng tiếng nước ngoài có thể có tglt không
+query_036,Môn học NNCM được ghi chú rõ về điều gì?,môn học nncm được ghi chú rõ điều gì
+query_037,Môn học trong chương trình ĐTTX được tổ chức giảng dạy kết hợp theo những phương thức nào?,môn học chương trình đttx được tổ chức giảng dạy kết hợp phương thức nào
+query_038,Nghĩa vụ của Phòng Thanh tra Pháp chế và Đảm bảo Chất lượng trong quy trình tổ chức thi là gì?,nghĩa vụ phòng thanh tra pháp chế đảm bảo chất lượng quy trình tổ chức thi gì
+query_039,"Người được xác định lại dân tộc có quyền yêu cầu chỉnh sửa nội dung ghi trên văn bằng, chứng chỉ không?",người được xác định dân tộc có quyền yêu cầu chỉnh sửa nội dung ghi trên văn bằng chứng chỉ không
+query_040,"Người đại diện theo pháp luật của người được cấp bản chính văn bằng, chứng chỉ có quyền yêu cầu cấp bản sao văn bằng, chứng chỉ từ sổ gốc không?",người đại diện pháp luật người được cấp bản chính văn bằng chứng chỉ có quyền yêu cầu cấp bản sao văn bằng chứng chỉ sổ gốc không
+query_041,Những quy định về khoá luận tốt nghiệp cho hệ chính quy áp dụng vào đối tượng nào?,quy định khoá luận tốt nghiệp hệ chính quy áp dụng đối tượng nào
+query_042,Những đơn vị nào có trách nhiệm chuẩn bị và tổ chức thi cho những môn học do mình quản lý?,đơn vị nào có trách nhiệm chuẩn bị tổ chức thi môn học do mình quản lý
+query_043,"Nếu bộ máy thẩm quyền có sự thay đổi thì quyền quyết định sửa đổi nội dung văn bằng, chứng chỉ thuộc về tay ai?",bộ máy thẩm quyền có sự thay đổi quyền quyết định sửa đổi nội dung văn bằng chứng chỉ thuộc tay ai
+query_044,"Nếu các thành viên muốn xem xét, trao đổi thêm về đề tài thì có khả năng không?",thành viên muốn xem xét trao đổi thêm đề tài có khả năng không
+query_045,Nếu không hoàn thành chương trình đào tạo thì có thể nhận chứng chỉ tốt nghiệp được không?,không hoàn thành chương trình đào tạo có thể nhận chứng chỉ tốt nghiệp được không
+query_046,Nếu một môn học được Việt hóa thì sau khi cập nhật loại II có thay đổi không?,môn học được việt hóa cập nhật loại ii có thay đổi không
+query_047,Nội dung của Điều 3 của quy định đào tạo chương trình tài năng là gì?,nội dung điều 3 quy định đào tạo chương trình tài năng gì
+query_048,P.ĐTĐH làm gì sau khi nhận các phản ánh từ các đơn vị có liên quan?,p đtđh làm gì nhận phản ánh đơn vị có liên quan
+query_049,P.ĐTĐH/VPĐB căn cứ vào đâu để xếp lịch thi và thông báo lịch thi đến SV và các đơn vị liên quan?,p đtđh vpđb căn cứ đâu xếp lịch thi thông báo lịch thi sv đơn vị liên quan
+query_050,"Phòng TTPC-ĐBCL phối hợp với ĐVQL có trách nhiệm tổ chức kiểm tra, thanh tra hoạt động mở ngành đào tạo theo kế hoạch nào?",phòng ttpc đbcl phối hợp đvql có trách nhiệm tổ chức kiểm tra thanh tra hoạt động mở ngành đào tạo kế hoạch nào
+query_051,Phó hiệu trưởng có quyền thu hồi quyết định mở ngành đào tạo không?,phó hiệu trưởng có quyền thu hồi quyết định mở ngành đào tạo không
+query_052,QUY ĐỊNH Về tiêu chuẩn giảng viên giảng dạy môn học và trợ giảng môn học áp dụng đối với đơn vị khác của Trường ĐHCNTT không?,quy định tiêu chuẩn giảng viên giảng dạy môn học trợ giảng môn học áp dụng đối đơn vị khác trường đhcntt không
+query_053,Quy chế đào tạo từ xa trình độ đại học của Trường Đại học Công nghệ Thông tin áp dụng đối với những đối tượng nào?,quy chế đào tạo xa trình độ đại học trường đại học công nghệ thông tin áp dụng đối đối tượng nào
+query_054,Quy trình phúc khảo diễn ra như thế nào?,quy trình phúc khảo diễn thế nào
+query_055,Quy định dạy học theo phương thức trực tuyên và kết hợp áp dụng cho các đối tượng nào?,quy định dạy học phương thức trực tuyên kết hợp áp dụng đối tượng nào
+query_056,Quy định về học phí về đào tạo liên thông từ trình độ đại học lên trình độ thạc sĩ hệ chính quy như thế nào?,quy định học phí đào tạo liên thông trình độ đại học lên trình độ thạc sĩ hệ chính quy thế nào
+query_057,Quy định đào tạo chương trình tài năng quy định điều gì?,quy định đào tạo chương trình tài năng quy định điều gì
+query_058,Quyền lợi khi đăng ký chương trình thứ hai là gì?,quyền lợi đăng ký chương trình thứ hai gì
+query_059,SHD là viết tắt của gì?,shd viết tắt gì
+query_060,Sinh viên CLC chuyển sang CT đại trà sẽ do ai xem xét?,sinh viên clc chuyển sang ct đại trà do ai xem xét
+query_061,Sinh viên có quyền yêu cầu trường cấp bảng điểm trong quá trình học tập không?,sinh viên có quyền yêu cầu trường cấp bảng điểm quá trình học tập không
+query_062,Sinh viên dự thính có được hưởng các chính sách dành cho sinh viên chính quy không?,sinh viên dự thính có được hưởng chính sách dành sinh viên chính quy không
+query_063,"Sinh viên khi đi thi có cần phải mang theo giấy tờ cá nhân như CCCD, thẻ sinh viên hay không?",sinh viên đi thi có cần phải mang giấy tờ cá nhân cccd thẻ sinh viên hay không
+query_064,Sinh viên thuộc chương trình ĐTTX chưa hoàn thành chương trình đào tạo theo quy định có thể nộp hồ sơ đề nghị xét tốt nghiệp không?,sinh viên thuộc chương trình đttx chưa hoàn thành chương trình đào tạo quy định có thể nộp hồ sơ đề nghị xét tốt nghiệp không
+query_065,Sinh viên tài năng có được tham gia xét hưởng học bổng khuyến khích tài năng như sinh viên các chương trình khác không?,sinh viên tài năng có được tham gia xét hưởng học bổng khuyến khích tài năng sinh viên chương trình khác không
+query_066,Số buổi seminar ngoại khóa của CTTN có giới hạn hay không?,số buổi seminar ngoại khóa cttn có giới hạn hay không
+query_067,Số lượng sinh viên tối thiểu của một lớp học cho các môn đại cương là bao nhiêu?,số lượng sinh viên tối thiểu lớp học môn đại cương bao nhiêu
+query_068,Thời gian tối đa thực hiện của chương trình ĐTTX được quy định như thế nào?,thời gian tối đa thực hiện chương trình đttx được quy định thế nào
+query_069,"Tiền chuẩn bị nước uống, bánh trái cho cuộc họp CTGT tối đa là bao nhiêu?",tiền chuẩn bị nước uống bánh trái cuộc họp ctgt tối đa bao nhiêu
+query_070,Trong Chương trình chuẩn thì có sự tham khảo của các chương trình của trường đại học khác hay không?,chương trình chuẩn có sự tham khảo chương trình trường đại học khác hay không
+query_071,"Trong cùng một ngành đào tạo, nội dung của chương trình đào tạo theo phương thức ĐTTX của Trường có như chương trình đào tạo theo hình thức giáo dục chính quy không?",ngành đào tạo nội dung chương trình đào tạo phương thức đttx trường có chương trình đào tạo hình thức giáo dục chính quy không
+query_072,Trong một học kỳ chính Trường tổ chức bao nhiêu đợt kiểm tra?,học kỳ chính trường tổ chức bao nhiêu đợt kiểm tra
+query_073,"Trong quá trình nhân đề thi, cán bộ phụ trách nhân đề thi có phải kiểm tra chất lượng bản in không?",quá trình nhân đề thi cán bộ phụ trách nhân đề thi có phải kiểm tra chất lượng bản in không
+query_074,Trường có những phương thức dạy và học nào?,trường có phương thức dạy học nào
+query_075,Trường hợp chưa nhận chứng chỉ GDQP-AN thì có thể đăng ký xét tốt nghiệp không?,trường hợp chưa nhận chứng chỉ gdqp an có thể đăng ký xét tốt nghiệp không
+query_076,Trường tổ chức lớp của hệ đào tạo từ xa trình độ đại học của trường đại học công nghệ thông tin như thế nào?,trường tổ chức lớp hệ đào tạo xa trình độ đại học trường đại học công nghệ thông tin thế nào
+query_077,Trợ giảng lớp học NNCM có thể sử dụng tiếng Việt trong quá trình hỗ trợ sinh viên không?,trợ giảng lớp học nncm có thể sử dụng tiếng việt quá trình hỗ trợ sinh viên không
+query_078,Việc quản lý phòng học có nằm trong số các hoạt động được nhà trường ứng dụng công nghệ thông tin vào không?,việc quản lý phòng học có nằm số hoạt động được nhà trường ứng dụng công nghệ thông tin không
+query_079,Việc xét miễn các môn học tiếng Nhật đối với sinh viên thuộc chương trình gì?,việc xét miễn môn học tiếng nhật đối sinh viên thuộc chương trình gì
+query_080,Việc xử lý vi phạm sinh viên có được công bố cho sinh viên biết không?,việc xử lý vi phạm sinh viên có được công bố sinh viên biết không
+query_081,Việc đổ danh sách thí sinh vào phòng thi do đơn vị nào thực hiện?,việc đổ danh sách thí sinh phòng thi do đơn vị nào thực hiện
+query_082,Vì sao UIT xây dựng và triển khai các chương trình CLC?,vì sao uit xây dựng triển khai chương trình clc
+query_083,Vì sao có những quy định chi tiết cách thực hiện công tác phân công cán bộ coi thi các đợt thi tập trung hệ đại học chính quy tại Trường?,vì sao có quy định chi tiết cách thực hiện công tác phân công cán bộ coi thi đợt thi tập trung hệ đại học chính quy trường
+query_084,"Văn bằng, chứng chỉ có bị hủy bỏ không?",văn bằng chứng chỉ có bị hủy bỏ không
+query_085,"Với các điểm quá trình, thực hành của môn học, thì hạn nhập điểm có giống với hạn nhập điểm cuối kỳ của môn học đó không?",điểm quá trình thực hành môn học hạn nhập điểm có giống hạn nhập điểm cuối kỳ môn học đó không
+query_086,"Với tài khoản sinh viên của mình, sinh viên cần phải có trách nhiệm gì?",tài khoản sinh viên mình sinh viên cần phải có trách nhiệm gì
+query_087,Yêu cầu về mặt pháp lý của tài liệu tham khảo là gì?,yêu cầu mặt pháp lý tài liệu tham khảo gì
+query_088,Yêu cầu đổi với điểm KLTN và ĐTBTL và điểm rèn luyện như thế nào để được cấp bằng CTTN?,yêu cầu đổi điểm kltn đtbtl điểm rèn luyện thế nào được cấp bằng cttn
+query_089,Ý kiến phản hồi của các bên liên quan có được ĐVCM thu thập không?,ý kiến phản hồi bên liên quan có được đvcm thu thập không
+query_090,ĐH CNTT thuộc cụm đại học nào?,đh cntt thuộc cụm đại học nào
+query_091,Điều gì yêu cầu các Khoa (Bộ môn) trong trường?,điều gì yêu cầu khoa bộ môn trường
+query_092,Điều kiện mở ngành đào tạo được quy định ở đâu?,điều kiện mở ngành đào tạo được quy định ở đâu
+query_093,Điểm 4 sẽ được xếp vào loại gì?,điểm 4 được xếp loại gì
+query_094,Điểm chưa hoàn tất học phần (hoãn thi) được kí hiệu bằng chữ gì?,điểm chưa hoàn tất học phần hoãn thi được kí hiệu bằng chữ gì
+query_095,Điểm sẽ được tính như thế nào trong trường hợp học cải thiện điểm đối với hệ đào tạo từ xa trình độ đại học của trường đại học công nghệ thông tin?,điểm được tính thế nào trường hợp học cải thiện điểm đối hệ đào tạo xa trình độ đại học trường đại học công nghệ thông tin
+query_096,Đơn vị nào có trách nhiệm lưu giữ Đề án mở ngành đào tạo và các văn bản có liên quan để làm minh chứng cho việc triển khai thực hiện mở ngành đào tạo tại Trường?,đơn vị nào có trách nhiệm lưu giữ đề án mở ngành đào tạo văn bản có liên quan làm minh chứng việc triển khai thực hiện mở ngành đào tạo trường
+query_097,Đơn vị phụ trách thực hiện công tác chấm trắc nghiệm là đơn vị nào?,đơn vị phụ trách thực hiện công tác chấm trắc nghiệm đơn vị nào
+query_098,Đơn vị quản lý môn học có thể là cái gì?,đơn vị quản lý môn học có thể cái gì
+query_099,Để Ban Giám hiệu có thể biết được toàn bộ hoạt động của chương trình thì đơn vị nào có trách nhiệm báo cáo cho Ban Giám hiệu?,ban giám hiệu có thể biết được toàn bộ hoạt động chương trình đơn vị nào có trách nhiệm báo cáo ban giám hiệu
+query_100,"Đối với chương trình tiên tiến, môn Giáo dục quốc phòng - an ninh có giảng dạy bằng tiếng Anh không?",đối chương trình tiên tiến môn giáo dục quốc phòng an ninh có giảng dạy bằng tiếng anh không

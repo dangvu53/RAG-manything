@@ -1,0 +1,13 @@
+{
+  "model": "Qwen/Qwen3-Reranker-0.6B",
+  "num_queries": 100,
+  "num_chunks": 297,
+  "num_pairs": 29700,
+  "score_shape": [
+    100,
+    297
+  ],
+  "score_range": "[0, 1] sigmoid-normalized",
+  "pair_order": "query-major then chunk order",
+  "prompt_name": "query"
+}

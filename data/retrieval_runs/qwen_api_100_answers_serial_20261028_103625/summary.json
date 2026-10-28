@@ -1,0 +1,24 @@
+{
+  "collection": "virhe4qa_qwen_api_30_fdd19f",
+  "queries_total": 100,
+  "answers_ready": 37,
+  "new_answer_requests_sent": 0,
+  "reused_existing_answers": 37,
+  "remaining_unanswered": 63,
+  "client_concurrency": 1,
+  "answer_max_new_tokens": 512,
+  "answer_latency_new_serial_requests": {
+    "count": 0
+  },
+  "wall_clock_new_requests_s": 0.679,
+  "failures": [
+    {
+      "query_id": 5,
+      "question": "Những quy định về khoá luận tốt nghiệp cho hệ chính quy áp dụng vào đối tượng nào?",
+      "ok": false,
+      "error": "HTTPError: 404 Client Error: Not Found for url: https://superadditional-lisha-nonmenially.ngrok-free.dev/v1/answer",
+      "answer_source": "new_sequential_answer_request"
+    }
+  ],
+  "method": "Reuse prior successful answers and prior retrieval top-3 results; send only unanswered query /v1/answer calls sequentially, awaiting each response before the next. No new embedding or Qdrant search requests."
+}

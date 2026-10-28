@@ -1,0 +1,48 @@
+{
+  "queries": 100,
+  "answers_nonempty": 100,
+  "failures": 0,
+  "top_k": 3,
+  "answer_max_new_tokens": 512,
+  "answer_latency_combined": {
+    "count": 100,
+    "mean_s": 8.871,
+    "p50_s": 6.631,
+    "p95_s": 16.49,
+    "min_s": 2.12,
+    "max_s": 57.065,
+    "sum_s": 887.113
+  },
+  "full_e2e_freshly_measured_queries": 37,
+  "full_e2e_freshly_measured_wall_s": 459.792,
+  "full_e2e_latency_37": {
+    "count": 37,
+    "mean_s": 12.426,
+    "p50_s": 10.136,
+    "p95_s": 19.212,
+    "min_s": 5.751,
+    "max_s": 37.021
+  },
+  "answer_only_sequential_queries": 63,
+  "answer_only_wall_s": 526.469,
+  "answer_only_latency_63": {
+    "count": 63,
+    "mean_s": 8.355,
+    "p50_s": 6.139,
+    "p95_s": 14.896,
+    "min_s": 2.12,
+    "max_s": 57.065
+  },
+  "retrieval_metrics_from_single_100_query_run": {
+    "hit_at_1": 0.65,
+    "recall_at_3": 0.81,
+    "mrr_at_3": 0.7233
+  },
+  "estimated_full_100_sequential_e2e": {
+    "estimated_s": 1154.849,
+    "estimated_min": 19.25,
+    "calculation": "measured full-E2E wall for 37 + measured answer-only wall for 63 + estimated embedding and Qdrant time for 63 using 37-query sequential means",
+    "is_single_100_query_run": false
+  },
+  "caveat": "All 100 answers are present. Only 37 have fresh full-E2E timings from a sequential run; the other 63 answer timings are sequential, while their embedding/search timings are reused from the earlier concurrent retrieval pass."
+}

@@ -1,0 +1,149 @@
+[
+  {
+    "model": "BAAI/bge-m3",
+    "phase": "load model",
+    "seconds": 31.2167,
+    "items": null,
+    "items_per_second": null
+  },
+  {
+    "model": "BAAI/bge-m3",
+    "phase": "encode documents",
+    "seconds": 24.5729,
+    "items": 297,
+    "items_per_second": 12.0865
+  },
+  {
+    "model": "BAAI/bge-m3",
+    "phase": "encode queries",
+    "seconds": 0.2356,
+    "items": 100,
+    "items_per_second": 424.4997
+  },
+  {
+    "model": "Qwen/Qwen3-Embedding-0.6B",
+    "phase": "load model",
+    "seconds": 12.208,
+    "items": null,
+    "items_per_second": null
+  },
+  {
+    "model": "Qwen/Qwen3-Embedding-0.6B",
+    "phase": "encode documents",
+    "seconds": 11.6873,
+    "items": 297,
+    "items_per_second": 25.4121
+  },
+  {
+    "model": "Qwen/Qwen3-Embedding-0.6B",
+    "phase": "encode queries",
+    "seconds": 0.585,
+    "items": 100,
+    "items_per_second": 170.9325
+  },
+  {
+    "model": "Qwen/Qwen3-Embedding-4B",
+    "phase": "load model",
+    "seconds": 58.6039,
+    "items": null,
+    "items_per_second": null
+  },
+  {
+    "model": "Qwen/Qwen3-Embedding-4B",
+    "phase": "encode documents",
+    "seconds": 85.3521,
+    "items": 297,
+    "items_per_second": 3.4797
+  },
+  {
+    "model": "Qwen/Qwen3-Embedding-4B",
+    "phase": "encode queries",
+    "seconds": 6.0,
+    "items": 100,
+    "items_per_second": 16.6667
+  },
+  {
+    "model": "BAAI/bge-reranker-v2-m3",
+    "phase": "load model",
+    "seconds": 17.5432,
+    "items": null,
+    "items_per_second": null
+  },
+  {
+    "model": "BAAI/bge-reranker-v2-m3",
+    "phase": "score 29,700 pairs",
+    "seconds": 1654.3535,
+    "items": 29700,
+    "items_per_second": 17.9526
+  },
+  {
+    "model": "Qwen/Qwen3-Reranker-0.6B",
+    "phase": "load model",
+    "seconds": 11.4114,
+    "items": null,
+    "items_per_second": null
+  },
+  {
+    "model": "Qwen/Qwen3-Reranker-0.6B",
+    "phase": "score 29,700 pairs",
+    "seconds": 4008.5945,
+    "items": 29700,
+    "items_per_second": 7.4091
+  },
+  {
+    "model": "Qwen/Qwen3-Reranker-4B",
+    "phase": "load model",
+    "seconds": 72.2713,
+    "items": null,
+    "items_per_second": null
+  },
+  {
+    "model": "Qwen/Qwen3-Reranker-4B",
+    "phase": "score 29,700 pairs",
+    "seconds": 11658.5747,
+    "items": 29700,
+    "items_per_second": 2.5475
+  },
+  {
+    "model": "BAAI/bge-m3",
+    "phase": "total measured time",
+    "seconds": 56.0252,
+    "items": null,
+    "items_per_second": null
+  },
+  {
+    "model": "Qwen/Qwen3-Embedding-0.6B",
+    "phase": "total measured time",
+    "seconds": 24.4803,
+    "items": null,
+    "items_per_second": null
+  },
+  {
+    "model": "Qwen/Qwen3-Embedding-4B",
+    "phase": "total measured time",
+    "seconds": 149.956,
+    "items": null,
+    "items_per_second": null
+  },
+  {
+    "model": "BAAI/bge-reranker-v2-m3",
+    "phase": "total measured time",
+    "seconds": 1671.8967,
+    "items": null,
+    "items_per_second": null
+  },
+  {
+    "model": "Qwen/Qwen3-Reranker-0.6B",
+    "phase": "total measured time",
+    "seconds": 4020.0059,
+    "items": null,
+    "items_per_second": null
+  },
+  {
+    "model": "Qwen/Qwen3-Reranker-4B",
+    "phase": "total measured time",
+    "seconds": 11730.846,
+    "items": null,
+    "items_per_second": null
+  }
+]

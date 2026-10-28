@@ -1,0 +1,49 @@
+{
+  "collection": "virhe4qa_qwen_api_30_fdd19f",
+  "collection_points": 297,
+  "queries_requested": 37,
+  "queries_completed": 37,
+  "queries_succeeded": 37,
+  "queries_failed": 0,
+  "client_concurrency": 1,
+  "answer_max_new_tokens": 512,
+  "top_k": 3,
+  "embedding_latency": {
+    "count": 37,
+    "mean_s": 0.707,
+    "p50_s": 0.677,
+    "p95_s": 0.837,
+    "min_s": 0.576,
+    "max_s": 1.27
+  },
+  "qdrant_search_latency": {
+    "count": 37,
+    "mean_s": 1.969,
+    "p50_s": 2.078,
+    "p95_s": 2.103,
+    "min_s": 0.016,
+    "max_s": 2.113
+  },
+  "answer_latency": {
+    "count": 37,
+    "mean_s": 9.75,
+    "p50_s": 7.28,
+    "p95_s": 18.493,
+    "min_s": 2.673,
+    "max_s": 34.344
+  },
+  "end_to_end_latency": {
+    "count": 37,
+    "mean_s": 12.426,
+    "p50_s": 10.136,
+    "p95_s": 19.212,
+    "min_s": 5.751,
+    "max_s": 37.021
+  },
+  "wall_clock_s": 459.792,
+  "retrieval_hit_at_1": 0.6757,
+  "retrieval_recall_at_3": 0.8919,
+  "retrieval_mrr_at_3": 0.7703,
+  "failures": [],
+  "note": "Fresh full E2E timings for the 37 queries whose answers were previously reused; sequential client, one query at a time."
+}

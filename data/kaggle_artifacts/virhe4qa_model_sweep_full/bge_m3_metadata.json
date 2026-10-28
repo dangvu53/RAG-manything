@@ -1,0 +1,7 @@
+{
+  "model": "BAAI/bge-m3",
+  "num_documents": 297,
+  "num_queries": 100,
+  "dense_dimension": 1024,
+  "sparse_format": "jsonl indices + values; variable nnz per item"
+}
