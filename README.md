@@ -95,7 +95,8 @@ Các biến quan trọng trong **.env**:
 | QWEN_API_URL | HTTPS URL của endpoint /generate |
 | QWEN_API_TOKEN | Bearer token của Qwen API |
 | QWEN_MODEL | Qwen/Qwen3-4B |
-| OPENAI_API_KEY | Bắt buộc khi một guardrail được bật |
+| OPENAI_API_KEY | API key cho guardrail hoặc RAGAS evaluation |
+| OPENAI_BASE_URL | Base URL cho OpenAI-compatible evaluation API |
 | OPENAI_INPUT_GUARDRAIL_MODEL | gpt-4o-mini |
 | OPENAI_OUTPUT_GUARDRAIL_MODEL | gpt-5-mini |
 | OPENAI_EVAL_MODEL | Model chấm RAGAS |
@@ -437,7 +438,20 @@ rag-evaluate reports/answers.jsonl --output reports/baseline.json
 ~~~
 
 Report gồm điểm từng mẫu, điểm trung bình và latency **mean**, **p50**, **p95**, **min**,
-**max**. Evaluation gửi nội dung dataset tới OpenAI nhưng tắt LangSmith tracing.
+**max**. Evaluation gửi nội dung dataset tới provider đã cấu hình nhưng tắt LangSmith
+tracing.
+
+Để chạy evaluation qua OpenRouter, dùng một OpenRouter key với API tương thích OpenAI:
+
+~~~env
+OPENAI_API_KEY=<openrouter-key>
+OPENAI_BASE_URL=https://openrouter.ai/api/v1
+OPENAI_EVAL_MODEL=openai/gpt-4o-mini
+OPENAI_EMBEDDING_MODEL=openai/text-embedding-3-small
+~~~
+
+Tên biến `OPENAI_*` mô tả giao thức client; key và endpoint trong cấu hình trên thuộc
+OpenRouter.
 
 ## Retrieval baseline
 

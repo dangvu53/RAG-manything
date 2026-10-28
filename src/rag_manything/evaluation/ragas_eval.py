@@ -28,6 +28,7 @@ class EvaluationSettings(BaseSettings):
     # Evaluating saved answers needs no Qwen or guardrail credentials.
     model_config = SettingsConfigDict(env_file=".env", extra="ignore", hide_input_in_errors=True)
     openai_api_key: str = Field(min_length=1, repr=False)
+    openai_base_url: str = "https://api.openai.com/v1"
     openai_eval_model: str = Field(min_length=1)
     openai_embedding_model: str = "text-embedding-3-small"
     openai_timeout_seconds: float = Field(default=30, gt=0)
@@ -99,29 +100,31 @@ def run_evaluation(rows: list[EvaluationRow], settings: EvaluationSettings) -> d
     from ragas import EvaluationDataset, evaluate
     from ragas.embeddings import LangchainEmbeddingsWrapper
     from ragas.llms import LangchainLLMWrapper
-    from ragas.metrics import (
+    from ragas.metrics.collections import (
+        AnswerRelevancy,
         FactualCorrectness,
         Faithfulness,
-        ResponseRelevancy,
         SemanticSimilarity,
     )
     from ragas.run_config import RunConfig
 
     llm = LangchainLLMWrapper(ChatOpenAI(
         model=settings.openai_eval_model, api_key=settings.openai_api_key,
+        base_url=settings.openai_base_url, use_responses_api=False,
         timeout=settings.openai_timeout_seconds, max_retries=1,
     ))
     embeddings = LangchainEmbeddingsWrapper(OpenAIEmbeddings(
         model=settings.openai_embedding_model, api_key=settings.openai_api_key,
+        base_url=settings.openai_base_url,
         request_timeout=settings.openai_timeout_seconds, max_retries=1,
     ))
-    # Offline evaluation content goes to OpenAI, but is not copied into LangSmith traces.
+    # Evaluation content goes to the configured provider, but is not copied into LangSmith traces.
     with tracing_context(enabled=False):
         result = evaluate(
             dataset=EvaluationDataset.from_list([row.model_dump() for row in rows]),
             metrics=[
                 Faithfulness(),
-                ResponseRelevancy(),
+                AnswerRelevancy(),
                 FactualCorrectness(),
                 SemanticSimilarity(),
             ],
@@ -141,6 +144,7 @@ def run_evaluation(rows: list[EvaluationRow], settings: EvaluationSettings) -> d
         averages[name] = sum(values) / len(values) if values else None
     return {
         "created_at": datetime.now(timezone.utc).isoformat(),
+        "evaluator_base_url": settings.openai_base_url,
         "evaluator_model": settings.openai_eval_model,
         "embedding_model": settings.openai_embedding_model,
         "row_count": len(rows),
