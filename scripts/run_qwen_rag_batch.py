@@ -22,7 +22,11 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 SRC_ROOT = PROJECT_ROOT / "src"
 if str(SRC_ROOT) not in sys.path:
     sys.path.insert(0, str(SRC_ROOT))
+SCRIPTS_ROOT = PROJECT_ROOT / "scripts"
+if str(SCRIPTS_ROOT) not in sys.path:
+    sys.path.insert(0, str(SCRIPTS_ROOT))
 
+from evaluate_bm25_retrieval import BM25Index  # noqa: E402
 from rag_manything.answer.service import AnswerService  # noqa: E402
 from rag_manything.config import Settings  # noqa: E402
 from rag_manything.models import RetrievedChunk  # noqa: E402
@@ -33,6 +37,9 @@ DEFAULT_QUERIES = (
     / "virhe4qa_subset"
     / "ViRHE4QA_v2_all_contexts_297"
     / "queries_100.csv"
+)
+DEFAULT_BM25_CORPUS = (
+    PROJECT_ROOT / "data" / "kaggle_artifacts" / "virhe4qa_model_sweep" / "chunks_manifest.csv"
 )
 
 
@@ -71,6 +78,68 @@ def load_queries(path: Path, limit: int) -> list[dict[str, str]]:
     return rows[:limit]
 
 
+def load_bm25_corpus(path: Path) -> list[dict[str, str]]:
+    with path.open("r", encoding="utf-8-sig", newline="") as stream:
+        rows = [dict(row) for row in csv.DictReader(stream)]
+    required = {"chunk_id", "document_id", "text"}
+    if not rows or not required.issubset(rows[0]):
+        raise ValueError(f"BM25 corpus must contain {sorted(required)}: {path}")
+    return rows
+
+
+def fuse_rankings(
+    dense_points: list[dict[str, Any]],
+    bm25_rows: list[dict[str, Any]],
+    *,
+    rrf_k: float,
+    limit: int,
+) -> list[dict[str, Any]]:
+    candidates: dict[str, dict[str, Any]] = {}
+    for dense_rank, point in enumerate(dense_points, start=1):
+        payload = dict(point.get("payload", {}) or {})
+        chunk_id = str(payload.get("chunk_id", point.get("id")))
+        candidates[chunk_id] = {
+            "point_id": point.get("id"),
+            "chunk_id": chunk_id,
+            "payload": payload,
+            "dense_rank": dense_rank,
+            "dense_score": point.get("score"),
+            "bm25_rank": None,
+            "bm25_score": None,
+            "rrf_score": 1.0 / (rrf_k + dense_rank - 1),
+        }
+    for bm25_rank, row in enumerate(bm25_rows, start=1):
+        chunk_id = str(row["chunk_id"])
+        payload = {
+            "chunk_id": chunk_id,
+            "document_id": row["document_id"],
+            "text": row["text"],
+        }
+        candidate = candidates.setdefault(
+            chunk_id,
+            {
+                "point_id": None,
+                "chunk_id": chunk_id,
+                "payload": payload,
+                "dense_rank": None,
+                "dense_score": None,
+                "bm25_rank": None,
+                "bm25_score": None,
+                "rrf_score": 0.0,
+            },
+        )
+        candidate["bm25_rank"] = bm25_rank
+        candidate["bm25_score"] = row["score"]
+        candidate["rrf_score"] += 1.0 / (rrf_k + bm25_rank - 1)
+    ranking = sorted(
+        candidates.values(),
+        key=lambda item: (-item["rrf_score"], item["chunk_id"]),
+    )[:limit]
+    for rank, item in enumerate(ranking, start=1):
+        item["rank"] = rank
+    return ranking
+
+
 def source_from_payload(payload: dict[str, Any]) -> str | None:
     for key in ("source_url", "source", "title", "document_id"):
         value = payload.get(key)
@@ -100,11 +169,24 @@ def main() -> int:
     ))
     parser.add_argument("--qdrant-url", default=os.getenv("QDRANT_URL", "http://localhost:6333"))
     parser.add_argument("--top-k", type=int, default=3)
+    parser.add_argument("--dense-candidates", type=int, default=100)
+    parser.add_argument("--bm25-candidates", type=int, default=100)
+    parser.add_argument("--bm25-corpus", type=Path, default=DEFAULT_BM25_CORPUS)
+    parser.add_argument("--bm25-k1", type=float, default=1.5)
+    parser.add_argument("--bm25-b", type=float, default=0.75)
+    parser.add_argument("--rrf-k", type=float, default=2.0)
     parser.add_argument("--timeout", type=float, default=600)
     parser.add_argument("--run-name")
     args = parser.parse_args()
-    if args.limit < 1 or args.top_k < 1 or args.timeout <= 0:
-        parser.error("limit, top-k, and timeout must be positive")
+    if (
+        args.limit < 1
+        or args.top_k < 1
+        or args.dense_candidates < args.top_k
+        or args.bm25_candidates < args.top_k
+        or args.rrf_k <= 0
+        or args.timeout <= 0
+    ):
+        parser.error("limits, candidate counts, rrf-k, and timeout must be valid positive values")
 
     rag_api_url = os.getenv("RAG_API_URL", "").rstrip("/")
     rag_api_key = os.getenv("RAG_API_KEY", "")
@@ -120,7 +202,17 @@ def main() -> int:
         parser.error("Set INPUT_GUARDRAIL_ENABLED=false and OUTPUT_GUARDRAIL_ENABLED=false")
 
     query_rows = load_queries(args.queries.resolve(), args.limit)
-    run_name = args.run_name or f"qwen_prompt_answer_{len(query_rows)}_{datetime.now():%Y%m%d_%H%M%S}"
+    bm25_corpus = load_bm25_corpus(args.bm25_corpus.resolve())
+    bm25_index_started = time.perf_counter()
+    bm25_index = BM25Index(
+        [row["text"] for row in bm25_corpus],
+        k1=args.bm25_k1,
+        b=args.bm25_b,
+    )
+    bm25_index_s = time.perf_counter() - bm25_index_started
+    run_name = args.run_name or (
+        f"qwen_bm25_rrf_prompt_answer_{len(query_rows)}_{datetime.now():%Y%m%d_%H%M%S}"
+    )
     output_dir = PROJECT_ROOT / "data" / "retrieval_runs" / run_name
     if output_dir.exists() and any(output_dir.iterdir()):
         parser.error(f"Output directory is not empty: {output_dir}")
@@ -167,7 +259,11 @@ def main() -> int:
                 started = time.perf_counter()
                 search_response = post_json(
                     collection_url,
-                    {"query": vectors[0], "limit": args.top_k, "with_payload": True},
+                    {
+                        "query": vectors[0],
+                        "limit": args.dense_candidates,
+                        "with_payload": True,
+                    },
                     headers=qdrant_headers,
                     timeout=args.timeout,
                 )
@@ -176,26 +272,39 @@ def main() -> int:
                 if not points:
                     raise RuntimeError("Qdrant returned no retrieval hits")
 
+                started = time.perf_counter()
+                bm25_scores = bm25_index.scores(question)
+                bm25_order = sorted(
+                    range(len(bm25_corpus)),
+                    key=lambda index: (-bm25_scores[index], bm25_corpus[index]["chunk_id"]),
+                )[: args.bm25_candidates]
+                bm25_hits = [
+                    {**bm25_corpus[index], "score": float(bm25_scores[index])}
+                    for index in bm25_order
+                ]
+                bm25_s = time.perf_counter() - started
+
+                started = time.perf_counter()
+                hits = fuse_rankings(
+                    points,
+                    bm25_hits,
+                    rrf_k=args.rrf_k,
+                    limit=args.top_k,
+                )
+                fusion_s = time.perf_counter() - started
+
                 chunks: list[RetrievedChunk] = []
-                hits: list[dict[str, Any]] = []
-                for rank, point in enumerate(points, start=1):
-                    payload = dict(point.get("payload", {}) or {})
-                    chunk_id = str(payload.get("chunk_id", point.get("id")))
+                for hit in hits:
+                    payload = hit["payload"]
+                    chunk_id = hit["chunk_id"]
                     text = str(payload.get("text", "")).strip()
                     if not text:
-                        raise RuntimeError(f"Retrieved hit {rank} has no payload.text")
+                        raise RuntimeError(f"Retrieved hit {hit['rank']} has no payload.text")
                     chunks.append(RetrievedChunk(
                         chunk_id=chunk_id,
                         content=text,
                         source=source_from_payload(payload),
                     ))
-                    hits.append({
-                        "rank": rank,
-                        "point_id": point.get("id"),
-                        "chunk_id": chunk_id,
-                        "score": point.get("score"),
-                        "payload": payload,
-                    })
 
                 started = time.perf_counter()
                 answer = answer_service.answer(question, chunks)
@@ -206,7 +315,9 @@ def main() -> int:
                     "answer_result": answer.model_dump(mode="json"),
                     "timings_s": {
                         "query_embedding_api": round(embedding_s, 4),
-                        "qdrant_search": round(search_s, 4),
+                        "qdrant_dense_search": round(search_s, 4),
+                        "bm25_search": round(bm25_s, 4),
+                        "rrf_fusion": round(fusion_s, 4),
                         "prompt_and_answer": round(answer_s, 4),
                         "end_to_end": round(time.perf_counter() - query_started, 4),
                     },
@@ -240,8 +351,18 @@ def main() -> int:
         "completed_queries": len(completed),
         "error_queries": len(records) - len(completed),
         "top_k": args.top_k,
+        "dense_candidates": args.dense_candidates,
+        "bm25_candidates": args.bm25_candidates,
+        "bm25": {
+            "corpus": str(args.bm25_corpus.resolve()),
+            "document_count": len(bm25_corpus),
+            "k1": args.bm25_k1,
+            "b": args.bm25_b,
+            "index_build_seconds": round(bm25_index_s, 4),
+        },
+        "fusion": {"method": "rrf", "k": args.rrf_k, "weights": [1.0, 1.0]},
         "guardrails_enabled": False,
-        "pipeline": "Qwen embedding -> Qdrant dense -> PromptBuilder -> Qwen generate",
+        "pipeline": "Qwen dense + local BM25 -> RRF -> PromptBuilder -> Qwen generate",
         "timing_s": {
             "total": round(time.perf_counter() - run_started, 4),
             "mean_per_completed_query": round(statistics.mean(durations), 4) if durations else None,

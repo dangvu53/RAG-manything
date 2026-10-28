@@ -364,14 +364,19 @@ This calls the Qwen embedding API, runs dense cosine search in Qdrant, then send
 
 ## Run a 30-query governed-answer sample
 
-The batch runner uses the local `PromptBuilder` policy and the Kaggle
-`/v1/generate` route. It runs sequentially and writes a checkpoint after every
-query:
+The batch runner uses Qwen3-Embedding-4B dense retrieval from Qdrant and local
+BM25, fuses the top 100 candidates from each branch with equal-weight RRF
+(`k=2`), then sends the final chunks through the local `PromptBuilder` policy
+and Kaggle `/v1/generate` route. It runs sequentially and writes a checkpoint
+after every query:
 
 ```powershell
 .\.venv\Scripts\python.exe .\RAG-manything\scripts\run_qwen_rag_batch.py `
   --limit 30 `
-  --top-k 3
+  --top-k 3 `
+  --dense-candidates 100 `
+  --bm25-candidates 100 `
+  --rrf-k 2
 ```
 
 Each run creates a timestamped directory under `data/retrieval_runs/` containing
