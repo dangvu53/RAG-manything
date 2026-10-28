@@ -217,7 +217,7 @@ def main() -> int:
     if output_dir.exists() and any(output_dir.iterdir()):
         parser.error(f"Output directory is not empty: {output_dir}")
     output_dir.mkdir(parents=True, exist_ok=True)
-    checkpoint_path = output_dir / "per_query_checkpoint.jsonl"
+    checkpoint_path = output_dir / "checkpoint.json"
 
     auth_headers = {"Authorization": f"Bearer {rag_api_key}"}
     qdrant_headers: dict[str, str] = {}
@@ -333,8 +333,10 @@ def main() -> int:
                 })
 
             records.append(record)
-            with checkpoint_path.open("a", encoding="utf-8") as stream:
-                stream.write(json.dumps(record, ensure_ascii=False) + "\n")
+            checkpoint_path.write_text(
+                json.dumps(records, ensure_ascii=False, indent=2) + "\n",
+                encoding="utf-8",
+            )
             print(
                 f"[{position}/{len(query_rows)}] {record['status']} | "
                 f"{record['timings_s']['end_to_end']:.2f}s"
@@ -370,9 +372,10 @@ def main() -> int:
             "p95": percentile(durations, 0.95),
         },
     }
-    with (output_dir / "per_query.jsonl").open("w", encoding="utf-8") as stream:
-        for record in records:
-            stream.write(json.dumps(record, ensure_ascii=False) + "\n")
+    (output_dir / "per_query.json").write_text(
+        json.dumps(records, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
     (output_dir / "summary.json").write_text(
         json.dumps(summary, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",

@@ -380,7 +380,8 @@ after every query:
 ```
 
 Each run creates a timestamped directory under `data/retrieval_runs/` containing
-`per_query_checkpoint.jsonl`, `per_query.jsonl`, and `summary.json`.
+`checkpoint.json`, `per_query.json`, and `summary.json`. Both result files are
+formatted JSON arrays for direct inspection in an editor.
 
 ## Guardrail và citation
 
