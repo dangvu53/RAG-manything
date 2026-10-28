@@ -349,6 +349,9 @@ CLI nhận câu hỏi và các chunk đã retrieval/rerank từ file JSON:
 rag-answer examples/request.json
 ~~~
 
+Đây là đường chạy dành cho phát triển, test và đánh giá answer; nó không gọi Qdrant.
+**AnswerService.answer(question, chunks)** cung cấp contract tương đương cho Python.
+
 ## Run one Qwen RAG query
 
 Set `RAG_API_URL`, `RAG_API_KEY`, and `QWEN_QDRANT_COLLECTION` in `.env`, start Qdrant and the Kaggle API notebook, then run this command from the workspace root:
@@ -359,8 +362,20 @@ Set `RAG_API_URL`, `RAG_API_KEY`, and `QWEN_QDRANT_COLLECTION` in `.env`, start 
 
 This calls the Qwen embedding API, runs dense cosine search in Qdrant, then sends the retrieved payload `text` fields to the answer API. It returns the answer, retrieved payloads, and per-stage timings. The current Qwen collection is dense-only; BM25 is not part of this command because the local Qdrant 1.15.5 instance rejected native BM25 text queries during the trial. Use `--output data/retrieval_runs/one_query.json` to save the full result.
 
-Đây là đường chạy dành cho phát triển, test và đánh giá answer; nó không gọi Qdrant.
-**AnswerService.answer(question, chunks)** cung cấp contract tương đương cho Python.
+## Run a 30-query governed-answer sample
+
+The batch runner uses the local `PromptBuilder` policy and the Kaggle
+`/v1/generate` route. It runs sequentially and writes a checkpoint after every
+query:
+
+```powershell
+.\.venv\Scripts\python.exe .\RAG-manything\scripts\run_qwen_rag_batch.py `
+  --limit 30 `
+  --top-k 3
+```
+
+Each run creates a timestamped directory under `data/retrieval_runs/` containing
+`per_query_checkpoint.jsonl`, `per_query.jsonl`, and `summary.json`.
 
 ## Guardrail và citation
 
