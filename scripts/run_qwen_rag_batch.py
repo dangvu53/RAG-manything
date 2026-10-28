@@ -192,10 +192,10 @@ def main() -> int:
     rag_api_key = os.getenv("RAG_API_KEY", "")
     if not rag_api_url or not rag_api_key:
         parser.error("Set RAG_API_URL and RAG_API_KEY in .env")
-    if not os.getenv("QWEN_API_URL", "").strip():
-        os.environ["QWEN_API_URL"] = f"{rag_api_url}/v1/generate"
-    if not os.getenv("QWEN_API_TOKEN", "").strip():
-        os.environ["QWEN_API_TOKEN"] = rag_api_key
+    # This runner uses the embedding and generation routes from the same
+    # combined Kaggle API, so stale QWEN_* values must not redirect generation.
+    os.environ["QWEN_API_URL"] = f"{rag_api_url}/v1/generate"
+    os.environ["QWEN_API_TOKEN"] = rag_api_key
 
     settings = Settings()
     if settings.input_guardrail_enabled or settings.output_guardrail_enabled:
