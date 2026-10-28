@@ -24,8 +24,8 @@ class Settings(BaseSettings):
     openai_eval_model: str = ""
     openai_timeout_seconds: float = Field(default=30, gt=0)
     openai_embedding_model: str = "text-embedding-3-small"
-    input_guardrail_enabled: bool = True
-    output_guardrail_enabled: bool = True
+    input_guardrail_enabled: bool = False
+    output_guardrail_enabled: bool = False
     max_question_chars: int = Field(default=4000, ge=1)
     max_context_chars: int = Field(default=16000, ge=128)
     langsmith_tracing: bool = False
