@@ -1,0 +1,10 @@
+{
+  "question": "Thư viện mở cửa lúc mấy giờ?",
+  "chunks": [
+    {
+      "chunk_id": "doc-01",
+      "content": "Thư viện mở cửa từ 08:00 đến 17:00, từ thứ Hai đến thứ Sáu.",
+      "source": "library-policy.md"
+    }
+  ]
+}

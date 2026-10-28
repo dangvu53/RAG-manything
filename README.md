@@ -1,50 +1,60 @@
 # RAG-manything
 
-Retrieval component for the RAG-manything project. The current implementation
-covers Qdrant storage, BGE-M3 hybrid retrieval, optional query processing,
-optional reranking, and ViRE-style offline evaluation.
+Hệ thống Retrieval-Augmented Generation (RAG) cho tiếng Việt, gồm hai khối:
 
-## Structure
+- Retrieval: BGE-M3 dense + sparse search trên Qdrant, hợp nhất bằng RRF và hỗ trợ reranking tùy chọn.
+- Prompt/Answer: kiểm tra và viết lại câu hỏi, tạo câu trả lời có citation, kiểm tra output và đánh giá bằng RAGAS.
 
-```text
-src/rag_manything/
-  retrieval/   retrieval component
-  prompt/      prompt construction component
-  answer/      answer generation component
-```
+## Luồng xử lý
 
-The retrieval component is implemented. Prompt and answer components remain
-placeholders.
+~~~text
+User question
+→ GPT-4o mini: input guardrail + query rewrite
+→ BGE-M3 hybrid retrieval trên Qdrant
+→ Optional reranking
+→ Prompt builder
+→ Qwen3-4B: answer generation
+→ GPT-5 mini: output guardrail
+→ Answer + citations + latency
+~~~
 
-## Current baseline status
+Nếu input guardrail phát hiện prompt injection, yêu cầu lấy bí mật hoặc nội dung không hợp lệ,
+pipeline dừng trước retrieval và trả: **Câu hỏi của bạn không hợp lệ.**
 
-- Corpus: 297 unique ViRHE4QA context chunks.
-- Queries: 100 prepared query-to-gold-chunk pairs.
-- Qdrant collection: `virhe4qa_297`.
-- Default search: BGE-M3 dense + BGE-M3 sparse, fused with Qdrant RRF.
-- Query processing: disabled; the external query pipeline is injected but not hard-coded.
-- Reranking: disabled in the current baseline; adapters are ready for later scores or models.
-- Alternate vectors already stored: Qwen3-Embedding-0.6B and Qwen3-Embedding-4B.
+Hai guardrail có thể bật/tắt độc lập. Khi input guardrail tắt, câu hỏi gốc được dùng cho
+retrieval. Khi output guardrail tắt, kiểm tra cấu trúc cục bộ vẫn chặn answer rỗng,
+thẻ think và citation không tồn tại.
 
-## Local setup
+## Thành phần chính
 
-The project uses the shared workspace environment at
-`D:\AI Engineer Fresher - TPBank\.venv`. From the workspace root:
+| Thành phần | Công nghệ | Trạng thái |
+| --- | --- | --- |
+| Input validation và query rewrite | GPT-4o mini | Đã triển khai |
+| Retrieval | BGE-M3 dense + sparse, Qdrant RRF | Đã triển khai |
+| Reranking | Adapter BGE/precomputed | Tùy chọn, mặc định tắt |
+| Answer generation | Qwen3-4B trên Kaggle | Đã triển khai |
+| Output guardrail | GPT-5 mini | Đã triển khai |
+| Observability | LangSmith metadata tracing | Tùy chọn |
+| Answer evaluation | RAGAS, 4 metric + latency | Đã triển khai |
 
-```powershell
-.\.venv\Scripts\python.exe -m pip install -r .\RAG-manything\requirements.txt
-.\.venv\Scripts\python.exe -m pip install -e .\RAG-manything
-Copy-Item .\RAG-manything\.env.example .\RAG-manything\.env
-```
+## Cài đặt
 
-Do not create a second environment inside `RAG-manything` unless the shared
-environment is unavailable.
+Yêu cầu:
 
-Update `.env` to match the local model server when one is configured.
+- Python 3.11 trở lên.
+- Docker nếu chạy Qdrant local.
+- Kaggle GPU và ngrok nếu chạy Qwen3-4B bằng notebook của dự án.
+- OpenAI API key khi bật guardrail hoặc chạy RAGAS.
 
-## Data used
+Dự án ưu tiên dùng virtual environment chung của workspace. Sau khi kích hoạt environment,
+chạy từ thư mục repository:
 
-The source data was copied from `ViRE/data` into `data/`:
+~~~powershell
+python -m pip install -r requirements.txt
+Copy-Item .env.example .env
+~~~
+
+## Dữ liệu và artifacts retrieval
 
 - `data/benchmark_datasets/`: benchmark datasets from the ViRE repository, excluding `mock`.
 - `data/virhe4qa_subset/`: prepared ViRHE4QA data with 297 unique contexts and 100 queries.
@@ -67,123 +77,126 @@ retrieval rankings. If a future model artifact exceeds the hosting provider's
 per-file limit, store that file with Git LFS instead of ignoring the whole data
 directory.
 
-## Start Qdrant
+Cài thêm dependencies cho RAGAS:
 
-From the workspace root:
+~~~powershell
+python -m pip install -e ".[evaluation]"
+~~~
 
-```powershell
-docker compose -f .\RAG-manything\docker-compose.yml up -d qdrant
-```
+## Cấu hình
 
-The current server is Qdrant `v1.15.5` at `http://localhost:6333`. Its local
-dashboard is available at `http://localhost:6333/dashboard`. The installed
-client may be newer than the server; `QdrantStore.from_url()` disables the
-compatibility warning for this local setup. Align versions before deployment.
+Các biến quan trọng trong **.env**:
 
-## Ingest parsed chunks
+| Biến | Mặc định/ý nghĩa |
+| --- | --- |
+| QDRANT_URL | http://localhost:6333 |
+| QDRANT_COLLECTION | Collection dùng khi ingestion |
+| EMBEDDING_MODEL | BAAI/bge-m3 |
+| QWEN_API_URL | HTTPS URL của endpoint /generate |
+| QWEN_API_TOKEN | Bearer token của Qwen API |
+| QWEN_MODEL | Qwen/Qwen3-4B |
+| OPENAI_API_KEY | Bắt buộc khi một guardrail được bật |
+| OPENAI_INPUT_GUARDRAIL_MODEL | gpt-4o-mini |
+| OPENAI_OUTPUT_GUARDRAIL_MODEL | gpt-5-mini |
+| OPENAI_EVAL_MODEL | Model chấm RAGAS |
+| INPUT_GUARDRAIL_ENABLED | Bật/tắt kiểm tra input và query rewrite |
+| OUTPUT_GUARDRAIL_ENABLED | Bật/tắt kiểm tra output bằng GPT |
+| LANGSMITH_TRACING | Mặc định false |
 
-Then ingest one JSONL file. Each line represents one chunk. The file may contain flat metadata fields (such as `title`, `page_start`, `source_url`, `product`) or a nested `metadata` object. `chunk_id`, `document_id`, and non-empty `text` are required.
+Không commit **.env**, API key hoặc token. Remote Qwen URL phải dùng HTTPS; HTTP chỉ được
+chấp nhận cho localhost.
 
-Example input line:
+## Khởi động retrieval
 
-```json
-{"chunk_id":"doc-a-0001","document_id":"doc-a","chunk_index":0,"text":"Chunk content...","metadata":{"title":"Document title","page_start":1,"page_end":1,"source_url":"https://example.org/document.pdf","product":"account"}}
-```
+Khởi động Qdrant:
 
-```powershell
-.\.venv\Scripts\python.exe .\RAG-manything\scripts\ingest_chunks.py path\to\document_chunks.jsonl
-```
+~~~powershell
+docker compose up -d qdrant
+~~~
 
-The script creates the collection if it does not exist, generates BGE-M3 dense and sparse vectors in batches, and upserts points. Re-running it with the same chunk IDs updates those points. It does not delete chunks that were removed from a later version of the input file. BGE vectors use the named-vector keys `bge_m3_dense` and `bge_m3_sparse`.
+Dashboard local: http://localhost:6333/dashboard
 
-The 100-row ViRHE4QA mock CSV can be ingested directly. The script uses each `context` as chunk text, creates a stable document ID from its content, and stores only source split/index/label as metadata. The question and answer fields are not embedded or stored in Qdrant.
+Nạp các vector đã xuất từ Kaggle:
 
-```powershell
-.\.venv\Scripts\python.exe .\RAG-manything\scripts\ingest_chunks.py .\RAG-manything\data\virhe4qa_subset\ViRHE4QA_v2_sample_100\ViRHE4QA_v2_sample_100.csv --collection virhe4qa_sample_100 --batch-size 8
-```
+~~~powershell
+python scripts/ingest_kaggle_artifacts.py data/kaggle_artifacts/virhe4qa_model_sweep --collection virhe4qa_297
+~~~
 
-## Load Kaggle artifacts
+Hoặc tạo embedding và ingest một file JSONL/CSV mới:
 
-When the Kaggle notebook has finished, download its output directory. It should contain at least `chunks_manifest.csv`, `bge_m3_dense.npy`, and `bge_m3_sparse.jsonl`. The Qwen dense `.npy` files are optional; the ingestion script discovers them automatically.
+~~~powershell
+python scripts/ingest_chunks.py path/to/chunks.jsonl --collection rag_chunks
+~~~
 
-```powershell
-.\.venv\Scripts\python.exe .\RAG-manything\scripts\ingest_kaggle_artifacts.py path\to\retrieval_artifacts --collection virhe4qa_297 --recreate
-```
+Mỗi chunk cần **chunk_id**, **document_id** và **text**. Metadata như **title**,
+**source_url**, **page_start** và **page_end** được lưu trong payload để tạo citation.
 
-This stores only document vectors in Qdrant. Query vectors, the reranker pair
-manifest, and future reranker scores remain offline evaluation artifacts. For
-interactive retrieval, the query encoder must be available locally or behind a
-service; Qdrant does not generate embeddings.
+## Chạy Qwen3-4B trên Kaggle
 
-## Retrieval pipeline
+Mở [notebook Qwen](notebooks/qwen3_4b_api_kaggle.ipynb), bật GPU và Internet, sau đó
+tạo hai Kaggle Secrets:
 
-Qdrant performs dense search, sparse search, or dense+sparse RRF fusion. Cross-encoder rerankers run after Qdrant returns candidates, so they are injected as a Python adapter.
+- QWEN_API_TOKEN: token ngẫu nhiên dài ít nhất 32 ký tự.
+- NGROK_AUTHTOKEN: token của tài khoản ngrok.
 
-The active hybrid branch is Qdrant-native, not a Python-side weighted score sum:
+Notebook thực hiện:
 
-1. Qdrant receives a dense `Prefetch` using `bge_m3_dense`.
-2. Qdrant receives a sparse `Prefetch` using `bge_m3_sparse`.
-3. Qdrant applies `FusionQuery(fusion=Fusion.RRF)` and returns the fused candidates.
+1. Load Qwen/Qwen3-4B và tắt thinking.
+2. Tạo FastAPI với GET /health và POST /generate.
+3. Bảo vệ cả hai endpoint bằng bearer token.
+4. Giới hạn một generation tại một thời điểm.
+5. Mở HTTPS tunnel và in QWEN_API_URL.
 
-The corresponding configuration is `search_mode="hybrid"` and `fusion="rrf"`.
-These are also the defaults of `RetrievalConfig`, `search_bge_m3.py`, and the
-batch evaluator, so a caller gets hybrid RRF unless it explicitly selects
-`dense`, `sparse`, or another fusion method.
+Kaggle session và ngrok URL chỉ mang tính tạm thời. Khi session dừng, cần chạy lại notebook
+và cập nhật QWEN_API_URL.
 
-```python
-from FlagEmbedding import BGEM3FlagModel, FlagReranker
+## Sử dụng end-to-end
 
+**AnswerService.answer_with_retrieval()** nhận trực tiếp một **RetrievalPipeline**. Phần
+Prompt/Answer chỉ dùng contract **retrieve()**, không thay đổi thuật toán retrieval.
+
+~~~python
+from FlagEmbedding import BGEM3FlagModel
+
+from rag_manything.answer.service import AnswerService
+from rag_manything.config import Settings
 from rag_manything.retrieval import (
     BgeM3QueryEncoder,
-    FlagEmbeddingReranker,
     HybridSearcher,
     QdrantStore,
     RetrievalConfig,
     RetrievalPipeline,
 )
 
-config = RetrievalConfig(
+retrieval_config = RetrievalConfig(
     collection_name="virhe4qa_297",
     search_mode="hybrid",
     fusion="rrf",
-    enable_query_processing=False,
     enable_reranking=False,
     final_limit=8,
 )
-store = QdrantStore.from_url(collection_name=config.collection_name)
+store = QdrantStore.from_url(collection_name=retrieval_config.collection_name)
 encoder = BgeM3QueryEncoder(BGEM3FlagModel("BAAI/bge-m3", use_fp16=False))
-pipeline = RetrievalPipeline(
-    searcher=HybridSearcher(store, config),
+retrieval_pipeline = RetrievalPipeline(
+    searcher=HybridSearcher(store, retrieval_config),
     query_encoder=encoder,
-    config=config,
+    config=retrieval_config,
 )
 
-results = pipeline.retrieve("Câu hỏi cần tìm")
-for result in results:
-    print(result.score, result.chunk_id, result.text[:160])
-```
+with AnswerService(Settings()) as service:
+    result = service.answer_with_retrieval(
+        "Thư viện mở cửa lúc mấy giờ?",
+        retrieval_pipeline,
+    )
 
-To enable reranking, increase the candidate pool and inject a reranker:
+print(result.model_dump())
+~~~
 
-```python
-config = RetrievalConfig(
-    collection_name="virhe4qa_297",
-    enable_reranking=True,
-    rerank_limit=20,
-    final_limit=8,
-)
-reranker = FlagEmbeddingReranker(
-    FlagReranker("BAAI/bge-reranker-v2-m3", use_fp16=False)
-)
-pipeline = RetrievalPipeline(
-    searcher=HybridSearcher(store, config),
-    query_encoder=encoder,
-    config=config,
-    reranker=reranker,
-)
-```
+Hybrid RRF là cấu hình mặc định. Để bật reranking, đặt
+**RetrievalConfig(enable_reranking=True, rerank_limit=20)** và truyền một reranker vào
+**RetrievalPipeline**. Candidate pool được rerank trước khi lấy **final_limit**.
 
-Set `enable_query_processing=True` and pass `query_processor=...` when the external query pipeline is ready. It may return a rewritten string or `ProcessedQuery(text=..., qdrant_filter=...)`. Set `enable_reranking=False` to bypass reranking without changing the search code. To use a Qwen dense branch, choose `search_mode="dense"` and set `dense_vector_name` to `qwen_0_6b_dense` or `qwen_4b_dense`, then inject a matching `CallableQueryEncoder`.
+Kết quả trả về:
 
 For the saved Kaggle reranker scores, use `PrecomputedReranker.from_artifacts(scores_csv, queries_manifest)`; it resolves the 100 exact questions to their `query_id` values without running a model locally.
 
@@ -303,18 +316,38 @@ Point {
 }
 ```
 
-Keep fields needed to show citations or filter results in the payload. A useful starting set is `chunk_id`, `document_id`, `chunk_index`, `text`, `title`, `page_start`, `page_end`, `source_url`, and any domain filters such as `product`, `document_type`, or `version`. Extra metadata fields are accepted and flattened into the payload.
+Các vector embedding được lưu trong named vectors; payload giữ text và metadata cần cho
+filter/citation. Các trường nên giữ gồm `chunk_id`, `document_id`, `chunk_index`, `text`,
+`title`, `page_start`, `page_end`, `source_url` và metadata nghiệp vụ.
 
-## Qdrant UI
+## Kết quả Answer
 
-The local Qdrant image includes a built-in dashboard. After starting the
-service, open:
+~~~json
+{
+  "answer": "Thư viện mở cửa lúc 08:00 [doc-01].",
+  "citations": [{"chunk_id": "doc-01", "source": "library.md"}],
+  "status": "answered",
+  "reason": null,
+  "prompt_version": "answer-v1",
+  "model": "Qwen/Qwen3-4B",
+  "rewritten_question": "Thư viện mở cửa lúc mấy giờ?",
+  "latency_ms": 1240.35
+}
+~~~
 
-```text
-http://localhost:6333/dashboard
-```
+**status** có thể là:
 
-It lets you inspect collections, payloads, vectors, and run searches. No separate UI container is needed.
+- **answered**: tạo và kiểm tra answer thành công.
+- **blocked**: input hoặc output bị guardrail chặn.
+- **insufficient_context**: retrieval không trả context hữu ích.
+
+## Chạy riêng Prompt/Answer
+
+CLI nhận câu hỏi và các chunk đã retrieval/rerank từ file JSON:
+
+~~~powershell
+rag-answer examples/request.json
+~~~
 
 ## Run one Qwen RAG query
 
@@ -326,3 +359,133 @@ Set `RAG_API_URL`, `RAG_API_KEY`, and `QWEN_QDRANT_COLLECTION` in `.env`, start 
 
 This calls the Qwen embedding API, runs dense cosine search in Qdrant, then sends the retrieved payload `text` fields to the answer API. It returns the answer, retrieved payloads, and per-stage timings. The current Qwen collection is dense-only; BM25 is not part of this command because the local Qdrant 1.15.5 instance rejected native BM25 text queries during the trial. Use `--output data/retrieval_runs/one_query.json` to save the full result.
 
+Đây là đường chạy dành cho phát triển, test và đánh giá answer; nó không gọi Qdrant.
+**AnswerService.answer(question, chunks)** cung cấp contract tương đương cho Python.
+
+## Guardrail và citation
+
+- GPT-4o mini trả structured output gồm **allowed**, **reason** và **rewritten_question**.
+- Câu hỏi viết lại phải độc lập, giữ nguyên ngôn ngữ, ý định, tên riêng, số liệu và ràng buộc.
+- Context được serialize như dữ liệu không đáng tin cậy để giảm prompt injection.
+- GPT-5 mini kiểm tra toàn bộ answer, grounding, nội dung nhạy cảm và citation.
+- Citation chỉ hợp lệ nếu **chunk_id** thực sự xuất hiện trong prompt sau khi cắt context.
+- Lỗi/refusal/schema sai của guardrail được xử lý fail-closed.
+- Qwen timeout hoặc lỗi tạm thời được retry tối đa hai lần; lỗi xác thực và payload sai
+  không được retry.
+
+## Observability
+
+Khi **LANGSMITH_TRACING=true**, mỗi request có các span:
+
+~~~text
+answer_request
+├── input_guardrail
+├── retrieval
+├── build_prompt
+├── qwen_generate
+└── output_guardrail
+~~~
+
+Trace chỉ ghi metadata như latency, model, prompt version, số chunk và trạng thái. Câu hỏi,
+context, prompt, answer và credentials không được gửi vào trace.
+
+## Đánh giá câu trả lời
+
+RAGAS chỉ chấm phần answer, không chấm chất lượng retrieval trong runner này.
+
+| Metric | Ý nghĩa |
+| --- | --- |
+| Faithfulness | Answer có được hỗ trợ bởi context hay không |
+| Response Relevancy | Answer có trả lời đúng trọng tâm câu hỏi hay không |
+| Factual Correctness | Các phát biểu có khớp reference hay không |
+| Semantic Similarity | Answer có tương đồng ngữ nghĩa với reference hay không |
+
+Dataset JSONL gồm **user_input**, **retrieved_contexts**, **response**, **reference** và
+**latency_ms**.
+
+Sinh answer thật và ghi latency:
+
+~~~powershell
+rag-evaluate examples/evaluation_seed.jsonl --generate --output reports/answers.jsonl
+~~~
+
+Chấm bốn metric:
+
+~~~powershell
+rag-evaluate reports/answers.jsonl --output reports/baseline.json
+~~~
+
+Report gồm điểm từng mẫu, điểm trung bình và latency **mean**, **p50**, **p95**, **min**,
+**max**. Evaluation gửi nội dung dataset tới OpenAI nhưng tắt LangSmith tracing.
+
+## Retrieval baseline
+
+Baseline hiện tại:
+
+- Collection: virhe4qa_297.
+- Corpus: 297 context chunks.
+- Evaluation set: 100 query/gold-chunk pairs.
+- Search: BGE-M3 dense + sparse, Qdrant RRF.
+- Query processing và reranking: tắt.
+
+| Metric | Kết quả |
+| --- | ---: |
+| P@1 | 0.6200 |
+| R@10 | 0.9100 |
+| MRR@10 | 0.7258 |
+| nDCG@10 | 0.7712 |
+| R@20 | 0.9500 |
+
+Kết quả và ranking đầy đủ nằm trong
+**data/retrieval_runs/bge_m3_hybrid_rrf_100/**.
+
+## Kiểm thử
+
+~~~powershell
+python -m pytest -q
+python -m unittest discover -s tests -v
+python -m compileall -q src scripts tests
+~~~
+
+Test chạy offline bằng mock transport, không gọi OpenAI, Kaggle hoặc Qdrant thật.
+
+## Cấu trúc repository
+
+~~~text
+src/rag_manything/
+  answer/
+    client.py          Qwen HTTP client
+    guardrails.py      GPT input/output guardrails
+    service.py         end-to-end answer orchestration
+  prompt/
+    builder.py         grounded prompt và context budget
+  retrieval/
+    hybrid.py          dense/sparse/hybrid search
+    pipeline.py        query processing và optional reranking
+    qdrant_store.py    Qdrant wrapper
+    query.py           query encoders
+    reranking.py       reranker adapters
+  evaluation/
+    ragas_eval.py      answer metrics và latency report
+  config.py            environment settings
+  models.py            request/response contracts
+  observability.py     LangSmith metadata tracing
+
+notebooks/
+scripts/
+data/
+tests/
+~~~
+
+## Giới hạn hiện tại
+
+- Qwen endpoint trên Kaggle/ngrok phù hợp development và demo, không phải production.
+- Generation chưa hỗ trợ streaming.
+- Notebook chỉ xử lý một generation tại một thời điểm.
+- Baseline RAGAS live chưa được tạo vì cần Qwen endpoint và OpenAI credentials thật.
+- RAGAS đang được pin ở nhánh 0.4.x; các API wrapper hiện tại có cảnh báo deprecation
+  trước khi nâng lên 1.x.
+
+Chi tiết thiết kế Prompt/Answer nằm trong [plan.md](plan.md). Hướng dẫn dữ liệu nằm trong
+[data/README.md](data/README.md) và
+[data/retrieval_runs/README.md](data/retrieval_runs/README.md).
