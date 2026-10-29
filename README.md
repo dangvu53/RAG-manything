@@ -1,5 +1,51 @@
 # RAG-manything
 
+## BM25 app and Grafana quick start
+
+This first runnable app uses the existing chunk manifest as an in-memory BM25 corpus. It does not
+call Qdrant during retrieval; Qdrant remains available in Compose for the vector-search baseline.
+Answer generation uses the configured Qwen endpoint. Prometheus scrapes runtime metrics from the
+API, while offline retrieval/RAGAS reports are pushed through Pushgateway.
+
+Configure `QWEN_API_URL` and `QWEN_API_TOKEN` in `.env`, then start the app and monitoring stack:
+
+```powershell
+docker compose up --build -d
+```
+
+The API is at `http://localhost:8000`, Prometheus at `http://localhost:9090`, Grafana at
+`http://localhost:3000` (initial login `admin` / `admin`), and Qdrant at
+`http://localhost:6333/dashboard`. Grafana provisions the Prometheus datasource and the
+**RAG-manything BM25 baseline** dashboard automatically.
+
+Send a question:
+
+```powershell
+$body = @{ question = "Điều kiện để được miễn học tiếng Anh là gì?"; top_k = 3 } | ConvertTo-Json
+Invoke-RestMethod -Method Post -Uri http://localhost:8000/v1/answer `
+  -ContentType "application/json" -Body $body
+```
+
+Runtime telemetry includes request counts, end-to-end and per-stage latency, answer status,
+retrieved chunk counts, and empty retrievals. It never uses question or chunk text as metric labels.
+
+Run the offline BM25 retrieval evaluation and publish its quality scores:
+
+```powershell
+python scripts/evaluate_bm25_retrieval.py `
+  --artifacts-dir data/kaggle_artifacts/virhe4qa_model_sweep `
+  --limit 100 --ks 1,3,5,10,20 --run-name bm25_grafana_100
+
+python scripts/publish_eval_metrics.py `
+  --retrieval-report data/retrieval_runs/bm25_grafana_100/metrics.json `
+  --retrieval-config data/retrieval_runs/bm25_grafana_100/run_config.json `
+  --dataset virhe4qa_100 --retrieval bm25
+```
+
+To include answer quality, pass a saved RAGAS report with `--answer-report path/to/ragas_report.json`.
+Evaluation metrics are batch results and update when this publisher command runs; live API latency
+and request metrics are scraped continuously.
+
 Hệ thống Retrieval-Augmented Generation (RAG) cho tiếng Việt, gồm hai khối:
 
 - Retrieval: BGE-M3 dense + sparse search trên Qdrant, hợp nhất bằng RRF và hỗ trợ reranking tùy chọn.

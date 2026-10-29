@@ -1,0 +1,11 @@
+apiVersion: 1
+
+providers:
+  - name: RAG
+    orgId: 1
+    folder: RAG-manything
+    type: file
+    disableDeletion: false
+    editable: true
+    options:
+      path: /var/lib/grafana/dashboards

@@ -24,6 +24,26 @@ nDCG@10   77.12%
 R@20      95.00%
 ```
 
+## BM25 app baseline (2026-10-29)
+
+`bm25_grafana_100_20261029/` evaluates local BM25 on the same 297 chunks and
+100 prepared queries. The implementation returns only chunks with a positive
+BM25 score, avoiding arbitrary zero-score matches.
+
+```text
+P@1       73.00%
+R@3       88.00%
+R@10      96.00%
+MRR@10    81.75%
+nDCG@10   85.27%
+Index build  0.023 s
+Search total 0.115 s / 100 queries (~1.15 ms per query)
+```
+
+This lexical-only baseline is the retrieval mode in the first API/Grafana
+application. Its search latency excludes answer generation and network time;
+those are measured separately by the live API.
+
 Important files in a run directory:
 
 - `metrics.json` / `metrics.csv`: aggregate metric values.

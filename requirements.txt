@@ -1,5 +1,5 @@
 # Install the package with development and retrieval dependencies.
--e .[dev,retrieval]
+-e .[dev,retrieval,api]
 
 # Additional runtime dependencies used by retrieval experiment scripts.
 onnxruntime>=1.18,<2

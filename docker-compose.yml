@@ -1,4 +1,20 @@
 services:
+  rag-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    environment:
+      BM25_CORPUS_PATH: /app/data/chunks_manifest.csv
+      BM25_K1: ${BM25_K1:-1.5}
+      BM25_B: ${BM25_B:-0.75}
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - ./data/kaggle_artifacts/virhe4qa_model_sweep/chunks_manifest.csv:/app/data/chunks_manifest.csv:ro
+    restart: unless-stopped
+
   qdrant:
     image: qdrant/qdrant:v1.15.5
     ports:
@@ -6,5 +22,40 @@ services:
     volumes:
       - qdrant_data:/qdrant/storage
 
+  prometheus:
+    image: prom/prometheus:v3.15.1
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.path=/prometheus
+    ports:
+      - "127.0.0.1:9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+    depends_on:
+      - rag-api
+      - pushgateway
+    restart: unless-stopped
+
+  pushgateway:
+    image: prom/pushgateway:v1.11.3
+    ports:
+      - "127.0.0.1:9091:9091"
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana:13.2.4
+    ports:
+      - "127.0.0.1:3000:3000"
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./monitoring/grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./monitoring/grafana/dashboards:/var/lib/grafana/dashboards:ro
+    depends_on:
+      - prometheus
+    restart: unless-stopped
+
 volumes:
   qdrant_data:
+  prometheus_data:
+  grafana_data:
