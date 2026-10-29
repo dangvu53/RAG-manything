@@ -26,11 +26,11 @@ SCRIPTS_ROOT = PROJECT_ROOT / "scripts"
 if str(SCRIPTS_ROOT) not in sys.path:
     sys.path.insert(0, str(SCRIPTS_ROOT))
 
-from evaluate_bm25_retrieval import BM25Index  # noqa: E402
 from rag_manything.answer.guardrails import INVALID_QUESTION_MESSAGE, OpenAIGuardrail  # noqa: E402
 from rag_manything.answer.service import AnswerService  # noqa: E402
 from rag_manything.config import Settings  # noqa: E402
 from rag_manything.models import AnswerResult, RetrievedChunk  # noqa: E402
+from rag_manything.search.bm25 import BM25Index  # noqa: E402
 
 DEFAULT_QUERIES = (
     PROJECT_ROOT

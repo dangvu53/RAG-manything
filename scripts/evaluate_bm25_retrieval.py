@@ -5,12 +5,8 @@ from __future__ import annotations
 import argparse
 import csv
 import json
-import math
-import re
 import sys
 import time
-import unicodedata
-from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -23,63 +19,7 @@ if str(PROJECT_ROOT / "scripts") not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT / "scripts"))
 
 from evaluate_qdrant_retrieval import evaluate_rankings, read_rows, write_csv  # noqa: E402
-
-
-TOKEN_PATTERN = re.compile(r"[^\W_]+", flags=re.UNICODE)
-
-
-def tokenize(text: str) -> list[str]:
-    normalized = unicodedata.normalize("NFC", text).lower()
-    return TOKEN_PATTERN.findall(normalized)
-
-
-class BM25Index:
-    """Minimal BM25 implementation for the local benchmark corpus."""
-
-    def __init__(self, documents: list[str], *, k1: float = 1.5, b: float = 0.75):
-        if k1 <= 0:
-            raise ValueError("k1 must be positive")
-        if not 0 <= b <= 1:
-            raise ValueError("b must be in [0, 1]")
-        self.k1 = k1
-        self.b = b
-        self.term_frequencies = [Counter(tokenize(document)) for document in documents]
-        self.document_lengths = [sum(counter.values()) for counter in self.term_frequencies]
-        self.average_document_length = (
-            sum(self.document_lengths) / len(self.document_lengths)
-            if self.document_lengths
-            else 0.0
-        )
-        document_frequency: Counter[str] = Counter()
-        for frequencies in self.term_frequencies:
-            document_frequency.update(frequencies.keys())
-        document_count = len(documents)
-        self.idf = {
-            term: math.log(1.0 + (document_count - frequency + 0.5) / (frequency + 0.5))
-            for term, frequency in document_frequency.items()
-        }
-
-    def scores(self, query: str) -> list[float]:
-        query_terms = Counter(tokenize(query))
-        scores = [0.0] * len(self.term_frequencies)
-        for term, query_frequency in query_terms.items():
-            idf = self.idf.get(term)
-            if idf is None:
-                continue
-            for index, frequencies in enumerate(self.term_frequencies):
-                term_frequency = frequencies.get(term, 0)
-                if not term_frequency:
-                    continue
-                length_ratio = (
-                    self.document_lengths[index] / self.average_document_length
-                    if self.average_document_length
-                    else 0.0
-                )
-                denominator = term_frequency + self.k1 * (1.0 - self.b + self.b * length_ratio)
-                scores[index] += query_frequency * idf * (
-                    term_frequency * (self.k1 + 1.0) / denominator
-                )
-        return scores
+from rag_manything.search.bm25 import BM25Index  # noqa: E402
 
 
 def main() -> int:
@@ -127,7 +67,7 @@ def main() -> int:
     for query_number, query in enumerate(query_rows, start=1):
         scores = index.scores(query["question"])
         order = sorted(
-            range(len(chunk_rows)),
+            (index for index, score in enumerate(scores) if score > 0),
             key=lambda item: (-scores[item], chunk_rows[item]["chunk_id"]),
         )[: args.limit]
         ranking: list[dict[str, Any]] = []
