@@ -1,0 +1,22 @@
+﻿split,index,context,,question,extractive answer,abstractive answer,label
+train,9676,"I. MỤC ĐÍCH
+Quy trình này nhằm quy định chi tiết cách thực hiện công tác phân công cán bộ coi thi đối với các đợt thi tập trung (giữa kỳ, cuối kỳ) hệ đại học chính quy tại Trường Đại học Công nghệ Thông tin, đảm bảo sự phối hợp đồng bộ, kịp thời, chính xác giữa các đơn vị, cá nhân có liên quan.
+II. PHẠM VI ÁP DỤNG
+Quy trình này áp dụng đối với cán bộ và sinh viên có liên quan của Trường Đại học Công nghệ Thông tin.",,Sao trường phải quy định rõ quy trình phân công cán bộ coi thi vậy?,"đảm bảo sự phối hợp đồng bộ, kịp thời, chính xác giữa các đơn vị, cá nhân có liên quan.","Quy trình phân công cho cán bộ coi thi của hệ chính quy quy định chi tiết cách thực hiện công tác phân công cán bộ coi thi các đợt thi tập trung hệ đại học chính quy tại Trường để đảm bảo sự phối hợp đồng bộ, kịp thời, chính xác giữa các đơn vị, cá nhân có liên quan.",0
+train,8703,"Điều  6.	Xét miễn các môn học tiếng Nhật đối với sinh viên thuộc chương trình Công nghệ Thông tin Việt - Nhật (chương trình chất lượng cao định hướng Nhật Bản)
+Sinh viên được xét miễn học các môn tiếng Nhật tương ứng trong CTĐT nếu có một trong các chứng chỉ đạt trình độ theo quy định như sau:
+Đạt chứng chỉ JLPT N5 hoặc NAT-TEST N5 sẽ được miễn môn JAN01, JAN02.
+Đạt chứng chỉ JLPT N4 hoặc NAT-TEST N4 sẽ được miễn môn JAN01 đến JAN03.
+Đạt chứng chỉ JLPT N3 hoặc NAT-TEST N3 sẽ được miễn môn JAN01 đến JAN06.
+Đạt chứng chỉ JLPT N2 hoặc NAT-TEST N2 sẽ được miễn môn JAN01 đến JAN07.
+Đạt chứng chỉ JLPT N1 hoặc NAT-TEST N1 sẽ được miễn môn JAN01 đến JAN08.
+Sinh viên được miễn môn học nào thì đồng thời được miễn những môn học ở cấp độ thấp hơn mà sinh viên chưa học hoặc chưa đạt",,Mấy môn tiếng Nhật được xét miễn là áp dụng cho sinh viên chương trình nào ấy nhỉ?,chất lượng cao định hướng Nhật Bản,Việc xét miễn các môn học tiếng Nhật đối với sinh viên thuộc chương trình chất lượng cao định hướng Nhật Bản.,0
+train,7550,"Điều  15. Học bổng
+Sinh viên CTTT cũng được xét nhận học bổng khuyến khích học tập của Nhà nước theo quy định của Trường như sinh viên chương trình đại trà.
+Học bổng của CTTT:
+- Học bổng học tập: căn cứ trên kết quả học tập và rèn luyện mỗi học kỳ của sinh viên, Trường sẽ cấp 03 suất học bổng dành cho 03 sinh viên xuất sắc nhất của mỗi khóa (ĐTBHK >= 8.0, Điểm rèn luyện đạt loại Khá trở lên; trường hợp có nhiều sinh viên cùng ĐTBHK thì xét theo kết quả điểm rèn luyện và ưu tiên sinh viên tham gia đầy đủ các hoạt động do đơn vị quản lý tổ chức). Học bổng bao gồm 01 suất học bổng toàn phần và 02 suất học bổng bán phần tương ứng mức học phí học kỳ áp dụng cho học kỳ tiếp theo mà sinh viên phải đóng.
+- Học bổng tân sinh viên: căn cứ trên kết quả và phương thức xét tuyển đại học, Trường sẽ cấp 03 suất học bổng dành cho 03 tân sinh viên có kết quả xét tuyển cao nhất, bao gồm 01 suất học bổng toàn phần và 02 suất học bổng bán phần tương ứng với học phí học kỳ đầu tiên của khóa học.
+",,Muốn được xét học bổng học tập thì họ nhìn vào điểm học với điểm rèn luyện ra sao?,kết quả học tập và rèn luyện mỗi học kỳ của sinh viên,Học bổng học tập được cấp căn cứ vào kết quả học tập và rèn luyện mỗi học kỳ của sinh viên.,0
+train,7527,"Điều  14. Học phí
+Học phí khóa học được công bố vào đầu khóa và không thay đổi trong toàn khóa học. Học phí này không bao gồm học phí học lại, học cải thiện và học phí gia hạn.
+Đơn giá tín chỉ học lại, học cải thiện và học phí gia hạn do Hiệu trưởng quy định vào đầu mỗi năm học.",,Ai quyết định giá mỗi tín chỉ khi mình học lại hoặc học cải thiện vậy?,Hiệu trưởng,Hiệu trưởng quy định đơn giá tín chỉ học lại và học cải thiện.,0

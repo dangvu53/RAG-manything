@@ -1,0 +1,78 @@
+[
+  {
+    "query_number": 1,
+    "source_index": null,
+    "split": null,
+    "question": "ĐH CNTT thuộc cụm đại học nào?",
+    "gold_context": null,
+    "gold_answer": null,
+    "reference_extractive_answer": null,
+    "reference_abstractive_answer": null,
+    "status": "ok",
+    "hits": [
+      {
+        "point_id": 179,
+        "chunk_id": "chunk_0179",
+        "payload": {
+          "text": "Điều  3. Giải thích từ ngữ và chữ viết tắt \nTrường: Trường Đại học Công nghệ Thông tin, Đại học Quốc gia Thành phố Hồ Chí Minh.\nPhòng ĐTĐH: Phòng Đào tạo đại học, Trường Đại học Công nghệ Thông tin.\nPhòng ĐTSĐH: Phòng Đào tạo Sau đại học và Khoa học Công nghệ, Trường Đại học Công nghệ Thông tin.        \nPhòng DL&CNTT: Phòng Dữ liệu và Công nghệ Thông tin        \nNgành ĐH-ThS: Ngành của chương trình ĐH-ThS. \nChương trình/Ngành ĐH đang học: Chương trình/Ngành học trình độ đại học của sinh viên khi dự tuyển vào chương trình ĐH-ThS.\nNgười học: sinh viên, học viên tham gia chương trình ĐH-ThS.",
+          "chunk_id": "chunk_0179",
+          "source_index": "4332"
+        },
+        "dense_rank": 1,
+        "dense_score": 0.55880463,
+        "bm25_rank": 1,
+        "bm25_score": 13.110604674764323,
+        "rrf_score": 1.0,
+        "rank": 1
+      },
+      {
+        "point_id": 14,
+        "chunk_id": "chunk_0014",
+        "payload": {
+          "text": "Điều  1. Phạm vi điều chỉnh\nVăn bản này quy định về quy trình đánh giá, cập nhật chương trình đào tạo trình độ Đại học/Sau Đại học của Trường Đại học Công nghệ Thông tin – ĐHQG-HCM (Trường ĐH CNTT).",
+          "chunk_id": "chunk_0014",
+          "source_index": "8913"
+        },
+        "dense_rank": 3,
+        "dense_score": 0.508189,
+        "bm25_rank": 2,
+        "bm25_score": 12.473970660154857,
+        "rrf_score": 0.5833333333333333,
+        "rank": 2
+      },
+      {
+        "point_id": 12,
+        "chunk_id": "chunk_0012",
+        "payload": {
+          "text": "Điều  1.\tPhạm vi điều chỉnh và đối tượng áp dụng\nQuy định này quy định những điều chung nhất về đào tạo Đại học chính quy CTTN của Trường ĐHCNTT thuộc ĐHQG-HCM và nằm trong khuôn khổ quy chế đào tạo theo học chế tín chỉ cho hệ đại học chính quy của Trường ĐHCNTT.\nQuy định này áp dụng đối với thành viên BĐH, các Khoa có đào tạo CTTN, sinh viên hệ chính quy CTTN ở trình độ đại học của Trường ĐHCNTT.",
+          "chunk_id": "chunk_0012",
+          "source_index": "7870"
+        },
+        "dense_rank": 2,
+        "dense_score": 0.5200294,
+        "bm25_rank": 25,
+        "bm25_score": 4.7249215755169205,
+        "rrf_score": 0.3717948717948718,
+        "rank": 3
+      }
+    ],
+    "answer_result": {
+      "answer": "Không đủ thông tin.",
+      "citations": [],
+      "status": "answered",
+      "reason": null,
+      "prompt_version": "answer-v1",
+      "model": "Qwen/Qwen3-4B",
+      "rewritten_question": "ĐH CNTT thuộc cụm đại học nào?",
+      "latency_ms": 1602.12
+    },
+    "timings_s": {
+      "query_embedding_api": 1.1099,
+      "qdrant_dense_search": 2.0891,
+      "bm25_search": 0.001,
+      "rrf_fusion": 0.0002,
+      "prompt_and_answer": 1.6022,
+      "end_to_end": 4.8026
+    }
+  }
+]

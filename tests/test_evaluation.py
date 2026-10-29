@@ -50,9 +50,8 @@ def test_evaluation_wires_four_answer_metrics_latency_and_configured_models(monk
             "faithfulness", "answer_relevancy", "factual_correctness",
             "semantic_similarity",
         }
-        assert kwargs["llm"].langchain_llm.model_name == "test-eval"
-        assert kwargs["embeddings"].embeddings.model == "test-embedding"
-        assert kwargs["raise_exceptions"] is True
+        assert kwargs["run_config"].timeout == 120
+        assert kwargs["raise_exceptions"] is False
         return SimpleNamespace(scores=[{
             "faithfulness": 1.0,
             "answer_relevancy": 0.5,
@@ -73,5 +72,8 @@ def test_evaluation_wires_four_answer_metrics_latency_and_configured_models(monk
     assert report["row_count"] == 1
     assert report["averages"]["faithfulness"] == 1
     assert report["averages"]["factual_correctness"] is None
+    assert report["missing_score_counts"]["factual_correctness"] == 1
+    assert report["evaluator_model"] == "test-eval"
+    assert report["embedding_model"] == "test-embedding"
     assert report["latency_ms"]["mean"] == 125.0
     assert report["latency_ms"]["p95"] == 125.0

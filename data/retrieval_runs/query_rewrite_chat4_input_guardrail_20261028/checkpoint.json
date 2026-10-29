@@ -1,0 +1,334 @@
+[
+  {
+    "query_number": 1,
+    "source_index": "9676",
+    "split": "train",
+    "question": "Sao trường phải quy định rõ quy trình phân công cán bộ coi thi vậy?",
+    "gold_context": "I. MỤC ĐÍCH\r\nQuy trình này nhằm quy định chi tiết cách thực hiện công tác phân công cán bộ coi thi đối với các đợt thi tập trung (giữa kỳ, cuối kỳ) hệ đại học chính quy tại Trường Đại học Công nghệ Thông tin, đảm bảo sự phối hợp đồng bộ, kịp thời, chính xác giữa các đơn vị, cá nhân có liên quan.\r\nII. PHẠM VI ÁP DỤNG\r\nQuy trình này áp dụng đối với cán bộ và sinh viên có liên quan của Trường Đại học Công nghệ Thông tin.",
+    "gold_answer": "Quy trình phân công cho cán bộ coi thi của hệ chính quy quy định chi tiết cách thực hiện công tác phân công cán bộ coi thi các đợt thi tập trung hệ đại học chính quy tại Trường để đảm bảo sự phối hợp đồng bộ, kịp thời, chính xác giữa các đơn vị, cá nhân có liên quan.",
+    "reference_extractive_answer": "đảm bảo sự phối hợp đồng bộ, kịp thời, chính xác giữa các đơn vị, cá nhân có liên quan.",
+    "reference_abstractive_answer": "Quy trình phân công cho cán bộ coi thi của hệ chính quy quy định chi tiết cách thực hiện công tác phân công cán bộ coi thi các đợt thi tập trung hệ đại học chính quy tại Trường để đảm bảo sự phối hợp đồng bộ, kịp thời, chính xác giữa các đơn vị, cá nhân có liên quan.",
+    "status": "ok",
+    "retrieval_query": "Tại sao trường cần quy định rõ quy trình phân công cán bộ coi thi?",
+    "hits": [
+      {
+        "point_id": 9,
+        "chunk_id": "chunk_0009",
+        "payload": {
+          "text": "V. NỘI DUNG QUY TRÌNH\nQuy trình phân công cán bộ coi thi gồm 3 giai đoạn tương ứng với 3 quy trình thành phần: Đăng ký coi thi, Phân công cán bộ coi thi và Tổng kết coi thi. Chi tiết các quy trình như sau.\n1. Quy trình đăng ký coi thi\nBước 1: Xây dựng kế hoạch thi\nPhòng Đào tạo Đại học xây dựng và thông báo kế hoạch thi cho các đơn vị tổ chức thi; trong đó xác định rõ các mốc thời gian chính. Thời gian trước 21 ngày tính từ ngày mở hệ thống đăng ký coi thi.\nBước 2: Xếp lịch thi, đưa lịch thi lên hệ thống \nPhòng Đào tạo Đại học xếp lịch thi, đưa thông tin lịch thi lên Hệ thống và gửi cho các đơn vị tổ chức thi để chuẩn bị cho công tác đăng ký coi thi. Hệ thống hỗ trợ kiểm tra tính hợp lệ của lịch thi. Thời gian trước 21 ngày kể từ ngày mở hệ thống đăng ký coi thi.\nBước 3: Thông báo cán bộ và sinh viên đăng ký coi thi\nPhòng Đào tạo Đại học thông báo cho cán bộ và sinh viên đăng ký coi thi qua email hoặc trên trang web Cổng thông tin đào tạo đại học. Thời gian trước 7 ngày kể từ ngày mở hệ thống đăng ký coi thi.\n\nBước 4: Mở hệ thống đăng ký coi thi\nPhòng Đào tạo Đại học mở Hệ thống để cán bộ, sinh viên đăng ký coi thi theo các mốc thời gian trong kế hoạch.\nBước 5: Đăng ký coi thi\nCán bộ và sinh viên đăng ký coi thi trên Hệ thống. \nBước 6: Đóng hệ thống đăng ký coi thi\nPhòng Đào tạo Đại học đóng Hệ thống khi kết thúc thời gian theo quy định.\n\n2. Quy trình phân công cán bộ coi thi\nBước 1: Chạy chức năng Phân công CBCT\nPhòng Đào tạo Đại học chạy chức năng phân công cán bộ coi thi của phần mềm quản lý đào tạo. Hệ thống tự động tính định mức coi thi của giảng viên điền tên cán bộ chưa đăng ký đủ số lượt coi thi theo quy định vào các ca thi chưa có cán bộ coi thi. Thời gian thực hiện trước 8 ngày kể từ ngày thi đầu tiên của đợt thi.\nBước 2: Thông báo CBCT kiểm tra lịch coi thi \nPhòng Đào tạo Đại học thông báo cán bộ coi thi kiểm tra lịch coi thi tại Cổng thông tin đào tạo đại học. Thời gian thực hiện trước 7 ngày kể từ ngày thi đầu tiên của đợt thi.\n\nBước 3: CBCT kiểm tra lịch coi thi, đề xuất CBCT thay thế (nếu cần)\nNếu vì lý do bất khả kháng, cán bộ coi thi không thể coi thi theo lịch đã phân công thì cán bộ coi thi tìm người thay thế và sử dụng chức năng đề xuất cán bộ coi thi thay thế của Hệ thống. Sau khi người coi thi thay xác nhận đồng ý coi thi thay qua Hệ thống thì thay thế đó mới có hiệu lực. Nếu không tìm được người thay thế cụ thể thì cán bộ coi thi vẫn có thể sử dụng chức năng Đề xuất cán bộ coi thi thay thế để tìm người hỗ trợ coi thi, và phân công được thay đổi khi có người xác nhận đồng ý coi thi thay trên Hệ thống. Thời gian thực hiện trước 6 ngày kể từ ngày thi đầu tiên của đợt thi.\nBước 4: CBCT thực hiện công tác coi thi\nCán bộ coi thi có trách nhiệm thực hiện công tác coi thi theo đúng lịch coi thi trên Hệ thống.\n\n\n3. Quy trình tổng kết coi thi\nBước 1: Khóa Hệ thống\nPhòng Đào tạo Đại học khóa toàn bộ chức năng thay đổi phân công cán bộ coi thi trên Hệ thống. Thời gian hoàn thành là 1 ngày sau ngày thi cuối cùng của đợt thi.\nBước 2: Xác nhận việc thực hiện coi thi \nCác đơn vị tổ chức thi xác nhận cán bộ coi thi thực tế cho các ca thi do đơn vị phụ trách và gửi báo cáo tình hình coi thi cho Ban Giám hiệu thông qua Phòng Đào tạo Đại học nếu có cán bộ coi thi vi phạm quy định về coi thi. Thời gian hoàn thành là 1 ngày sau ngày thi cuối cùng của đợt thi.\nBước 3: Tổng kết coi thi\nTrường xem xét xử lý kỷ luật cán bộ coi thi vi phạm quy định về coi thi (nếu có). Phòng Đào tạo Đại học làm đề xuất, Phòng Kế hoạch Tài chính làm thủ tục chi trả thù lao coi thi cho cán bộ coi thi theo quy định. Thời gian hoàn thành là 10 ngày sau ngày thi cuối cùng của đợt thi.",
+          "chunk_id": "chunk_0009",
+          "source_index": "9740"
+        },
+        "dense_rank": 2,
+        "dense_score": 0.7068054,
+        "bm25_rank": 1,
+        "bm25_score": 24.235861819605027,
+        "rrf_score": 0.8333333333333333,
+        "rank": 1
+      },
+      {
+        "point_id": 4,
+        "chunk_id": "chunk_0004",
+        "payload": {
+          "text": "I. MỤC ĐÍCH\nQuy trình này nhằm quy định chi tiết cách thực hiện công tác phân công cán bộ coi thi đối với các đợt thi tập trung (giữa kỳ, cuối kỳ) hệ đại học chính quy tại Trường Đại học Công nghệ Thông tin, đảm bảo sự phối hợp đồng bộ, kịp thời, chính xác giữa các đơn vị, cá nhân có liên quan.\nII. PHẠM VI ÁP DỤNG\nQuy trình này áp dụng đối với cán bộ và sinh viên có liên quan của Trường Đại học Công nghệ Thông tin.",
+          "chunk_id": "chunk_0004",
+          "source_index": "9676"
+        },
+        "dense_rank": 1,
+        "dense_score": 0.74836683,
+        "bm25_rank": 3,
+        "bm25_score": 19.55980730302423,
+        "rrf_score": 0.75,
+        "rank": 2
+      },
+      {
+        "point_id": 251,
+        "chunk_id": "chunk_0251",
+        "payload": {
+          "text": "Điều  7. Phân công cán bộ coi thi (CBCT)\nThực hiện theo quyết định hiện hành về việc ban hành Quy trình phân công CBCT cho các đợt thi tập trung hệ đại học chính quy.",
+          "chunk_id": "chunk_0251",
+          "source_index": "5700"
+        },
+        "dense_rank": 3,
+        "dense_score": 0.69342935,
+        "bm25_rank": 4,
+        "bm25_score": 18.76073043552038,
+        "rrf_score": 0.45,
+        "rank": 3
+      }
+    ],
+    "answer_result": {
+      "answer": "Trường cần quy định rõ quy trình phân công cán bộ coi thi để đảm bảo sự phối hợp đồng bộ, kịp thời, chính xác giữa các đơn vị, cá nhân có liên quan trong công tác coi thi [chunk_0004].",
+      "citations": [
+        {
+          "chunk_id": "chunk_0004",
+          "source": null
+        }
+      ],
+      "status": "answered",
+      "reason": null,
+      "prompt_version": "answer-v1",
+      "model": "Qwen/Qwen3-4B",
+      "rewritten_question": "Tại sao trường cần quy định rõ quy trình phân công cán bộ coi thi?",
+      "latency_ms": 6399.95
+    },
+    "timings_s": {
+      "input_guardrail": 7.157,
+      "query_embedding_api": 0.7481,
+      "qdrant_dense_search": 2.1716,
+      "bm25_search": 0.0029,
+      "rrf_fusion": 0.0006,
+      "prompt_and_answer": 6.4002,
+      "end_to_end": 16.4807
+    }
+  },
+  {
+    "query_number": 2,
+    "source_index": "8703",
+    "split": "train",
+    "question": "Mấy môn tiếng Nhật được xét miễn là áp dụng cho sinh viên chương trình nào ấy nhỉ?",
+    "gold_context": "Điều  6.\tXét miễn các môn học tiếng Nhật đối với sinh viên thuộc chương trình Công nghệ Thông tin Việt - Nhật (chương trình chất lượng cao định hướng Nhật Bản)\r\nSinh viên được xét miễn học các môn tiếng Nhật tương ứng trong CTĐT nếu có một trong các chứng chỉ đạt trình độ theo quy định như sau:\r\nĐạt chứng chỉ JLPT N5 hoặc NAT-TEST N5 sẽ được miễn môn JAN01, JAN02.\r\nĐạt chứng chỉ JLPT N4 hoặc NAT-TEST N4 sẽ được miễn môn JAN01 đến JAN03.\r\nĐạt chứng chỉ JLPT N3 hoặc NAT-TEST N3 sẽ được miễn môn JAN01 đến JAN06.\r\nĐạt chứng chỉ JLPT N2 hoặc NAT-TEST N2 sẽ được miễn môn JAN01 đến JAN07.\r\nĐạt chứng chỉ JLPT N1 hoặc NAT-TEST N1 sẽ được miễn môn JAN01 đến JAN08.\r\nSinh viên được miễn môn học nào thì đồng thời được miễn những môn học ở cấp độ thấp hơn mà sinh viên chưa học hoặc chưa đạt",
+    "gold_answer": "Việc xét miễn các môn học tiếng Nhật đối với sinh viên thuộc chương trình chất lượng cao định hướng Nhật Bản.",
+    "reference_extractive_answer": "chất lượng cao định hướng Nhật Bản",
+    "reference_abstractive_answer": "Việc xét miễn các môn học tiếng Nhật đối với sinh viên thuộc chương trình chất lượng cao định hướng Nhật Bản.",
+    "status": "ok",
+    "retrieval_query": "Mấy môn tiếng Nhật được xét miễn cho sinh viên chương trình nào?",
+    "hits": [
+      {
+        "point_id": 230,
+        "chunk_id": "chunk_0230",
+        "payload": {
+          "text": "Điều  6.\tXét miễn các môn học tiếng Nhật đối với sinh viên thuộc chương trình Công nghệ Thông tin Việt - Nhật (chương trình chất lượng cao định hướng Nhật Bản)\nSinh viên được xét miễn học các môn tiếng Nhật tương ứng trong CTĐT nếu có một trong các chứng chỉ đạt trình độ theo quy định như sau:\nĐạt chứng chỉ JLPT N5 hoặc NAT-TEST N5 sẽ được miễn môn JAN01, JAN02.\nĐạt chứng chỉ JLPT N4 hoặc NAT-TEST N4 sẽ được miễn môn JAN01 đến JAN03.\nĐạt chứng chỉ JLPT N3 hoặc NAT-TEST N3 sẽ được miễn môn JAN01 đến JAN06.\nĐạt chứng chỉ JLPT N2 hoặc NAT-TEST N2 sẽ được miễn môn JAN01 đến JAN07.\nĐạt chứng chỉ JLPT N1 hoặc NAT-TEST N1 sẽ được miễn môn JAN01 đến JAN08.\nSinh viên được miễn môn học nào thì đồng thời được miễn những môn học ở cấp độ thấp hơn mà sinh viên chưa học hoặc chưa đạt",
+          "chunk_id": "chunk_0230",
+          "source_index": "8693"
+        },
+        "dense_rank": 1,
+        "dense_score": 0.8022039,
+        "bm25_rank": 1,
+        "bm25_score": 26.61772096246893,
+        "rrf_score": 1.0,
+        "rank": 1
+      },
+      {
+        "point_id": 217,
+        "chunk_id": "chunk_0217",
+        "payload": {
+          "text": "Điều  5.        Xét miễn các môn học tiếng Anh \n1.        Sinh viên được xét miễn học các môn tiếng Anh tương ứng nếu có một trong các chứng chỉ/chứng nhận đạt trình độ tối thiểu theo quy định tại Bảng 3. Sinh viên được miễn môn học nào thì đồng thời được miễn những môn học ở cấp độ thấp hơn mà sinh viên chưa học hoặc chưa đạt.\nDưới đây là các mức điểm của  chứng chỉ/chứng nhận và môn học được miễn theo các điểm số tương ứng:\n\nTOEIC Nghe-Đọc đạt từ  350 - dưới 400, TOEIC Nói-Viết đạt từ 100 – dưới 120, TOEFL iBT đạt từ 32 – dưới 35, IELTS đạt 3.5, VNU-EPT đạt từ 152 - dưới 165, chứng chỉ Cambridge English KET (Merit) hay A2 Key  (Grade C) sẽ được miễn Anh văn 1 (mã môn ENG01) đối với cả chương trình CTC/ CTTN và CTTT.\n\nTOEIC Nghe-Đọc đạt từ  400 - dưới 450, TOEIC Nói-Viết đạt từ 120 – dưới 140, TOEFL iBT đạt từ 32 – dưới 35, IELTS đạt 3.5, VNU-EPT đạt từ 152 - dưới 165, chứng chỉ Cambridge English KET (Merit) hay A2 Key  (Grade C) sẽ được miễn Anh văn 2 (mã môn ENG02) đối với cả chương trình CTC/ CTTN và CTTT.\n\nTOEIC Nghe-Đọc đạt từ  450 - dưới 500, TOEIC Nói-Viết đạt từ 140 – dưới 160, TOEFL iBT đạt từ 45 – dưới 50, IELTS đạt 4.5, VNU-EPT đạt từ 176 - dưới 201, chứng chỉ Cambridge English A2 Key (Grade A) hoặc  B1 Preliminary (Grade C) hoặc B1 Business Preliminary (Pass) sẽ được miễn Anh văn 3 (mã môn ENG03) đối với cả chương trình CTC/ CTTN và CTTT.\n\nTOEIC Nghe-Đọc đạt từ  550 - dưới 555, TOEIC Nói-Viết đạt từ 160 – dưới 180, TOEFL iBT đạt từ 50 – dưới 60, IELTS đạt 5.0, VNU-EPT đạt từ 201 - dưới 251, chứng chỉ Cambridge English KET B1 Preliminary (Grade B) hoặc B1 Business Preliminary (Merit) sẽ được miễn Anh văn 4 (mã môn ENG04) đối với chương trình CTTT.\n\nTOEIC Nghe-Đọc đạt từ  555 trở lên, TOEIC Nói-Viết đạt từ 180 trở lên, TOEFL iBT đạt từ 60 trở lên, IELTS đạt 5.5 trở lên, VNU-EPT đạt từ 251 trở lên, chứng chỉ Cambridge English B1 Preliminary (Grade A) hoặc B2 First (Grade C) hoặc B1 Business Preliminary (Distinction) hoặc B2 Business Vantage (Grade C) sẽ được miễn Anh văn 5 (mã môn ENG05) đối với chương trình CTTT.\n2.        Hàng năm, Trung tâm Ngoại ngữ của Trường tổ chức 04 đợt kiểm tra năng lực tiếng Anh với 04 kỹ năng nghe – đọc – nói – viết và cấp chứng nhận nội bộ. Sinh viên có thể dùng chứng nhận nội bộ này tương đương với chứng chỉ TOEIC để nộp xét miễn các môn tiếng Anh như trong khoảng 1 điều 5.",
+          "chunk_id": "chunk_0217",
+          "source_index": "8596"
+        },
+        "dense_rank": 3,
+        "dense_score": 0.59420025,
+        "bm25_rank": 2,
+        "bm25_score": 19.121559637646786,
+        "rrf_score": 0.5833333333333333,
+        "rank": 2
+      },
+      {
+        "point_id": 247,
+        "chunk_id": "chunk_0247",
+        "payload": {
+          "text": "Điều  7.        Thời điểm xét miễn, cách tính điểm miễn các môn học ngoại ngữ\n1. Trường xét miễn các môn học ngoại ngữ trong vòng 4 học kỳ chính kể từ khi nhập học, sau thời gian này (nghĩa là sau học kỳ 2 của năm thứ hai) sinh viên không được xét miễn các môn học ngoại ngữ và phải đăng ký học những môn học ngoại ngữ trong chương trình đào tạo. \n2. Sinh viên đạt các văn bằng/chứng chỉ/chứng nhận tại Điều 5, Điều 6 của Quy định này thì nộp bản sao văn bằng/chứng chỉ/chứng nhận còn hiệu lực cho Trường để được xét miễn các môn học tương ứng. Văn bằng/chứng chỉ/chứng nhận phải còn thời hạn hai năm tính từ ngày cấp đến ngày đăng ký xét công nhận đạt chuẩn. Trường tổ chức xét miễn 4 đợt/năm tương ứng với 4 đợt xét tốt nghiệp đại học trong năm. \n3. Điểm Miễn được tính cho học kỳ kế tiếp trong tiến trình học.",
+          "chunk_id": "chunk_0247",
+          "source_index": "8714"
+        },
+        "dense_rank": 2,
+        "dense_score": 0.6094562,
+        "bm25_rank": 9,
+        "bm25_score": 14.683084875435338,
+        "rrf_score": 0.43333333333333335,
+        "rank": 3
+      }
+    ],
+    "answer_result": {
+      "answer": "Sinh viên chương trình Công nghệ Thông tin Việt - Nhật (chương trình chất lượng cao định hướng Nhật Bản) được xét miễn các môn học tiếng Nhật tương ứng [chunk_0230].",
+      "citations": [
+        {
+          "chunk_id": "chunk_0230",
+          "source": null
+        }
+      ],
+      "status": "answered",
+      "reason": null,
+      "prompt_version": "answer-v1",
+      "model": "Qwen/Qwen3-4B",
+      "rewritten_question": "Mấy môn tiếng Nhật được xét miễn cho sinh viên chương trình nào?",
+      "latency_ms": 5585.76
+    },
+    "timings_s": {
+      "input_guardrail": 1.5435,
+      "query_embedding_api": 0.7451,
+      "qdrant_dense_search": 2.0999,
+      "bm25_search": 0.0036,
+      "rrf_fusion": 0.0005,
+      "prompt_and_answer": 5.5859,
+      "end_to_end": 9.9788
+    }
+  },
+  {
+    "query_number": 3,
+    "source_index": "7550",
+    "split": "train",
+    "question": "Muốn được xét học bổng học tập thì họ nhìn vào điểm học với điểm rèn luyện ra sao?",
+    "gold_context": "Điều  15. Học bổng\r\nSinh viên CTTT cũng được xét nhận học bổng khuyến khích học tập của Nhà nước theo quy định của Trường như sinh viên chương trình đại trà.\r\nHọc bổng của CTTT:\r\n- Học bổng học tập: căn cứ trên kết quả học tập và rèn luyện mỗi học kỳ của sinh viên, Trường sẽ cấp 03 suất học bổng dành cho 03 sinh viên xuất sắc nhất của mỗi khóa (ĐTBHK >= 8.0, Điểm rèn luyện đạt loại Khá trở lên; trường hợp có nhiều sinh viên cùng ĐTBHK thì xét theo kết quả điểm rèn luyện và ưu tiên sinh viên tham gia đầy đủ các hoạt động do đơn vị quản lý tổ chức). Học bổng bao gồm 01 suất học bổng toàn phần và 02 suất học bổng bán phần tương ứng mức học phí học kỳ áp dụng cho học kỳ tiếp theo mà sinh viên phải đóng.\r\n- Học bổng tân sinh viên: căn cứ trên kết quả và phương thức xét tuyển đại học, Trường sẽ cấp 03 suất học bổng dành cho 03 tân sinh viên có kết quả xét tuyển cao nhất, bao gồm 01 suất học bổng toàn phần và 02 suất học bổng bán phần tương ứng với học phí học kỳ đầu tiên của khóa học.\r\n",
+    "gold_answer": "Học bổng học tập được cấp căn cứ vào kết quả học tập và rèn luyện mỗi học kỳ của sinh viên.",
+    "reference_extractive_answer": "kết quả học tập và rèn luyện mỗi học kỳ của sinh viên",
+    "reference_abstractive_answer": "Học bổng học tập được cấp căn cứ vào kết quả học tập và rèn luyện mỗi học kỳ của sinh viên.",
+    "status": "ok",
+    "retrieval_query": "Cách thức xét học bổng học tập dựa vào điểm học và điểm rèn luyện?",
+    "hits": [
+      {
+        "point_id": 88,
+        "chunk_id": "chunk_0088",
+        "payload": {
+          "text": "Điều  15.        Học bổng, khen thưởng\n15.1.        Học bổng khuyến khích học tập của Nhà nước\n-        Sinh viên CT CLC cũng được xét nhận học bổng khuyến khích học tập của Nhà nước theo quy định như sinh viên chương trình đại trà.\n15.2.        Học bổng CT CLC\n-        Học bổng học tập: căn cứ trên kết quả học tập và rèn luyện mỗi học kỳ của sinh viên, nhà trường sẽ cấp 03 suất học bổng dành cho 03 sinh viên xuất sắc nhất theo từng khóa của từng ngành (ĐTBHK >= 8.0, Điểm rèn luyện đạt loại Khá trở lên; trường hợp có nhiều sinh viên cùng ĐTBHK thì xét theo kết quả điểm rèn luyện và ưu tiên sinh viên tham gia đầy đủ các hoạt động do đơn vị quản lý tổ chức). Học bổng bao gồm 01 suất học bổng toàn phần và 02 suất học bổng bán phần tương ứng mức học phí học kỳ áp dụng cho học kỳ tiếp theo mà sinh viên phải đóng.\n-        Học bổng tân sinh viên: căn cứ trên kết quả và phương thức xét tuyển đại học, Trường sẽ cấp 03 suất học bổng dành cho 03 tân sinh viên có kết quả xét tuyển cao nhất của mỗi ngành, bao gồm 01 suất học bổng toàn phần và 02 suất học bổng bán phần tương ứng với học phí học kỳ đầu tiên của khóa học.\n15.3.        Khen thưởng, hỗ trợ các hoạt động chuyên môn\n-        Trường có cơ chế khen thưởng nhằm khuyến khích sinh viên tham gia nghiên cứu khoa học đạt kết quả tốt, hỗ trợ sinh viên tham gia các chương trình trao đổi giao lưu học tập, tham gia báo cáo ở các hội nghị khoa học có uy tín. \n-        Danh sách sinh viên được khen thưởng, hỗ trợ do đơn vị chuyên môn xét duyệt đề nghị và Hiệu trưởng quyết định.",
+          "chunk_id": "chunk_0088",
+          "source_index": "6978"
+        },
+        "dense_rank": 1,
+        "dense_score": 0.6096421,
+        "bm25_rank": 2,
+        "bm25_score": 28.12921869263802,
+        "rrf_score": 0.8333333333333333,
+        "rank": 1
+      },
+      {
+        "point_id": 91,
+        "chunk_id": "chunk_0091",
+        "payload": {
+          "text": "Điều  15. Học bổng\nSinh viên CTTT cũng được xét nhận học bổng khuyến khích học tập của Nhà nước theo quy định của Trường như sinh viên chương trình đại trà.\nHọc bổng của CTTT:\n- Học bổng học tập: căn cứ trên kết quả học tập và rèn luyện mỗi học kỳ của sinh viên, Trường sẽ cấp 03 suất học bổng dành cho 03 sinh viên xuất sắc nhất của mỗi khóa (ĐTBHK >= 8.0, Điểm rèn luyện đạt loại Khá trở lên; trường hợp có nhiều sinh viên cùng ĐTBHK thì xét theo kết quả điểm rèn luyện và ưu tiên sinh viên tham gia đầy đủ các hoạt động do đơn vị quản lý tổ chức). Học bổng bao gồm 01 suất học bổng toàn phần và 02 suất học bổng bán phần tương ứng mức học phí học kỳ áp dụng cho học kỳ tiếp theo mà sinh viên phải đóng.\n- Học bổng tân sinh viên: căn cứ trên kết quả và phương thức xét tuyển đại học, Trường sẽ cấp 03 suất học bổng dành cho 03 tân sinh viên có kết quả xét tuyển cao nhất, bao gồm 01 suất học bổng toàn phần và 02 suất học bổng bán phần tương ứng với học phí học kỳ đầu tiên của khóa học.",
+          "chunk_id": "chunk_0091",
+          "source_index": "7550"
+        },
+        "dense_rank": 2,
+        "dense_score": 0.6095909,
+        "bm25_rank": 1,
+        "bm25_score": 30.052298950224085,
+        "rrf_score": 0.8333333333333333,
+        "rank": 2
+      },
+      {
+        "point_id": 152,
+        "chunk_id": "chunk_0152",
+        "payload": {
+          "text": "Điều  24. Cách quản lý điểm\n1.  Điểm trung bình học kỳ (ĐTBHK) là điểm trung bình của các học phần mà sinh viên đã đăng ký học trong học kỳ đó với trọng số là số tín chỉ của mỗi học phần (bao gồm cả những học phần không đạt). ĐTBHK được dùng để xét học bổng, khen thưởng, xử lý học vụ sau mỗi học kỳ.\n2.  Điểm trung bình chung (ĐTBC) là điểm trung bình của các học phần mà sinh viên đã đăng ký học từ lúc bắt đầu khóa học đến thời điểm được tính với trọng số là số tín chỉ của mỗi học phần (được tính theo điểm học phần cao nhất trong các lần học, bao gồm cả những học phần không đạt). ĐTBC được dùng để xét số tín chỉ được phép đăng ký trong học kỳ, học vượt, xét chuyển ngành/chương trình, xét điều kiện làm khóa luận tốt nghiệP.\n3. Điểm trung bình chung tích lũy (ĐTBCTL) là điểm trung bình của các học phần mà sinh viên đã đăng ký học từ lúc bắt đầu khóa học đến thời điểm được tính với trọng số là số tín chỉ đã được tích lũy (đạt từ 5,0 điểm trở lên) của mỗi học phần (được tính theo điểm học phần cao nhất trong các lần học). ĐTBCTL được tính khi sinh viên đủ điều kiện tốt nghiệp, được dùng để phân loại kết quả học tập và xếp hạng tốt nghiệP.\n4.   Cách tính ĐTBHK, ĐTBC, ĐTBCTL được quy định tại Điều 26 của Quy chế này.\n5.   Kết quả học tập của học kỳ hè (nếu có) được tính chung vào học kỳ liền kề trước đó.\n6.   Học phần có kết quả từ 5,0 điểm trở lên được bảo lưu khi sinh viên học thêm một ngành học mới trong Trường. Điểm bảo lưu được tính vào ĐTBC, ĐTBCTL.\n7.   Không tính kết quả thi các học phần Giáo dục quốc phòng-An ninh và Giáo dục thể chất vào ĐTBHK, ĐTBC hoặc ĐTBCTL. Việc đánh giá kết quả và điều kiện cấp chứng chỉ đối với học phần này theo quy định riêng của Bộ GD&ĐT.\n8.   Điểm I, điểm M, điểm BL không được tính trong ĐTBHK, ĐTBC và ĐTBCTL.",
+          "chunk_id": "chunk_0152",
+          "source_index": "2172"
+        },
+        "dense_rank": 3,
+        "dense_score": 0.58815074,
+        "bm25_rank": 6,
+        "bm25_score": 18.151245577518612,
+        "rrf_score": 0.39285714285714285,
+        "rank": 3
+      }
+    ],
+    "answer_result": {
+      "answer": "Theo Điều 15.2.1 của quy định, học bổng học tập được xét dựa trên kết quả học tập và rèn luyện mỗi học kỳ của sinh viên, cụ thể là ĐTBHK >= 8.0 và Điểm rèn luyện đạt loại Khá trở lên [chunk_0088].",
+      "citations": [
+        {
+          "chunk_id": "chunk_0088",
+          "source": null
+        }
+      ],
+      "status": "answered",
+      "reason": null,
+      "prompt_version": "answer-v1",
+      "model": "Qwen/Qwen3-4B",
+      "rewritten_question": "Cách thức xét học bổng học tập dựa vào điểm học và điểm rèn luyện?",
+      "latency_ms": 7439.55
+    },
+    "timings_s": {
+      "input_guardrail": 2.0567,
+      "query_embedding_api": 0.7526,
+      "qdrant_dense_search": 2.148,
+      "bm25_search": 0.0073,
+      "rrf_fusion": 0.0011,
+      "prompt_and_answer": 7.4401,
+      "end_to_end": 12.4066
+    }
+  },
+  {
+    "query_number": 4,
+    "source_index": "7527",
+    "split": "train",
+    "question": "Ai quyết định giá mỗi tín chỉ khi mình học lại hoặc học cải thiện vậy?",
+    "gold_context": "Điều  14. Học phí\r\nHọc phí khóa học được công bố vào đầu khóa và không thay đổi trong toàn khóa học. Học phí này không bao gồm học phí học lại, học cải thiện và học phí gia hạn.\r\nĐơn giá tín chỉ học lại, học cải thiện và học phí gia hạn do Hiệu trưởng quy định vào đầu mỗi năm học.",
+    "gold_answer": "Hiệu trưởng quy định đơn giá tín chỉ học lại và học cải thiện.",
+    "reference_extractive_answer": "Hiệu trưởng",
+    "reference_abstractive_answer": "Hiệu trưởng quy định đơn giá tín chỉ học lại và học cải thiện.",
+    "status": "ok",
+    "retrieval_query": "Ai quyết định giá mỗi tín chỉ khi học lại hoặc học cải thiện?",
+    "hits": [
+      {
+        "point_id": 80,
+        "chunk_id": "chunk_0080",
+        "payload": {
+          "text": "Điều  14. Học phí\nHọc phí khóa học được công bố vào đầu khóa và không thay đổi trong toàn khóa học. Học phí này không bao gồm học phí học lại, học cải thiện và học phí gia hạn.\nĐơn giá tín chỉ học lại, học cải thiện và học phí gia hạn do Hiệu trưởng quy định vào đầu mỗi năm học.",
+          "chunk_id": "chunk_0080",
+          "source_index": "7527"
+        },
+        "dense_rank": 1,
+        "dense_score": 0.67923516,
+        "bm25_rank": 1,
+        "bm25_score": 24.62539893761698,
+        "rrf_score": 1.0,
+        "rank": 1
+      },
+      {
+        "point_id": 27,
+        "chunk_id": "chunk_0027",
+        "payload": {
+          "text": "Điều  10. Nguyên tắc xác định học phí\nHọc phí được thu theo từng học kỳ và được tính theo công thức sau:\nHọc phí = HPTCHM × TCHPHM + HPTCHL × TCHPHL + HPTCCT × TCHPCT\nTrong đó: \n-\tHPTCHM: mức học phí cho loại tín chỉ học phí học mới. \n-\tTCHPHM: tổng số tín chỉ học phí của các môn học mới. \n-\tHPTCHL: mức học phí cho loại tín chỉ học phí học lại. \n-\tTCHPHL: tổng số tín chỉ học phí của các môn học lại. \n-\tHPTCCT: mức học phí cho loại tín chỉ học phí học cải thiện. \n-\tTCHPCT: tổng số tín chỉ học phí của các môn học cải thiện\nVào đầu khóa học hoặc năm học, Trường công bố mức học phí cho mỗi loại tín chỉ học phí.",
+          "chunk_id": "chunk_0027",
+          "source_index": "2940"
+        },
+        "dense_rank": 2,
+        "dense_score": 0.64194655,
+        "bm25_rank": 4,
+        "bm25_score": 23.082861147859465,
+        "rrf_score": 0.5333333333333333,
+        "rank": 2
+      },
+      {
+        "point_id": 208,
+        "chunk_id": "chunk_0208",
+        "payload": {
+          "text": "Điều  4. Tín chỉ học tập – Tín chỉ học phí\n1. Tín chỉ học tập:\n-        Tín chỉ học tập: là đơn vị dùng để xác định thời gian, khối lượng học tập của sinh viên và khối lượng giảng dạy của giảng viên, đồng thời là đơn vị dùng để đánh giá kết quả học tập của sinh viên dựa trên số lượng tín chỉ học tập đã tích lũy được.\n-        Một tiết học được tính quy chuẩn bằng 50 phút.\n-        Một tín chỉ học tập được quy định bằng 15 tiết học lý thuyết; 30 tiết thảo luận trên lớp, thí nghiệm, thực hành tại phòng máy theo phương thức học tập trực tiếp hoặc trực tuyến hoặc 45 – 60 tiết thực tập, kiến tập, chuẩn bị khoá luận.\n-        Đối với những học phần lý thuyết hoặc thực hành, thí nghiệm: để tiếp thu được một tín chỉ sinh viên phải dành ít nhất 30 giờ chuẩn bị cá nhân (tự học) và giảng viên phải dành ít nhất 30 giờ để soạn giáo án, bài tập tình huống, soạn đề cương chi tiết, chấm bài tập về nhà, bài thi, giải đáp cho sinh viên hoặc phát triển học phần.\n-        Một tín chỉ thực tập doanh nghiệp được quy định bằng 4 tuần đi thực tập doanh nghiệP.\n-        Số tiết, số tín chỉ, thời gian tự học, thời gian làm việc của giảng viên, cách đánh giá học phần được quy định cụ thể trong đề cương chi tiết của từng học phần.\n-        Sau đây tín chỉ học tập được gọi tắt là tín chỉ. \n2. Tín chỉ học phí (TCHP): là đơn vị dùng để lượng hóa chi phí của các hoạt động giảng dạy tính cho từng học phần. Số TCHP của mỗi học phần được xác định căn cứ vào đề cương và cách thức tổ chức học phần; cụ thể như sau:\n-        Phần giảng dạy lý thuyết tại lớp: 15 tiết tương đương với 1 TCHP.\n-        Phần giảng dạy thực hành, thí nghiệm, thảo luận: \n-        Học phần thực hành HT1 : 1 TCTH tương đương 2 TCHP.\n-        Học phần thực hành HT2 : 1 TCTH tương đương 1 TCHP.\n-        Một số học phần đặc biệt được xác định số TCHP riêng theo quyết định của Hiệu trưởng gồm các loại học phần: Giáo dục quốc phòng - an ninh, Giáo dục thể chất, Thực tập doanh nghiệp, Khóa luận tốt nghiệp, Môn học đồ án (bao gồm chuyên đề nghiên cứu khoa học, seminar,…).\n-        Có 3 loại TCHP:\n-        TCHP học lại (TCHPHL): là tín chỉ học phí của học phần học lại. \n-        TCHP học cải thiện (TCHPCT): là tín chỉ học phí của học phần học cải thiện.\n-        TCHP học mới (TCHPHM): là tín chỉ học phí của học phần mới học lần đầu.\n-        Đầu năm học, Trường sẽ công bố mức học phí cho mỗi loại TCHP.\n3. Nguyên tắc xác định học phí\n-        Đối với sinh viên còn trong thời gian học theo thiết kế chương trình đào tạo:\n-        Đối với học kỳ chính \nHọc phí = HPHK + HPTCHL × TCHPHL + HPTCCT × TCHPCT\n-        Đối với học kỳ hè \nHọc phí = HPTCHM × TCHPHM + HPTCHL × TCHPHL + HPTCCT × TCHPCT\n-        Đối với sinh viên đã quá thời gian học theo thiết kế chương trình đào tạo:\n-        Đối với học kỳ chính\nHọc phí = min(HPHKC, HPGH + HPTCHM × TCHPHM) + HPTCHL × TCHPHL + HPTCCT × TCHPCT \n-        Đối với học kỳ hè \nHọc phí = HPTCHM × TCHPHM + HPTCHL × TCHPHL + HPTCCT × TCHPCT\n-        Trong các công thức trên:\n-        HPHK: học phí học kỳ, là khoản tiền sinh viên phải đóng khi có đăng ký học phần mới trong học kỳ chính. \n-        HPHKC: học phí học kỳ cuối cùng theo thiết kế chương trình đào tạo. (Ví dụ : nếu CTĐT có thời gian thiết kế là 4 năm thì học kỳ cuối cùng là học kỳ thứ 8, nếu CTĐT có thời gian thiết kế là 3,5 năm thì học kỳ cuối cùng là học kỳ thứ 7).\n-        HPTCHM: mức đơn giá học phí cho loại tín chỉ học phí học mới.\n-        TCHPHM: tổng số tín chỉ học phí của các môn học mới.\n-        HPTCHL: mức đơn giá học phí cho loại tín chỉ học phí học lại.\n-        TCHPHL: tổng số tín chỉ học phí của các môn học lại.\n-        HPTCCT: mức đơn giá học phí cho loại tín chỉ học phí học cải thiện.\n-        TCHPCT: tổng số tín chỉ học phí của các môn học cải thiện.\n-        HPGH : học phí gia hạn, được tính theo công thức sau đây với giá trị t được xác định cụ thể tại các thông báo của Hiệu trưởng :\nHPGH = t × HPHKC (t < 100%).\n-        Gia hạn thời gian nộp học phí: Nếu sinh viên có hoàn cảnh đặc biệt khó khăn không thể hoàn thành học phí đúng hạn thì phải làm đơn xin gia hạn đóng học phí và nộp về Phòng Kế hoạch – Tài chính trước thời hạn đóng học phí theo quy định.\n-        Đối với sinh viên đăng ký học ngoài giờ hành chính thì học phí tuân theo quy định về việc tổ chức day-học ngoài giờ hành chính của Trường.\n-        Đối với sinh viên học cùng lúc hai chương trình đào tạo, học phí cũng được xác định theo quy định tại khoản này. Trường hợp sinh viên đã tốt nghiệp chương trình thứ nhất thì học phí chương trình thứ hai được tính dựa trên số tín chỉ mà sinh viên đăng ký theo công thức: Học phí = Số TC học phí x đơn giá học phí.\n-        Sinh viên phải đóng HPHK tương ứng với số học kỳ theo thiết kế chương trình đào tạo. HPHK được áp dụng theo quy định học phí hiện hành của từng năm học tương ứng trong CTĐT. Lưu ý một số trường hợp đặc biệt sau đây (n là số học kỳ theo  thiết kế CTĐT ):\n+ Nếu được cho phép bảo lưu thì sinh viên không phải đóng HPHK cho học kỳ được bảo lưu, tuy nhiên sinh viên phải đóng HPHK tới hết học kỳ n + i (trong đó i là tổng số học kỳ sinh viên được bảo lưu).\n (Ví dụ : CTĐT có thời gian thiết kế là 7 học kỳ , sinh viên bảo lưu 01 học kỳ thì thời gian sinh viên phải đóng HPHK tới hết học kỳ 8).\n+ Nếu sinh viên không đăng ký học phần hoặc bị hủy ĐKHP (ĐKHP nhưng không đóng HPHK hoặc ĐKHP nhưng đóng HPHK trễ hạn) thì sinh viên không phải đóng HPHK của học kỳ đó, tuy nhiên sinh viên phải đóng HPHK tới hết học kỳ n + i (trong đó i là số học kỳ sinh viên không ĐKHP hoặc bị hủy ĐKHP). Đồng thời, sinh viên bị XLHV theo quy định tại Điều 16 của Quy chế này.\n(Ví dụ : CTĐT có thời gian thiết kế là 7 học kỳ, sinh viên không ĐKHP hoặc bị hủy ĐKHP 01 học kỳ thì thời gian sinh viên phải đóng HPHK tới hết học kỳ 8).",
+          "chunk_id": "chunk_0208",
+          "source_index": "2696"
+        },
+        "dense_rank": 3,
+        "dense_score": 0.6140499,
+        "bm25_rank": 5,
+        "bm25_score": 19.703807339060486,
+        "rrf_score": 0.41666666666666663,
+        "rank": 3
+      }
+    ],
+    "answer_result": {
+      "answer": "Giá mỗi tín chỉ khi học lại hoặc học cải thiện được quy định bởi Hiệu trưởng [chunk_0080].",
+      "citations": [
+        {
+          "chunk_id": "chunk_0080",
+          "source": null
+        }
+      ],
+      "status": "answered",
+      "reason": null,
+      "prompt_version": "answer-v1",
+      "model": "Qwen/Qwen3-4B",
+      "rewritten_question": "Ai quyết định giá mỗi tín chỉ khi học lại hoặc học cải thiện?",
+      "latency_ms": 5433.77
+    },
+    "timings_s": {
+      "input_guardrail": 1.1711,
+      "query_embedding_api": 0.7233,
+      "qdrant_dense_search": 2.0929,
+      "bm25_search": 0.0026,
+      "rrf_fusion": 0.0005,
+      "prompt_and_answer": 5.4338,
+      "end_to_end": 9.4251
+    }
+  }
+]

@@ -1,0 +1,2010 @@
+{
+  "summary": {
+    "query_count": 10,
+    "corpus_chunks": 297,
+    "dense_candidates": 100,
+    "bm25_candidates": 100,
+    "per_query_rrf_k": 2,
+    "cross_query_fusion": "RRF k=2 over each subquery hybrid ranking",
+    "final_k_checked": [
+      3,
+      5
+    ],
+    "mean_evidence_coverage_at_3_single": 0.8667,
+    "mean_evidence_coverage_at_3_decomposed": 0.9667,
+    "complete_evidence_cases_at_3_single": 7,
+    "complete_evidence_cases_at_3_decomposed": 9,
+    "mean_retrieval_time_s_single": 2.9109,
+    "mean_retrieval_time_s_decomposed": 6.1251,
+    "answer_generation_run": false
+  },
+  "results": [
+    {
+      "id": "q01",
+      "question": "So sánh học bổng học tập của chương trình chất lượng cao và chương trình tiên tiến: mỗi bên có bao nhiêu suất, điều kiện điểm thế nào và khi bằng điểm thì ưu tiên ra sao?",
+      "target_chunks": [
+        "chunk_0088",
+        "chunk_0091"
+      ],
+      "subqueries": [
+        "Học bổng học tập của chương trình chất lượng cao: số suất, điều kiện điểm và cách ưu tiên khi bằng điểm.",
+        "Học bổng học tập của chương trình tiên tiến: số suất, điều kiện điểm và cách ưu tiên khi bằng điểm."
+      ],
+      "single_query": {
+        "target_ranks": {
+          "chunk_0088": 3,
+          "chunk_0091": 1
+        },
+        "coverage_at_3": 2,
+        "coverage_at_5": 2,
+        "top6": [
+          {
+            "rank": 1,
+            "chunk_id": "chunk_0091",
+            "rrf_score": 0.75,
+            "text": "Điều  15. Học bổng\nSinh viên CTTT cũng được xét nhận học bổng khuyến khích học tập của Nhà nước theo quy định của Trường như sinh viên chương trình đại trà.\nHọc bổng của CTTT:\n- Học bổng học tập: căn cứ trên kết quả học "
+          },
+          {
+            "rank": 2,
+            "chunk_id": "chunk_0264",
+            "rrf_score": 0.75,
+            "text": "Điều  8. Chương trình đào tạo gắn với một ngành \nChương trình đào tạo gắn với một ngành được phân loại như sau:\n1.\tChương trình chuẩn: được xây dựng theo quy định hiện hành; đáp ứng mục tiêu và chuẩn đầu ra của bậc trình"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "chunk_0088",
+            "rrf_score": 0.666667,
+            "text": "Điều  15.        Học bổng, khen thưởng\n15.1.        Học bổng khuyến khích học tập của Nhà nước\n-        Sinh viên CT CLC cũng được xét nhận học bổng khuyến khích học tập của Nhà nước theo quy định như sinh viên chương tr"
+          },
+          {
+            "rank": 4,
+            "chunk_id": "chunk_0258",
+            "rrf_score": 0.3,
+            "text": "Điều  8.\tPhương thức xét tuyển đầu vào\nCăn cứ vào số lượng đăng ký xét tuyển hàng năm, BĐH quyết định chỉ tiêu tuyển vào lớp tài năng và trình BGH phê duyệt.  \nViệc xét tuyển đầu vào được áp dụng 1 trong 2 phương án sau:"
+          },
+          {
+            "rank": 5,
+            "chunk_id": "chunk_0119",
+            "rrf_score": 0.237037,
+            "text": "Điều  2.\tGiải thích từ ngữ\nChương trình đại trà là chương trình đào tạo trình độ đại học hệ chính quy được ĐHQG-HCM cho phép triển khai đào tạo tại Trường ĐHCNTT, có mức trần học phí theo quy định hiện hành của Chính phủ"
+          },
+          {
+            "rank": 6,
+            "chunk_id": "chunk_0181",
+            "rrf_score": 0.208333,
+            "text": "Điều  3. Môn học\n1.\tHọc phần (hay môn học) là khối lượng kiến thức tương đối trọn vẹn, thuận tiện cho người học tích lũy trong quá trình học tập, nội dung được bố trí giảng dạy trong một học kỳ. Mỗi học phần được ký hiệu"
+          }
+        ],
+        "timing": {
+          "embedding_s": 0.819,
+          "qdrant_s": 2.1358,
+          "bm25_s": 0.0022,
+          "fusion_s": 0.0002,
+          "total_s": 2.9572
+        }
+      },
+      "decomposed": {
+        "target_ranks": {
+          "chunk_0088": 2,
+          "chunk_0091": 1
+        },
+        "coverage_at_3": 2,
+        "coverage_at_5": 2,
+        "top6": [
+          {
+            "rank": 1,
+            "chunk_id": "chunk_0091",
+            "rrf_score": 1.0,
+            "text": "Điều  15. Học bổng\nSinh viên CTTT cũng được xét nhận học bổng khuyến khích học tập của Nhà nước theo quy định của Trường như sinh viên chương trình đại trà.\nHọc bổng của CTTT:\n- Học bổng học tập: căn cứ trên kết quả học "
+          },
+          {
+            "rank": 2,
+            "chunk_id": "chunk_0088",
+            "rrf_score": 0.666667,
+            "text": "Điều  15.        Học bổng, khen thưởng\n15.1.        Học bổng khuyến khích học tập của Nhà nước\n-        Sinh viên CT CLC cũng được xét nhận học bổng khuyến khích học tập của Nhà nước theo quy định như sinh viên chương tr"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "chunk_0258",
+            "rrf_score": 0.5,
+            "text": "Điều  8.\tPhương thức xét tuyển đầu vào\nCăn cứ vào số lượng đăng ký xét tuyển hàng năm, BĐH quyết định chỉ tiêu tuyển vào lớp tài năng và trình BGH phê duyệt.  \nViệc xét tuyển đầu vào được áp dụng 1 trong 2 phương án sau:"
+          },
+          {
+            "rank": 4,
+            "chunk_id": "chunk_0152",
+            "rrf_score": 0.366667,
+            "text": "Điều  24. Cách quản lý điểm\n1.  Điểm trung bình học kỳ (ĐTBHK) là điểm trung bình của các học phần mà sinh viên đã đăng ký học trong học kỳ đó với trọng số là số tín chỉ của mỗi học phần (bao gồm cả những học phần không "
+          },
+          {
+            "rank": 5,
+            "chunk_id": "chunk_0255",
+            "rrf_score": 0.342857,
+            "text": "Điều  7. Tuyển sinh                                      \n1. Chỉ tiêu tuyển sinh: Chỉ tiêu tuyển sinh chương trình ĐH-ThS do Hiệu trưởng quyết định, không vượt quá 50% tổng chỉ tiêu đào tạo trình độ thạc sĩ của ngành tươ"
+          },
+          {
+            "rank": 6,
+            "chunk_id": "chunk_0050",
+            "rrf_score": 0.309524,
+            "text": "Điều  12.\tTốt nghiệp Chương trình Tài năng\nSinh viên sẽ được cấp bằng \"Cử nhân/Kỹ sư Tài năng\" (Honor Program) của Trường ĐHCNTT – ĐHQG HCM nếu hội đủ các điều kiện sau:\n-\tĐang là sinh viên của CTTN.\n-\tHoàn tất chương tr"
+          }
+        ],
+        "subquery_results": [
+          {
+            "query": "Học bổng học tập của chương trình chất lượng cao: số suất, điều kiện điểm và cách ưu tiên khi bằng điểm.",
+            "target_ranks": {
+              "chunk_0088": 2,
+              "chunk_0091": 1
+            },
+            "top4": [
+              {
+                "rank": 1,
+                "chunk_id": "chunk_0091",
+                "rrf_score": 1.0,
+                "text": "Điều  15. Học bổng\nSinh viên CTTT cũng được xét nhận học bổng khuyến khích học tập của Nhà nước theo quy định của Trường như sinh viên chương trình đại trà.\nHọc bổng của CTTT:\n- Học bổng học tập: căn cứ trên kết quả học "
+              },
+              {
+                "rank": 2,
+                "chunk_id": "chunk_0088",
+                "rrf_score": 0.666667,
+                "text": "Điều  15.        Học bổng, khen thưởng\n15.1.        Học bổng khuyến khích học tập của Nhà nước\n-        Sinh viên CT CLC cũng được xét nhận học bổng khuyến khích học tập của Nhà nước theo quy định như sinh viên chương tr"
+              },
+              {
+                "rank": 3,
+                "chunk_id": "chunk_0258",
+                "rrf_score": 0.5,
+                "text": "Điều  8.\tPhương thức xét tuyển đầu vào\nCăn cứ vào số lượng đăng ký xét tuyển hàng năm, BĐH quyết định chỉ tiêu tuyển vào lớp tài năng và trình BGH phê duyệt.  \nViệc xét tuyển đầu vào được áp dụng 1 trong 2 phương án sau:"
+              },
+              {
+                "rank": 4,
+                "chunk_id": "chunk_0152",
+                "rrf_score": 0.266667,
+                "text": "Điều  24. Cách quản lý điểm\n1.  Điểm trung bình học kỳ (ĐTBHK) là điểm trung bình của các học phần mà sinh viên đã đăng ký học trong học kỳ đó với trọng số là số tín chỉ của mỗi học phần (bao gồm cả những học phần không "
+              }
+            ],
+            "timing": {
+              "embedding_s": 0.8255,
+              "qdrant_s": 2.0931,
+              "bm25_s": 0.0023,
+              "fusion_s": 0.0008,
+              "total_s": 2.9217
+            }
+          },
+          {
+            "query": "Học bổng học tập của chương trình tiên tiến: số suất, điều kiện điểm và cách ưu tiên khi bằng điểm.",
+            "target_ranks": {
+              "chunk_0088": 2,
+              "chunk_0091": 1
+            },
+            "top4": [
+              {
+                "rank": 1,
+                "chunk_id": "chunk_0091",
+                "rrf_score": 1.0,
+                "text": "Điều  15. Học bổng\nSinh viên CTTT cũng được xét nhận học bổng khuyến khích học tập của Nhà nước theo quy định của Trường như sinh viên chương trình đại trà.\nHọc bổng của CTTT:\n- Học bổng học tập: căn cứ trên kết quả học "
+              },
+              {
+                "rank": 2,
+                "chunk_id": "chunk_0088",
+                "rrf_score": 0.666667,
+                "text": "Điều  15.        Học bổng, khen thưởng\n15.1.        Học bổng khuyến khích học tập của Nhà nước\n-        Sinh viên CT CLC cũng được xét nhận học bổng khuyến khích học tập của Nhà nước theo quy định như sinh viên chương tr"
+              },
+              {
+                "rank": 3,
+                "chunk_id": "chunk_0258",
+                "rrf_score": 0.45,
+                "text": "Điều  8.\tPhương thức xét tuyển đầu vào\nCăn cứ vào số lượng đăng ký xét tuyển hàng năm, BĐH quyết định chỉ tiêu tuyển vào lớp tài năng và trình BGH phê duyệt.  \nViệc xét tuyển đầu vào được áp dụng 1 trong 2 phương án sau:"
+              },
+              {
+                "rank": 4,
+                "chunk_id": "chunk_0255",
+                "rrf_score": 0.275,
+                "text": "Điều  7. Tuyển sinh                                      \n1. Chỉ tiêu tuyển sinh: Chỉ tiêu tuyển sinh chương trình ĐH-ThS do Hiệu trưởng quyết định, không vượt quá 50% tổng chỉ tiêu đào tạo trình độ thạc sĩ của ngành tươ"
+              }
+            ],
+            "timing": {
+              "embedding_s": 0.8721,
+              "qdrant_s": 2.1433,
+              "bm25_s": 0.0016,
+              "fusion_s": 0.0002,
+              "total_s": 3.0172
+            }
+          }
+        ],
+        "timing_total_s": 5.9389
+      }
+    },
+    {
+      "id": "q02",
+      "question": "Ở chương trình tài năng có những loại học bổng hoặc hỗ trợ nào, và nếu không đạt điều kiện tốt nghiệp bằng tài năng thì học bổng đã nhận được xử lý thế nào?",
+      "target_chunks": [
+        "chunk_0064",
+        "chunk_0050"
+      ],
+      "subqueries": [
+        "Các loại học bổng và hỗ trợ tài chính dành cho sinh viên chương trình tài năng CTTN.",
+        "Điều kiện tốt nghiệp chương trình tài năng CTTN; nếu không đạt thì nhận bằng gì và có phải hoàn trả học bổng không?"
+      ],
+      "single_query": {
+        "target_ranks": {
+          "chunk_0064": 4,
+          "chunk_0050": 1
+        },
+        "coverage_at_3": 1,
+        "coverage_at_5": 2,
+        "top6": [
+          {
+            "rank": 1,
+            "chunk_id": "chunk_0050",
+            "rrf_score": 1.0,
+            "text": "Điều  12.\tTốt nghiệp Chương trình Tài năng\nSinh viên sẽ được cấp bằng \"Cử nhân/Kỹ sư Tài năng\" (Honor Program) của Trường ĐHCNTT – ĐHQG HCM nếu hội đủ các điều kiện sau:\n-\tĐang là sinh viên của CTTN.\n-\tHoàn tất chương tr"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "chunk_0088",
+            "rrf_score": 0.5,
+            "text": "Điều  15.        Học bổng, khen thưởng\n15.1.        Học bổng khuyến khích học tập của Nhà nước\n-        Sinh viên CT CLC cũng được xét nhận học bổng khuyến khích học tập của Nhà nước theo quy định như sinh viên chương tr"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "chunk_0120",
+            "rrf_score": 0.47619,
+            "text": "Điều  2.\tGiải thích từ ngữ\nSinh viên thuộc chương trình tài năng có 02 hình thức là chính thức và dự bị, nằm trong tổng chỉ tiêu của chương trình:\n-\tSinh viên chính thức: đảm bảo đáp ứng các tiêu chuẩn theo yêu cầu và đư"
+          },
+          {
+            "rank": 4,
+            "chunk_id": "chunk_0064",
+            "rrf_score": 0.45,
+            "text": "Điều  13.\tQuy định về tài chính \n1.\tHọc bổng sinh viên\nHọc bổng chương trình: học bổng được cấp cho sinh viên theo từng học kỳ – một học kỳ tính là 5.0 tháng. Mức học bổng hàng năm do Hiệu trưởng quyết định. Tất cả các s"
+          },
+          {
+            "rank": 5,
+            "chunk_id": "chunk_0274",
+            "rrf_score": 0.45,
+            "text": "Điều  9.\tTuyển bổ sung và loại ra khỏi chương trình, xét chính thức và dự bị\nĐối tượng tham gia CTTN là những sinh viên có năng lực xuất sắc, do đó, sau mỗi học kỳ BĐH quyết định việc loại sinh viên khỏi lớp tài năng, tu"
+          },
+          {
+            "rank": 6,
+            "chunk_id": "chunk_0190",
+            "rrf_score": 0.206667,
+            "text": "Điều  31. Thực tập, khóa luận tốt nghiệp và chuyên đề tốt nghiệp\n1.  Thực tập\n-\tHọc phần Thực tập doanh nghiệp là học phần đặc biệt trong một số chương trình đào tạo của Trường. Theo đó, sinh viên đến thực tập tại doanh "
+          }
+        ],
+        "timing": {
+          "embedding_s": 0.828,
+          "qdrant_s": 2.0868,
+          "bm25_s": 0.0038,
+          "fusion_s": 0.0005,
+          "total_s": 2.9191
+        }
+      },
+      "decomposed": {
+        "target_ranks": {
+          "chunk_0064": 2,
+          "chunk_0050": 1
+        },
+        "coverage_at_3": 2,
+        "coverage_at_5": 2,
+        "top6": [
+          {
+            "rank": 1,
+            "chunk_id": "chunk_0050",
+            "rrf_score": 0.642857,
+            "text": "Điều  12.\tTốt nghiệp Chương trình Tài năng\nSinh viên sẽ được cấp bằng \"Cử nhân/Kỹ sư Tài năng\" (Honor Program) của Trường ĐHCNTT – ĐHQG HCM nếu hội đủ các điều kiện sau:\n-\tĐang là sinh viên của CTTN.\n-\tHoàn tất chương tr"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "chunk_0064",
+            "rrf_score": 0.590909,
+            "text": "Điều  13.\tQuy định về tài chính \n1.\tHọc bổng sinh viên\nHọc bổng chương trình: học bổng được cấp cho sinh viên theo từng học kỳ – một học kỳ tính là 5.0 tháng. Mức học bổng hàng năm do Hiệu trưởng quyết định. Tất cả các s"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "chunk_0091",
+            "rrf_score": 0.5,
+            "text": "Điều  15. Học bổng\nSinh viên CTTT cũng được xét nhận học bổng khuyến khích học tập của Nhà nước theo quy định của Trường như sinh viên chương trình đại trà.\nHọc bổng của CTTT:\n- Học bổng học tập: căn cứ trên kết quả học "
+          },
+          {
+            "rank": 4,
+            "chunk_id": "chunk_0274",
+            "rrf_score": 0.5,
+            "text": "Điều  9.\tTuyển bổ sung và loại ra khỏi chương trình, xét chính thức và dự bị\nĐối tượng tham gia CTTN là những sinh viên có năng lực xuất sắc, do đó, sau mỗi học kỳ BĐH quyết định việc loại sinh viên khỏi lớp tài năng, tu"
+          },
+          {
+            "rank": 5,
+            "chunk_id": "chunk_0120",
+            "rrf_score": 0.392857,
+            "text": "Điều  2.\tGiải thích từ ngữ\nSinh viên thuộc chương trình tài năng có 02 hình thức là chính thức và dự bị, nằm trong tổng chỉ tiêu của chương trình:\n-\tSinh viên chính thức: đảm bảo đáp ứng các tiêu chuẩn theo yêu cầu và đư"
+          },
+          {
+            "rank": 6,
+            "chunk_id": "chunk_0258",
+            "rrf_score": 0.325,
+            "text": "Điều  8.\tPhương thức xét tuyển đầu vào\nCăn cứ vào số lượng đăng ký xét tuyển hàng năm, BĐH quyết định chỉ tiêu tuyển vào lớp tài năng và trình BGH phê duyệt.  \nViệc xét tuyển đầu vào được áp dụng 1 trong 2 phương án sau:"
+          }
+        ],
+        "subquery_results": [
+          {
+            "query": "Các loại học bổng và hỗ trợ tài chính dành cho sinh viên chương trình tài năng CTTN.",
+            "target_ranks": {
+              "chunk_0064": 1,
+              "chunk_0050": 6
+            },
+            "top4": [
+              {
+                "rank": 1,
+                "chunk_id": "chunk_0064",
+                "rrf_score": 0.833333,
+                "text": "Điều  13.\tQuy định về tài chính \n1.\tHọc bổng sinh viên\nHọc bổng chương trình: học bổng được cấp cho sinh viên theo từng học kỳ – một học kỳ tính là 5.0 tháng. Mức học bổng hàng năm do Hiệu trưởng quyết định. Tất cả các s"
+              },
+              {
+                "rank": 2,
+                "chunk_id": "chunk_0091",
+                "rrf_score": 0.642857,
+                "text": "Điều  15. Học bổng\nSinh viên CTTT cũng được xét nhận học bổng khuyến khích học tập của Nhà nước theo quy định của Trường như sinh viên chương trình đại trà.\nHọc bổng của CTTT:\n- Học bổng học tập: căn cứ trên kết quả học "
+              },
+              {
+                "rank": 3,
+                "chunk_id": "chunk_0120",
+                "rrf_score": 0.458333,
+                "text": "Điều  2.\tGiải thích từ ngữ\nSinh viên thuộc chương trình tài năng có 02 hình thức là chính thức và dự bị, nằm trong tổng chỉ tiêu của chương trình:\n-\tSinh viên chính thức: đảm bảo đáp ứng các tiêu chuẩn theo yêu cầu và đư"
+              },
+              {
+                "rank": 4,
+                "chunk_id": "chunk_0088",
+                "rrf_score": 0.45,
+                "text": "Điều  15.        Học bổng, khen thưởng\n15.1.        Học bổng khuyến khích học tập của Nhà nước\n-        Sinh viên CT CLC cũng được xét nhận học bổng khuyến khích học tập của Nhà nước theo quy định như sinh viên chương tr"
+              }
+            ],
+            "timing": {
+              "embedding_s": 0.807,
+              "qdrant_s": 2.0905,
+              "bm25_s": 0.0016,
+              "fusion_s": 0.0002,
+              "total_s": 2.8993
+            }
+          },
+          {
+            "query": "Điều kiện tốt nghiệp chương trình tài năng CTTN; nếu không đạt thì nhận bằng gì và có phải hoàn trả học bổng không?",
+            "target_ranks": {
+              "chunk_0064": 10,
+              "chunk_0050": 1
+            },
+            "top4": [
+              {
+                "rank": 1,
+                "chunk_id": "chunk_0050",
+                "rrf_score": 1.0,
+                "text": "Điều  12.\tTốt nghiệp Chương trình Tài năng\nSinh viên sẽ được cấp bằng \"Cử nhân/Kỹ sư Tài năng\" (Honor Program) của Trường ĐHCNTT – ĐHQG HCM nếu hội đủ các điều kiện sau:\n-\tĐang là sinh viên của CTTN.\n-\tHoàn tất chương tr"
+              },
+              {
+                "rank": 2,
+                "chunk_id": "chunk_0274",
+                "rrf_score": 0.666667,
+                "text": "Điều  9.\tTuyển bổ sung và loại ra khỏi chương trình, xét chính thức và dự bị\nĐối tượng tham gia CTTN là những sinh viên có năng lực xuất sắc, do đó, sau mỗi học kỳ BĐH quyết định việc loại sinh viên khỏi lớp tài năng, tu"
+              },
+              {
+                "rank": 3,
+                "chunk_id": "chunk_0190",
+                "rrf_score": 0.291667,
+                "text": "Điều  31. Thực tập, khóa luận tốt nghiệp và chuyên đề tốt nghiệp\n1.  Thực tập\n-\tHọc phần Thực tập doanh nghiệp là học phần đặc biệt trong một số chương trình đào tạo của Trường. Theo đó, sinh viên đến thực tập tại doanh "
+              },
+              {
+                "rank": 4,
+                "chunk_id": "chunk_0258",
+                "rrf_score": 0.283333,
+                "text": "Điều  8.\tPhương thức xét tuyển đầu vào\nCăn cứ vào số lượng đăng ký xét tuyển hàng năm, BĐH quyết định chỉ tiêu tuyển vào lớp tài năng và trình BGH phê duyệt.  \nViệc xét tuyển đầu vào được áp dụng 1 trong 2 phương án sau:"
+              }
+            ],
+            "timing": {
+              "embedding_s": 0.7972,
+              "qdrant_s": 2.0982,
+              "bm25_s": 0.0021,
+              "fusion_s": 0.0002,
+              "total_s": 2.8977
+            }
+          }
+        ],
+        "timing_total_s": 5.797
+      }
+    },
+    {
+      "id": "q03",
+      "question": "Nếu xét miễn ngoại ngữ bằng chứng chỉ, quy định tiếng Anh và tiếng Nhật khác nhau ra sao, đặc biệt JLPT hoặc NAT-TEST được miễn đến môn nào?",
+      "target_chunks": [
+        "chunk_0217",
+        "chunk_0230"
+      ],
+      "subqueries": [
+        "Chứng chỉ TOEIC, IELTS, TOEFL và các môn tiếng Anh được miễn theo từng mức điểm.",
+        "Sinh viên chương trình Việt-Nhật có JLPT hoặc NAT-TEST từng cấp độ được miễn các môn JAN nào?"
+      ],
+      "single_query": {
+        "target_ranks": {
+          "chunk_0217": 3,
+          "chunk_0230": 1
+        },
+        "coverage_at_3": 2,
+        "coverage_at_5": 2,
+        "top6": [
+          {
+            "rank": 1,
+            "chunk_id": "chunk_0230",
+            "rrf_score": 1.0,
+            "text": "Điều  6.\tXét miễn các môn học tiếng Nhật đối với sinh viên thuộc chương trình Công nghệ Thông tin Việt - Nhật (chương trình chất lượng cao định hướng Nhật Bản)\nSinh viên được xét miễn học các môn tiếng Nhật tương ứng tro"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "chunk_0275",
+            "rrf_score": 0.533333,
+            "text": "Điều  9.\tVăn bằng, chứng chỉ/chứng nhận được sử dụng để công nhận đạt chuẩn xét tốt nghiệp\nĐể được xét tốt nghiệp sinh viên phải hoàn tất các môn học tiếng Anh trong chương trình giảng dạy tiếng Anh tại Điều 3 và có một "
+          },
+          {
+            "rank": 3,
+            "chunk_id": "chunk_0217",
+            "rrf_score": 0.5,
+            "text": "Điều  5.        Xét miễn các môn học tiếng Anh \n1.        Sinh viên được xét miễn học các môn tiếng Anh tương ứng nếu có một trong các chứng chỉ/chứng nhận đạt trình độ tối thiểu theo quy định tại Bảng 3. Sinh viên được "
+          },
+          {
+            "rank": 4,
+            "chunk_id": "chunk_0261",
+            "rrf_score": 0.416667,
+            "text": "Điều  8.        Chuẩn quá trình về ngoại ngữ\n1. Sau 2 học kỳ chính kể từ thời điểm nhập học, sinh viên phải đạt môn Anh văn 1 (mã môn ENG01), nếu không đạt môn Anh văn 1, sinh viên chỉ được đăng ký tối đa 12 tín chỉ ngoà"
+          },
+          {
+            "rank": 5,
+            "chunk_id": "chunk_0247",
+            "rrf_score": 0.361111,
+            "text": "Điều  7.        Thời điểm xét miễn, cách tính điểm miễn các môn học ngoại ngữ\n1. Trường xét miễn các môn học ngoại ngữ trong vòng 4 học kỳ chính kể từ khi nhập học, sau thời gian này (nghĩa là sau học kỳ 2 của năm thứ ha"
+          },
+          {
+            "rank": 6,
+            "chunk_id": "chunk_0201",
+            "rrf_score": 0.283333,
+            "text": "Điều  4.        Kiểm tra xếp lớp đầu khóa cho sinh viên thuộc CTC, CTTN, CTTT\n1.        Vào đầu khóa học, Trường tổ chức kiểm tra tiếng Anh để xếp lớp cho tất cả sinh viên khóa tuyển mới. Đề kiểm tra xếp lớp đầu khóa có "
+          }
+        ],
+        "timing": {
+          "embedding_s": 0.7889,
+          "qdrant_s": 2.0626,
+          "bm25_s": 0.0023,
+          "fusion_s": 0.0002,
+          "total_s": 2.8541
+        }
+      },
+      "decomposed": {
+        "target_ranks": {
+          "chunk_0217": 1,
+          "chunk_0230": 3
+        },
+        "coverage_at_3": 2,
+        "coverage_at_5": 2,
+        "top6": [
+          {
+            "rank": 1,
+            "chunk_id": "chunk_0217",
+            "rrf_score": 0.75,
+            "text": "Điều  5.        Xét miễn các môn học tiếng Anh \n1.        Sinh viên được xét miễn học các môn tiếng Anh tương ứng nếu có một trong các chứng chỉ/chứng nhận đạt trình độ tối thiểu theo quy định tại Bảng 3. Sinh viên được "
+          },
+          {
+            "rank": 2,
+            "chunk_id": "chunk_0275",
+            "rrf_score": 0.666667,
+            "text": "Điều  9.\tVăn bằng, chứng chỉ/chứng nhận được sử dụng để công nhận đạt chuẩn xét tốt nghiệp\nĐể được xét tốt nghiệp sinh viên phải hoàn tất các môn học tiếng Anh trong chương trình giảng dạy tiếng Anh tại Điều 3 và có một "
+          },
+          {
+            "rank": 3,
+            "chunk_id": "chunk_0230",
+            "rrf_score": 0.642857,
+            "text": "Điều  6.\tXét miễn các môn học tiếng Nhật đối với sinh viên thuộc chương trình Công nghệ Thông tin Việt - Nhật (chương trình chất lượng cao định hướng Nhật Bản)\nSinh viên được xét miễn học các môn tiếng Nhật tương ứng tro"
+          },
+          {
+            "rank": 4,
+            "chunk_id": "chunk_0201",
+            "rrf_score": 0.35,
+            "text": "Điều  4.        Kiểm tra xếp lớp đầu khóa cho sinh viên thuộc CTC, CTTN, CTTT\n1.        Vào đầu khóa học, Trường tổ chức kiểm tra tiếng Anh để xếp lớp cho tất cả sinh viên khóa tuyển mới. Đề kiểm tra xếp lớp đầu khóa có "
+          },
+          {
+            "rank": 5,
+            "chunk_id": "chunk_0175",
+            "rrf_score": 0.311111,
+            "text": "Điều  3.        Chương trình giảng dạy tiếng Anh \n1.        Chương trình giảng dạy tiếng Anh của từng loại chương trình bao gồm những môn học được liệt kê theo cấp độ khó tăng dần như trong Bảng 1 nhằm hỗ trợ sinh viên đ"
+          },
+          {
+            "rank": 6,
+            "chunk_id": "chunk_0261",
+            "rrf_score": 0.311111,
+            "text": "Điều  8.        Chuẩn quá trình về ngoại ngữ\n1. Sau 2 học kỳ chính kể từ thời điểm nhập học, sinh viên phải đạt môn Anh văn 1 (mã môn ENG01), nếu không đạt môn Anh văn 1, sinh viên chỉ được đăng ký tối đa 12 tín chỉ ngoà"
+          }
+        ],
+        "subquery_results": [
+          {
+            "query": "Chứng chỉ TOEIC, IELTS, TOEFL và các môn tiếng Anh được miễn theo từng mức điểm.",
+            "target_ranks": {
+              "chunk_0217": 1,
+              "chunk_0230": 6
+            },
+            "top4": [
+              {
+                "rank": 1,
+                "chunk_id": "chunk_0217",
+                "rrf_score": 1.0,
+                "text": "Điều  5.        Xét miễn các môn học tiếng Anh \n1.        Sinh viên được xét miễn học các môn tiếng Anh tương ứng nếu có một trong các chứng chỉ/chứng nhận đạt trình độ tối thiểu theo quy định tại Bảng 3. Sinh viên được "
+              },
+              {
+                "rank": 2,
+                "chunk_id": "chunk_0275",
+                "rrf_score": 0.666667,
+                "text": "Điều  9.\tVăn bằng, chứng chỉ/chứng nhận được sử dụng để công nhận đạt chuẩn xét tốt nghiệp\nĐể được xét tốt nghiệp sinh viên phải hoàn tất các môn học tiếng Anh trong chương trình giảng dạy tiếng Anh tại Điều 3 và có một "
+              },
+              {
+                "rank": 3,
+                "chunk_id": "chunk_0201",
+                "rrf_score": 0.5,
+                "text": "Điều  4.        Kiểm tra xếp lớp đầu khóa cho sinh viên thuộc CTC, CTTN, CTTT\n1.        Vào đầu khóa học, Trường tổ chức kiểm tra tiếng Anh để xếp lớp cho tất cả sinh viên khóa tuyển mới. Đề kiểm tra xếp lớp đầu khóa có "
+              },
+              {
+                "rank": 4,
+                "chunk_id": "chunk_0175",
+                "rrf_score": 0.366667,
+                "text": "Điều  3.        Chương trình giảng dạy tiếng Anh \n1.        Chương trình giảng dạy tiếng Anh của từng loại chương trình bao gồm những môn học được liệt kê theo cấp độ khó tăng dần như trong Bảng 1 nhằm hỗ trợ sinh viên đ"
+              }
+            ],
+            "timing": {
+              "embedding_s": 0.7915,
+              "qdrant_s": 2.0643,
+              "bm25_s": 0.0014,
+              "fusion_s": 0.0002,
+              "total_s": 2.8574
+            }
+          },
+          {
+            "query": "Sinh viên chương trình Việt-Nhật có JLPT hoặc NAT-TEST từng cấp độ được miễn các môn JAN nào?",
+            "target_ranks": {
+              "chunk_0217": 3,
+              "chunk_0230": 1
+            },
+            "top4": [
+              {
+                "rank": 1,
+                "chunk_id": "chunk_0230",
+                "rrf_score": 1.0,
+                "text": "Điều  6.\tXét miễn các môn học tiếng Nhật đối với sinh viên thuộc chương trình Công nghệ Thông tin Việt - Nhật (chương trình chất lượng cao định hướng Nhật Bản)\nSinh viên được xét miễn học các môn tiếng Nhật tương ứng tro"
+              },
+              {
+                "rank": 2,
+                "chunk_id": "chunk_0275",
+                "rrf_score": 0.583333,
+                "text": "Điều  9.\tVăn bằng, chứng chỉ/chứng nhận được sử dụng để công nhận đạt chuẩn xét tốt nghiệp\nĐể được xét tốt nghiệp sinh viên phải hoàn tất các môn học tiếng Anh trong chương trình giảng dạy tiếng Anh tại Điều 3 và có một "
+              },
+              {
+                "rank": 3,
+                "chunk_id": "chunk_0217",
+                "rrf_score": 0.533333,
+                "text": "Điều  5.        Xét miễn các môn học tiếng Anh \n1.        Sinh viên được xét miễn học các môn tiếng Anh tương ứng nếu có một trong các chứng chỉ/chứng nhận đạt trình độ tối thiểu theo quy định tại Bảng 3. Sinh viên được "
+              },
+              {
+                "rank": 4,
+                "chunk_id": "chunk_0261",
+                "rrf_score": 0.45,
+                "text": "Điều  8.        Chuẩn quá trình về ngoại ngữ\n1. Sau 2 học kỳ chính kể từ thời điểm nhập học, sinh viên phải đạt môn Anh văn 1 (mã môn ENG01), nếu không đạt môn Anh văn 1, sinh viên chỉ được đăng ký tối đa 12 tín chỉ ngoà"
+              }
+            ],
+            "timing": {
+              "embedding_s": 0.7796,
+              "qdrant_s": 2.1182,
+              "bm25_s": 0.0065,
+              "fusion_s": 0.0002,
+              "total_s": 2.9045
+            }
+          }
+        ],
+        "timing_total_s": 5.7619
+      }
+    },
+    {
+      "id": "q04",
+      "question": "Lúc mới vào trường, điểm TOEIC đầu vào để xếp lớp khác gì với TOEIC hoặc IELTS dùng để xét miễn môn tiếng Anh?",
+      "target_chunks": [
+        "chunk_0201",
+        "chunk_0217"
+      ],
+      "subqueries": [
+        "Điểm kiểm tra TOEIC đầu khóa được dùng để xếp sinh viên vào các lớp Anh văn nào?",
+        "Các mức TOEIC hoặc IELTS dùng để xét miễn môn Anh văn ENG01, ENG02 và các môn cấp thấp hơn."
+      ],
+      "single_query": {
+        "target_ranks": {
+          "chunk_0201": 1,
+          "chunk_0217": 2
+        },
+        "coverage_at_3": 2,
+        "coverage_at_5": 2,
+        "top6": [
+          {
+            "rank": 1,
+            "chunk_id": "chunk_0201",
+            "rrf_score": 1.0,
+            "text": "Điều  4.        Kiểm tra xếp lớp đầu khóa cho sinh viên thuộc CTC, CTTN, CTTT\n1.        Vào đầu khóa học, Trường tổ chức kiểm tra tiếng Anh để xếp lớp cho tất cả sinh viên khóa tuyển mới. Đề kiểm tra xếp lớp đầu khóa có "
+          },
+          {
+            "rank": 2,
+            "chunk_id": "chunk_0217",
+            "rrf_score": 0.666667,
+            "text": "Điều  5.        Xét miễn các môn học tiếng Anh \n1.        Sinh viên được xét miễn học các môn tiếng Anh tương ứng nếu có một trong các chứng chỉ/chứng nhận đạt trình độ tối thiểu theo quy định tại Bảng 3. Sinh viên được "
+          },
+          {
+            "rank": 3,
+            "chunk_id": "chunk_0275",
+            "rrf_score": 0.5,
+            "text": "Điều  9.\tVăn bằng, chứng chỉ/chứng nhận được sử dụng để công nhận đạt chuẩn xét tốt nghiệp\nĐể được xét tốt nghiệp sinh viên phải hoàn tất các môn học tiếng Anh trong chương trình giảng dạy tiếng Anh tại Điều 3 và có một "
+          },
+          {
+            "rank": 4,
+            "chunk_id": "chunk_0018",
+            "rrf_score": 0.311111,
+            "text": "Điều  10.\tChương trình giảng dạy và tổ chức giảng dạy NNCM\n1.\tMôn học NNCM đáp ứng các yêu cầu sau:\na.\tLà các môn học thuộc khối kiến thức cơ bản, cơ sở hoặc chuyên ngành được giảng dạy chủ yếu bằng tiếng Anh/tiếng Nhật."
+          },
+          {
+            "rank": 5,
+            "chunk_id": "chunk_0175",
+            "rrf_score": 0.309524,
+            "text": "Điều  3.        Chương trình giảng dạy tiếng Anh \n1.        Chương trình giảng dạy tiếng Anh của từng loại chương trình bao gồm những môn học được liệt kê theo cấp độ khó tăng dần như trong Bảng 1 nhằm hỗ trợ sinh viên đ"
+          },
+          {
+            "rank": 6,
+            "chunk_id": "chunk_0261",
+            "rrf_score": 0.215909,
+            "text": "Điều  8.        Chuẩn quá trình về ngoại ngữ\n1. Sau 2 học kỳ chính kể từ thời điểm nhập học, sinh viên phải đạt môn Anh văn 1 (mã môn ENG01), nếu không đạt môn Anh văn 1, sinh viên chỉ được đăng ký tối đa 12 tín chỉ ngoà"
+          }
+        ],
+        "timing": {
+          "embedding_s": 0.8321,
+          "qdrant_s": 2.1002,
+          "bm25_s": 0.0019,
+          "fusion_s": 0.0002,
+          "total_s": 2.9344
+        }
+      },
+      "decomposed": {
+        "target_ranks": {
+          "chunk_0201": 1,
+          "chunk_0217": 2
+        },
+        "coverage_at_3": 2,
+        "coverage_at_5": 2,
+        "top6": [
+          {
+            "rank": 1,
+            "chunk_id": "chunk_0201",
+            "rrf_score": 0.833333,
+            "text": "Điều  4.        Kiểm tra xếp lớp đầu khóa cho sinh viên thuộc CTC, CTTN, CTTT\n1.        Vào đầu khóa học, Trường tổ chức kiểm tra tiếng Anh để xếp lớp cho tất cả sinh viên khóa tuyển mới. Đề kiểm tra xếp lớp đầu khóa có "
+          },
+          {
+            "rank": 2,
+            "chunk_id": "chunk_0217",
+            "rrf_score": 0.833333,
+            "text": "Điều  5.        Xét miễn các môn học tiếng Anh \n1.        Sinh viên được xét miễn học các môn tiếng Anh tương ứng nếu có một trong các chứng chỉ/chứng nhận đạt trình độ tối thiểu theo quy định tại Bảng 3. Sinh viên được "
+          },
+          {
+            "rank": 3,
+            "chunk_id": "chunk_0275",
+            "rrf_score": 0.45,
+            "text": "Điều  9.\tVăn bằng, chứng chỉ/chứng nhận được sử dụng để công nhận đạt chuẩn xét tốt nghiệp\nĐể được xét tốt nghiệp sinh viên phải hoàn tất các môn học tiếng Anh trong chương trình giảng dạy tiếng Anh tại Điều 3 và có một "
+          },
+          {
+            "rank": 4,
+            "chunk_id": "chunk_0175",
+            "rrf_score": 0.416667,
+            "text": "Điều  3.        Chương trình giảng dạy tiếng Anh \n1.        Chương trình giảng dạy tiếng Anh của từng loại chương trình bao gồm những môn học được liệt kê theo cấp độ khó tăng dần như trong Bảng 1 nhằm hỗ trợ sinh viên đ"
+          },
+          {
+            "rank": 5,
+            "chunk_id": "chunk_0261",
+            "rrf_score": 0.277778,
+            "text": "Điều  8.        Chuẩn quá trình về ngoại ngữ\n1. Sau 2 học kỳ chính kể từ thời điểm nhập học, sinh viên phải đạt môn Anh văn 1 (mã môn ENG01), nếu không đạt môn Anh văn 1, sinh viên chỉ được đăng ký tối đa 12 tín chỉ ngoà"
+          },
+          {
+            "rank": 6,
+            "chunk_id": "chunk_0032",
+            "rrf_score": 0.247619,
+            "text": "Điều  11.\t Đào tạo ngoại ngữ\n-\tVào đầu khóa học, sinh viên CT CLC phải tham dự kiểm tra ngoại ngữ đầu vào để phân loại trình độ theo quy định chung của Trường.\n-\tTrong quá trình học, sinh viên phải đạt các chuẩn quá trìn"
+          }
+        ],
+        "subquery_results": [
+          {
+            "query": "Điểm kiểm tra TOEIC đầu khóa được dùng để xếp sinh viên vào các lớp Anh văn nào?",
+            "target_ranks": {
+              "chunk_0201": 1,
+              "chunk_0217": 2
+            },
+            "top4": [
+              {
+                "rank": 1,
+                "chunk_id": "chunk_0201",
+                "rrf_score": 1.0,
+                "text": "Điều  4.        Kiểm tra xếp lớp đầu khóa cho sinh viên thuộc CTC, CTTN, CTTT\n1.        Vào đầu khóa học, Trường tổ chức kiểm tra tiếng Anh để xếp lớp cho tất cả sinh viên khóa tuyển mới. Đề kiểm tra xếp lớp đầu khóa có "
+              },
+              {
+                "rank": 2,
+                "chunk_id": "chunk_0217",
+                "rrf_score": 0.666667,
+                "text": "Điều  5.        Xét miễn các môn học tiếng Anh \n1.        Sinh viên được xét miễn học các môn tiếng Anh tương ứng nếu có một trong các chứng chỉ/chứng nhận đạt trình độ tối thiểu theo quy định tại Bảng 3. Sinh viên được "
+              },
+              {
+                "rank": 3,
+                "chunk_id": "chunk_0275",
+                "rrf_score": 0.45,
+                "text": "Điều  9.\tVăn bằng, chứng chỉ/chứng nhận được sử dụng để công nhận đạt chuẩn xét tốt nghiệp\nĐể được xét tốt nghiệp sinh viên phải hoàn tất các môn học tiếng Anh trong chương trình giảng dạy tiếng Anh tại Điều 3 và có một "
+              },
+              {
+                "rank": 4,
+                "chunk_id": "chunk_0032",
+                "rrf_score": 0.293478,
+                "text": "Điều  11.\t Đào tạo ngoại ngữ\n-\tVào đầu khóa học, sinh viên CT CLC phải tham dự kiểm tra ngoại ngữ đầu vào để phân loại trình độ theo quy định chung của Trường.\n-\tTrong quá trình học, sinh viên phải đạt các chuẩn quá trìn"
+              }
+            ],
+            "timing": {
+              "embedding_s": 0.8956,
+              "qdrant_s": 2.151,
+              "bm25_s": 0.0053,
+              "fusion_s": 0.0002,
+              "total_s": 3.0521
+            }
+          },
+          {
+            "query": "Các mức TOEIC hoặc IELTS dùng để xét miễn môn Anh văn ENG01, ENG02 và các môn cấp thấp hơn.",
+            "target_ranks": {
+              "chunk_0201": 2,
+              "chunk_0217": 1
+            },
+            "top4": [
+              {
+                "rank": 1,
+                "chunk_id": "chunk_0217",
+                "rrf_score": 1.0,
+                "text": "Điều  5.        Xét miễn các môn học tiếng Anh \n1.        Sinh viên được xét miễn học các môn tiếng Anh tương ứng nếu có một trong các chứng chỉ/chứng nhận đạt trình độ tối thiểu theo quy định tại Bảng 3. Sinh viên được "
+              },
+              {
+                "rank": 2,
+                "chunk_id": "chunk_0201",
+                "rrf_score": 0.666667,
+                "text": "Điều  4.        Kiểm tra xếp lớp đầu khóa cho sinh viên thuộc CTC, CTTN, CTTT\n1.        Vào đầu khóa học, Trường tổ chức kiểm tra tiếng Anh để xếp lớp cho tất cả sinh viên khóa tuyển mới. Đề kiểm tra xếp lớp đầu khóa có "
+              },
+              {
+                "rank": 3,
+                "chunk_id": "chunk_0175",
+                "rrf_score": 0.5,
+                "text": "Điều  3.        Chương trình giảng dạy tiếng Anh \n1.        Chương trình giảng dạy tiếng Anh của từng loại chương trình bao gồm những môn học được liệt kê theo cấp độ khó tăng dần như trong Bảng 1 nhằm hỗ trợ sinh viên đ"
+              },
+              {
+                "rank": 4,
+                "chunk_id": "chunk_0275",
+                "rrf_score": 0.4,
+                "text": "Điều  9.\tVăn bằng, chứng chỉ/chứng nhận được sử dụng để công nhận đạt chuẩn xét tốt nghiệp\nĐể được xét tốt nghiệp sinh viên phải hoàn tất các môn học tiếng Anh trong chương trình giảng dạy tiếng Anh tại Điều 3 và có một "
+              }
+            ],
+            "timing": {
+              "embedding_s": 0.7983,
+              "qdrant_s": 2.0881,
+              "bm25_s": 0.0014,
+              "fusion_s": 0.0002,
+              "total_s": 2.8879
+            }
+          }
+        ],
+        "timing_total_s": 5.94
+      }
+    },
+    {
+      "id": "q05",
+      "question": "Điều kiện để được học môn chuyên ngành giảng dạy bằng tiếng Anh hoặc tiếng Nhật có giống chuẩn ngoại ngữ cần đạt để xét tốt nghiệp không?",
+      "target_chunks": [
+        "chunk_0018",
+        "chunk_0275"
+      ],
+      "subqueries": [
+        "Điều kiện chứng chỉ hoặc môn học cần đạt để tham gia lớp chuyên ngành giảng dạy bằng tiếng Anh hoặc tiếng Nhật.",
+        "Chuẩn ngoại ngữ, chứng chỉ tiếng Anh, Pháp hoặc Nhật được chấp nhận để xét tốt nghiệp."
+      ],
+      "single_query": {
+        "target_ranks": {
+          "chunk_0018": 6,
+          "chunk_0275": 1
+        },
+        "coverage_at_3": 1,
+        "coverage_at_5": 1,
+        "top6": [
+          {
+            "rank": 1,
+            "chunk_id": "chunk_0275",
+            "rrf_score": 0.833333,
+            "text": "Điều  9.\tVăn bằng, chứng chỉ/chứng nhận được sử dụng để công nhận đạt chuẩn xét tốt nghiệp\nĐể được xét tốt nghiệp sinh viên phải hoàn tất các môn học tiếng Anh trong chương trình giảng dạy tiếng Anh tại Điều 3 và có một "
+          },
+          {
+            "rank": 2,
+            "chunk_id": "chunk_0035",
+            "rrf_score": 0.611111,
+            "text": "Điều  11.\tYêu cầu về cán bộ giảng dạy NNCM\nCBGD phải đáp ứng yêu cầu theo quy định chung của Trường; ngoài ra, CBGD lý thuyết phải đáp ứng thêm một trong các yêu cầu sau đây:\n1.\tCó trình độ tiếng Anh/tiếng Nhật tối thiểu"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "chunk_0124",
+            "rrf_score": 0.533333,
+            "text": "Điều  2.        Mục đích đào tạo ngoại ngữ\n1        . Chương trình giảng dạy tiếng Anh nhằm mục đích giúp sinh viên:\na        . Phát triển toàn diện 4 kỹ năng sử dụng tiếng Anh tổng quát: nghe, nói, đọc, viết; phát triển"
+          },
+          {
+            "rank": 4,
+            "chunk_id": "chunk_0261",
+            "rrf_score": 0.416667,
+            "text": "Điều  8.        Chuẩn quá trình về ngoại ngữ\n1. Sau 2 học kỳ chính kể từ thời điểm nhập học, sinh viên phải đạt môn Anh văn 1 (mã môn ENG01), nếu không đạt môn Anh văn 1, sinh viên chỉ được đăng ký tối đa 12 tín chỉ ngoà"
+          },
+          {
+            "rank": 5,
+            "chunk_id": "chunk_0175",
+            "rrf_score": 0.375,
+            "text": "Điều  3.        Chương trình giảng dạy tiếng Anh \n1.        Chương trình giảng dạy tiếng Anh của từng loại chương trình bao gồm những môn học được liệt kê theo cấp độ khó tăng dần như trong Bảng 1 nhằm hỗ trợ sinh viên đ"
+          },
+          {
+            "rank": 6,
+            "chunk_id": "chunk_0018",
+            "rrf_score": 0.366667,
+            "text": "Điều  10.\tChương trình giảng dạy và tổ chức giảng dạy NNCM\n1.\tMôn học NNCM đáp ứng các yêu cầu sau:\na.\tLà các môn học thuộc khối kiến thức cơ bản, cơ sở hoặc chuyên ngành được giảng dạy chủ yếu bằng tiếng Anh/tiếng Nhật."
+          }
+        ],
+        "timing": {
+          "embedding_s": 0.8118,
+          "qdrant_s": 2.0454,
+          "bm25_s": 0.0021,
+          "fusion_s": 0.0002,
+          "total_s": 2.8595
+        }
+      },
+      "decomposed": {
+        "target_ranks": {
+          "chunk_0018": 2,
+          "chunk_0275": 1
+        },
+        "coverage_at_3": 2,
+        "coverage_at_5": 2,
+        "top6": [
+          {
+            "rank": 1,
+            "chunk_id": "chunk_0275",
+            "rrf_score": 0.833333,
+            "text": "Điều  9.\tVăn bằng, chứng chỉ/chứng nhận được sử dụng để công nhận đạt chuẩn xét tốt nghiệp\nĐể được xét tốt nghiệp sinh viên phải hoàn tất các môn học tiếng Anh trong chương trình giảng dạy tiếng Anh tại Điều 3 và có một "
+          },
+          {
+            "rank": 2,
+            "chunk_id": "chunk_0018",
+            "rrf_score": 0.590909,
+            "text": "Điều  10.\tChương trình giảng dạy và tổ chức giảng dạy NNCM\n1.\tMôn học NNCM đáp ứng các yêu cầu sau:\na.\tLà các môn học thuộc khối kiến thức cơ bản, cơ sở hoặc chuyên ngành được giảng dạy chủ yếu bằng tiếng Anh/tiếng Nhật."
+          },
+          {
+            "rank": 3,
+            "chunk_id": "chunk_0124",
+            "rrf_score": 0.458333,
+            "text": "Điều  2.        Mục đích đào tạo ngoại ngữ\n1        . Chương trình giảng dạy tiếng Anh nhằm mục đích giúp sinh viên:\na        . Phát triển toàn diện 4 kỹ năng sử dụng tiếng Anh tổng quát: nghe, nói, đọc, viết; phát triển"
+          },
+          {
+            "rank": 4,
+            "chunk_id": "chunk_0035",
+            "rrf_score": 0.416667,
+            "text": "Điều  11.\tYêu cầu về cán bộ giảng dạy NNCM\nCBGD phải đáp ứng yêu cầu theo quy định chung của Trường; ngoài ra, CBGD lý thuyết phải đáp ứng thêm một trong các yêu cầu sau đây:\n1.\tCó trình độ tiếng Anh/tiếng Nhật tối thiểu"
+          },
+          {
+            "rank": 5,
+            "chunk_id": "chunk_0261",
+            "rrf_score": 0.392857,
+            "text": "Điều  8.        Chuẩn quá trình về ngoại ngữ\n1. Sau 2 học kỳ chính kể từ thời điểm nhập học, sinh viên phải đạt môn Anh văn 1 (mã môn ENG01), nếu không đạt môn Anh văn 1, sinh viên chỉ được đăng ký tối đa 12 tín chỉ ngoà"
+          },
+          {
+            "rank": 6,
+            "chunk_id": "chunk_0175",
+            "rrf_score": 0.325,
+            "text": "Điều  3.        Chương trình giảng dạy tiếng Anh \n1.        Chương trình giảng dạy tiếng Anh của từng loại chương trình bao gồm những môn học được liệt kê theo cấp độ khó tăng dần như trong Bảng 1 nhằm hỗ trợ sinh viên đ"
+          }
+        ],
+        "subquery_results": [
+          {
+            "query": "Điều kiện chứng chỉ hoặc môn học cần đạt để tham gia lớp chuyên ngành giảng dạy bằng tiếng Anh hoặc tiếng Nhật.",
+            "target_ranks": {
+              "chunk_0018": 1,
+              "chunk_0275": 2
+            },
+            "top4": [
+              {
+                "rank": 1,
+                "chunk_id": "chunk_0018",
+                "rrf_score": 1.0,
+                "text": "Điều  10.\tChương trình giảng dạy và tổ chức giảng dạy NNCM\n1.\tMôn học NNCM đáp ứng các yêu cầu sau:\na.\tLà các môn học thuộc khối kiến thức cơ bản, cơ sở hoặc chuyên ngành được giảng dạy chủ yếu bằng tiếng Anh/tiếng Nhật."
+              },
+              {
+                "rank": 2,
+                "chunk_id": "chunk_0275",
+                "rrf_score": 0.583333,
+                "text": "Điều  9.\tVăn bằng, chứng chỉ/chứng nhận được sử dụng để công nhận đạt chuẩn xét tốt nghiệp\nĐể được xét tốt nghiệp sinh viên phải hoàn tất các môn học tiếng Anh trong chương trình giảng dạy tiếng Anh tại Điều 3 và có một "
+              },
+              {
+                "rank": 3,
+                "chunk_id": "chunk_0035",
+                "rrf_score": 0.47619,
+                "text": "Điều  11.\tYêu cầu về cán bộ giảng dạy NNCM\nCBGD phải đáp ứng yêu cầu theo quy định chung của Trường; ngoài ra, CBGD lý thuyết phải đáp ứng thêm một trong các yêu cầu sau đây:\n1.\tCó trình độ tiếng Anh/tiếng Nhật tối thiểu"
+              },
+              {
+                "rank": 4,
+                "chunk_id": "chunk_0175",
+                "rrf_score": 0.366667,
+                "text": "Điều  3.        Chương trình giảng dạy tiếng Anh \n1.        Chương trình giảng dạy tiếng Anh của từng loại chương trình bao gồm những môn học được liệt kê theo cấp độ khó tăng dần như trong Bảng 1 nhằm hỗ trợ sinh viên đ"
+              }
+            ],
+            "timing": {
+              "embedding_s": 0.8605,
+              "qdrant_s": 2.0567,
+              "bm25_s": 0.004,
+              "fusion_s": 0.0002,
+              "total_s": 2.9215
+            }
+          },
+          {
+            "query": "Chuẩn ngoại ngữ, chứng chỉ tiếng Anh, Pháp hoặc Nhật được chấp nhận để xét tốt nghiệp.",
+            "target_ranks": {
+              "chunk_0018": 10,
+              "chunk_0275": 1
+            },
+            "top4": [
+              {
+                "rank": 1,
+                "chunk_id": "chunk_0275",
+                "rrf_score": 1.0,
+                "text": "Điều  9.\tVăn bằng, chứng chỉ/chứng nhận được sử dụng để công nhận đạt chuẩn xét tốt nghiệp\nĐể được xét tốt nghiệp sinh viên phải hoàn tất các môn học tiếng Anh trong chương trình giảng dạy tiếng Anh tại Điều 3 và có một "
+              },
+              {
+                "rank": 2,
+                "chunk_id": "chunk_0124",
+                "rrf_score": 0.666667,
+                "text": "Điều  2.        Mục đích đào tạo ngoại ngữ\n1        . Chương trình giảng dạy tiếng Anh nhằm mục đích giúp sinh viên:\na        . Phát triển toàn diện 4 kỹ năng sử dụng tiếng Anh tổng quát: nghe, nói, đọc, viết; phát triển"
+              },
+              {
+                "rank": 3,
+                "chunk_id": "chunk_0261",
+                "rrf_score": 0.5,
+                "text": "Điều  8.        Chuẩn quá trình về ngoại ngữ\n1. Sau 2 học kỳ chính kể từ thời điểm nhập học, sinh viên phải đạt môn Anh văn 1 (mã môn ENG01), nếu không đạt môn Anh văn 1, sinh viên chỉ được đăng ký tối đa 12 tín chỉ ngoà"
+              },
+              {
+                "rank": 4,
+                "chunk_id": "chunk_0216",
+                "rrf_score": 0.366667,
+                "text": "Điều  5.        Chương trình đào tạo\nCT CLC được xây dựng trên nền chương trình đào tạo đại trà tương ứng và theo quy định xây dựng chương trình đào tạo của Trường ĐHCNTT. CT CLC có sự khác biệt so với chương trình đại t"
+              }
+            ],
+            "timing": {
+              "embedding_s": 0.876,
+              "qdrant_s": 2.0977,
+              "bm25_s": 0.002,
+              "fusion_s": 0.0002,
+              "total_s": 2.9758
+            }
+          }
+        ],
+        "timing_total_s": 5.8973
+      }
+    },
+    {
+      "id": "q06",
+      "question": "Muốn vào chương trình tài năng thì trường xét tuyển thế nào, sau khi vào thì những trường hợp nào có thể bị loại khỏi chương trình?",
+      "target_chunks": [
+        "chunk_0258",
+        "chunk_0274"
+      ],
+      "subqueries": [
+        "Phương thức, chỉ tiêu và điều kiện tuyển sinh đầu vào chương trình tài năng CTTN.",
+        "Các tiêu chuẩn xét sinh viên chính thức, dự bị và loại sinh viên khỏi chương trình tài năng sau mỗi học kỳ."
+      ],
+      "single_query": {
+        "target_ranks": {
+          "chunk_0258": 2,
+          "chunk_0274": 1
+        },
+        "coverage_at_3": 2,
+        "coverage_at_5": 2,
+        "top6": [
+          {
+            "rank": 1,
+            "chunk_id": "chunk_0274",
+            "rrf_score": 1.0,
+            "text": "Điều  9.\tTuyển bổ sung và loại ra khỏi chương trình, xét chính thức và dự bị\nĐối tượng tham gia CTTN là những sinh viên có năng lực xuất sắc, do đó, sau mỗi học kỳ BĐH quyết định việc loại sinh viên khỏi lớp tài năng, tu"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "chunk_0258",
+            "rrf_score": 0.5,
+            "text": "Điều  8.\tPhương thức xét tuyển đầu vào\nCăn cứ vào số lượng đăng ký xét tuyển hàng năm, BĐH quyết định chỉ tiêu tuyển vào lớp tài năng và trình BGH phê duyệt.  \nViệc xét tuyển đầu vào được áp dụng 1 trong 2 phương án sau:"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "chunk_0120",
+            "rrf_score": 0.45,
+            "text": "Điều  2.\tGiải thích từ ngữ\nSinh viên thuộc chương trình tài năng có 02 hình thức là chính thức và dự bị, nằm trong tổng chỉ tiêu của chương trình:\n-\tSinh viên chính thức: đảm bảo đáp ứng các tiêu chuẩn theo yêu cầu và đư"
+          },
+          {
+            "rank": 4,
+            "chunk_id": "chunk_0148",
+            "rrf_score": 0.344569,
+            "text": "Điều  23. Xử lý sinh viên dự thi vi phạm quy định\nHình thức xử lý vi phạm do các CBCT thống nhất quyết định và ghi rõ trong biên bản. Biên bản xử lý vi phạm được bàn giao cho cán bộ trực thi cùng với túi bài thi kèm các "
+          },
+          {
+            "rank": 5,
+            "chunk_id": "chunk_0085",
+            "rrf_score": 0.2625,
+            "text": "Điều  14. Đăng ký học tập\nSinh viên được đăng ký học và thi các môn học trong chương trình đào tạo do bất kỳ một CSĐT nào thuộc ĐHQG-HCM hoặc hệ thống các trường thành viên của ASEAN University Network tổ chức giảng dạy."
+          },
+          {
+            "rank": 6,
+            "chunk_id": "chunk_0050",
+            "rrf_score": 0.225641,
+            "text": "Điều  12.\tTốt nghiệp Chương trình Tài năng\nSinh viên sẽ được cấp bằng \"Cử nhân/Kỹ sư Tài năng\" (Honor Program) của Trường ĐHCNTT – ĐHQG HCM nếu hội đủ các điều kiện sau:\n-\tĐang là sinh viên của CTTN.\n-\tHoàn tất chương tr"
+          }
+        ],
+        "timing": {
+          "embedding_s": 0.8772,
+          "qdrant_s": 2.0709,
+          "bm25_s": 0.0027,
+          "fusion_s": 0.0002,
+          "total_s": 2.951
+        }
+      },
+      "decomposed": {
+        "target_ranks": {
+          "chunk_0258": 2,
+          "chunk_0274": 1
+        },
+        "coverage_at_3": 2,
+        "coverage_at_5": 2,
+        "top6": [
+          {
+            "rank": 1,
+            "chunk_id": "chunk_0274",
+            "rrf_score": 0.833333,
+            "text": "Điều  9.\tTuyển bổ sung và loại ra khỏi chương trình, xét chính thức và dự bị\nĐối tượng tham gia CTTN là những sinh viên có năng lực xuất sắc, do đó, sau mỗi học kỳ BĐH quyết định việc loại sinh viên khỏi lớp tài năng, tu"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "chunk_0258",
+            "rrf_score": 0.75,
+            "text": "Điều  8.\tPhương thức xét tuyển đầu vào\nCăn cứ vào số lượng đăng ký xét tuyển hàng năm, BĐH quyết định chỉ tiêu tuyển vào lớp tài năng và trình BGH phê duyệt.  \nViệc xét tuyển đầu vào được áp dụng 1 trong 2 phương án sau:"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "chunk_0120",
+            "rrf_score": 0.47619,
+            "text": "Điều  2.\tGiải thích từ ngữ\nSinh viên thuộc chương trình tài năng có 02 hình thức là chính thức và dự bị, nằm trong tổng chỉ tiêu của chương trình:\n-\tSinh viên chính thức: đảm bảo đáp ứng các tiêu chuẩn theo yêu cầu và đư"
+          },
+          {
+            "rank": 4,
+            "chunk_id": "chunk_0243",
+            "rrf_score": 0.375,
+            "text": "Điều  7.\tQuy trình mở CTTN và chỉ tiêu tuyển \nCăn cứ vào đề án tổng thể và nguồn kinh phí được cấp, BĐH sẽ chọn các Khoa – Ngành có đủ điều kiện tối thiểu để đề nghị lập đề án mở CTTN. Khoa quản lý ngành là đơn vị chịu t"
+          },
+          {
+            "rank": 5,
+            "chunk_id": "chunk_0050",
+            "rrf_score": 0.325,
+            "text": "Điều  12.\tTốt nghiệp Chương trình Tài năng\nSinh viên sẽ được cấp bằng \"Cử nhân/Kỹ sư Tài năng\" (Honor Program) của Trường ĐHCNTT – ĐHQG HCM nếu hội đủ các điều kiện sau:\n-\tĐang là sinh viên của CTTN.\n-\tHoàn tất chương tr"
+          },
+          {
+            "rank": 6,
+            "chunk_id": "chunk_0278",
+            "rrf_score": 0.257576,
+            "text": "Điều  9.        Phương thức xét tuyển\nViệc xét tuyển vào CT CLC thực hiện theo một trong hai phương thức sau đây:\n9.1.        Tuyển sinh viên năm nhất \nThực hiện theo đề án tuyển sinh hàng năm của hệ đại học chính quy. C"
+          }
+        ],
+        "subquery_results": [
+          {
+            "query": "Phương thức, chỉ tiêu và điều kiện tuyển sinh đầu vào chương trình tài năng CTTN.",
+            "target_ranks": {
+              "chunk_0258": 1,
+              "chunk_0274": 2
+            },
+            "top4": [
+              {
+                "rank": 1,
+                "chunk_id": "chunk_0258",
+                "rrf_score": 1.0,
+                "text": "Điều  8.\tPhương thức xét tuyển đầu vào\nCăn cứ vào số lượng đăng ký xét tuyển hàng năm, BĐH quyết định chỉ tiêu tuyển vào lớp tài năng và trình BGH phê duyệt.  \nViệc xét tuyển đầu vào được áp dụng 1 trong 2 phương án sau:"
+              },
+              {
+                "rank": 2,
+                "chunk_id": "chunk_0274",
+                "rrf_score": 0.533333,
+                "text": "Điều  9.\tTuyển bổ sung và loại ra khỏi chương trình, xét chính thức và dự bị\nĐối tượng tham gia CTTN là những sinh viên có năng lực xuất sắc, do đó, sau mỗi học kỳ BĐH quyết định việc loại sinh viên khỏi lớp tài năng, tu"
+              },
+              {
+                "rank": 3,
+                "chunk_id": "chunk_0243",
+                "rrf_score": 0.5,
+                "text": "Điều  7.\tQuy trình mở CTTN và chỉ tiêu tuyển \nCăn cứ vào đề án tổng thể và nguồn kinh phí được cấp, BĐH sẽ chọn các Khoa – Ngành có đủ điều kiện tối thiểu để đề nghị lập đề án mở CTTN. Khoa quản lý ngành là đơn vị chịu t"
+              },
+              {
+                "rank": 4,
+                "chunk_id": "chunk_0272",
+                "rrf_score": 0.5,
+                "text": "Điều  8. Điều kiện và phương thức tuyển sinh\n8.1 Điều kiện xét tuyển\nSinh viên trúng tuyển CTTT phải đạt các yêu cầu:\nĐảm bảo điều kiện đầu vào đối với hệ đại học chính quy theo quy định của Bộ GD&ĐT và Trường ĐHCNTT.\nHo"
+              }
+            ],
+            "timing": {
+              "embedding_s": 0.8175,
+              "qdrant_s": 2.0468,
+              "bm25_s": 0.0044,
+              "fusion_s": 0.0003,
+              "total_s": 2.8691
+            }
+          },
+          {
+            "query": "Các tiêu chuẩn xét sinh viên chính thức, dự bị và loại sinh viên khỏi chương trình tài năng sau mỗi học kỳ.",
+            "target_ranks": {
+              "chunk_0258": 3,
+              "chunk_0274": 1
+            },
+            "top4": [
+              {
+                "rank": 1,
+                "chunk_id": "chunk_0274",
+                "rrf_score": 1.0,
+                "text": "Điều  9.\tTuyển bổ sung và loại ra khỏi chương trình, xét chính thức và dự bị\nĐối tượng tham gia CTTN là những sinh viên có năng lực xuất sắc, do đó, sau mỗi học kỳ BĐH quyết định việc loại sinh viên khỏi lớp tài năng, tu"
+              },
+              {
+                "rank": 2,
+                "chunk_id": "chunk_0120",
+                "rrf_score": 0.666667,
+                "text": "Điều  2.\tGiải thích từ ngữ\nSinh viên thuộc chương trình tài năng có 02 hình thức là chính thức và dự bị, nằm trong tổng chỉ tiêu của chương trình:\n-\tSinh viên chính thức: đảm bảo đáp ứng các tiêu chuẩn theo yêu cầu và đư"
+              },
+              {
+                "rank": 3,
+                "chunk_id": "chunk_0258",
+                "rrf_score": 0.5,
+                "text": "Điều  8.\tPhương thức xét tuyển đầu vào\nCăn cứ vào số lượng đăng ký xét tuyển hàng năm, BĐH quyết định chỉ tiêu tuyển vào lớp tài năng và trình BGH phê duyệt.  \nViệc xét tuyển đầu vào được áp dụng 1 trong 2 phương án sau:"
+              },
+              {
+                "rank": 4,
+                "chunk_id": "chunk_0050",
+                "rrf_score": 0.271429,
+                "text": "Điều  12.\tTốt nghiệp Chương trình Tài năng\nSinh viên sẽ được cấp bằng \"Cử nhân/Kỹ sư Tài năng\" (Honor Program) của Trường ĐHCNTT – ĐHQG HCM nếu hội đủ các điều kiện sau:\n-\tĐang là sinh viên của CTTN.\n-\tHoàn tất chương tr"
+              }
+            ],
+            "timing": {
+              "embedding_s": 0.8104,
+              "qdrant_s": 2.0412,
+              "bm25_s": 0.002,
+              "fusion_s": 0.0002,
+              "total_s": 2.8538
+            }
+          }
+        ],
+        "timing_total_s": 5.7229
+      }
+    },
+    {
+      "id": "q07",
+      "question": "Điều kiện đăng ký làm KLTN khác gì điều kiện được bảo vệ trước hội đồng, và ai xét duyệt từng bước?",
+      "target_chunks": [
+        "chunk_0215",
+        "chunk_0045"
+      ],
+      "subqueries": [
+        "Điều kiện đăng ký, xét duyệt sinh viên được làm khóa luận tốt nghiệp KLTN và đơn vị giao đề tài.",
+        "Danh sách sinh viên đủ điều kiện bảo vệ KLTN do ai xem xét và ai ra quyết định; mỗi năm có mấy đợt bảo vệ?"
+      ],
+      "single_query": {
+        "target_ranks": {
+          "chunk_0215": 1,
+          "chunk_0045": 2
+        },
+        "coverage_at_3": 2,
+        "coverage_at_5": 2,
+        "top6": [
+          {
+            "rank": 1,
+            "chunk_id": "chunk_0215",
+            "rrf_score": 0.75,
+            "text": "Điều  5. \tXét duyệt sinh viên được làm KLTN\nSV đủ điều kiện làm KLTN là các SV đáp ứng các yêu cầu được quy định trong Quy chế đào tạo theo học chế tín chỉ của nhà trường.\nNgoài các yêu cầu chung do trường quy định, Khoa"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "chunk_0045",
+            "rrf_score": 0.7,
+            "text": "Điều  11. Tổ chức bảo vệ KLTN\n–\tHằng năm sẽ có 2 đợt bảo vệ khóa luận tốt nghiệp theo kế hoạch chung của Trường và được công bố vào đầu mỗi năm học. Khoa đề nghị thời gian tổ chức Hội đồng và gởi về phòng ĐTĐH chậm nhất "
+          },
+          {
+            "rank": 3,
+            "chunk_id": "chunk_0276",
+            "rrf_score": 0.666667,
+            "text": "Điều  9. \tHoàn thành KLTN \nSV phải bảo vệ KLTN trước hội đồng do Trường thành lập.\nđiều kiện để sinh viên được bảo vệ KLTN:\n–\tĐã hoàn thành tất cả các học phần của chương trình giáo dục theo ngành học của mình, bao gồm c"
+          },
+          {
+            "rank": 4,
+            "chunk_id": "chunk_0200",
+            "rrf_score": 0.361111,
+            "text": "Điều  4. \tXét duyệt đề tài KLTN\nKhoa chịu trách nhiệm xét duyệt đề tài KLTN. Việc xét duyệt phải đảm bảo các yêu cầu sau:\na.\tĐề tài có thể do giảng viên hay các doanh nghiệp đề xuất.\nb.\tĐề tài và đề cương nghiên cứu phải"
+          },
+          {
+            "rank": 5,
+            "chunk_id": "chunk_0022",
+            "rrf_score": 0.291667,
+            "text": "Điều  10. \tThành lập hội đồng bảo vệ KLTN\nMỗi đợt bảo vệ, ứng với mỗi ngành (hoặc có thể là liên ngành khi cần thiết) theo đề nghị của Trưởng Khoa phụ trách ngành, Hiệu Trưởng sẽ ra quyết định thành lập một hay nhiều hội"
+          },
+          {
+            "rank": 6,
+            "chunk_id": "chunk_0078",
+            "rrf_score": 0.283333,
+            "text": "Điều  14. \tChế độ lưu trữ\nToàn bộ biên bản, hồ sơ bảo vệ KLTN được Thư ký Hội đồng bàn giao cho Khoa và được các Khoa lưu trữ tối thiểu trong vòng năm năm. \nKhoa tổng hợp điểm vào danh sách các SV đã đăng ký làm KLTN (kể"
+          }
+        ],
+        "timing": {
+          "embedding_s": 0.8102,
+          "qdrant_s": 2.0792,
+          "bm25_s": 0.0033,
+          "fusion_s": 0.0004,
+          "total_s": 2.8931
+        }
+      },
+      "decomposed": {
+        "target_ranks": {
+          "chunk_0215": 1,
+          "chunk_0045": 2
+        },
+        "coverage_at_3": 2,
+        "coverage_at_5": 2,
+        "top6": [
+          {
+            "rank": 1,
+            "chunk_id": "chunk_0215",
+            "rrf_score": 0.75,
+            "text": "Điều  5. \tXét duyệt sinh viên được làm KLTN\nSV đủ điều kiện làm KLTN là các SV đáp ứng các yêu cầu được quy định trong Quy chế đào tạo theo học chế tín chỉ của nhà trường.\nNgoài các yêu cầu chung do trường quy định, Khoa"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "chunk_0045",
+            "rrf_score": 0.642857,
+            "text": "Điều  11. Tổ chức bảo vệ KLTN\n–\tHằng năm sẽ có 2 đợt bảo vệ khóa luận tốt nghiệp theo kế hoạch chung của Trường và được công bố vào đầu mỗi năm học. Khoa đề nghị thời gian tổ chức Hội đồng và gởi về phòng ĐTĐH chậm nhất "
+          },
+          {
+            "rank": 3,
+            "chunk_id": "chunk_0276",
+            "rrf_score": 0.533333,
+            "text": "Điều  9. \tHoàn thành KLTN \nSV phải bảo vệ KLTN trước hội đồng do Trường thành lập.\nđiều kiện để sinh viên được bảo vệ KLTN:\n–\tĐã hoàn thành tất cả các học phần của chương trình giáo dục theo ngành học của mình, bao gồm c"
+          },
+          {
+            "rank": 4,
+            "chunk_id": "chunk_0200",
+            "rrf_score": 0.458333,
+            "text": "Điều  4. \tXét duyệt đề tài KLTN\nKhoa chịu trách nhiệm xét duyệt đề tài KLTN. Việc xét duyệt phải đảm bảo các yêu cầu sau:\na.\tĐề tài có thể do giảng viên hay các doanh nghiệp đề xuất.\nb.\tĐề tài và đề cương nghiên cứu phải"
+          },
+          {
+            "rank": 5,
+            "chunk_id": "chunk_0190",
+            "rrf_score": 0.392857,
+            "text": "Điều  31. Thực tập, khóa luận tốt nghiệp và chuyên đề tốt nghiệp\n1.  Thực tập\n-\tHọc phần Thực tập doanh nghiệp là học phần đặc biệt trong một số chương trình đào tạo của Trường. Theo đó, sinh viên đến thực tập tại doanh "
+          },
+          {
+            "rank": 6,
+            "chunk_id": "chunk_0022",
+            "rrf_score": 0.227778,
+            "text": "Điều  10. \tThành lập hội đồng bảo vệ KLTN\nMỗi đợt bảo vệ, ứng với mỗi ngành (hoặc có thể là liên ngành khi cần thiết) theo đề nghị của Trưởng Khoa phụ trách ngành, Hiệu Trưởng sẽ ra quyết định thành lập một hay nhiều hội"
+          }
+        ],
+        "subquery_results": [
+          {
+            "query": "Điều kiện đăng ký, xét duyệt sinh viên được làm khóa luận tốt nghiệp KLTN và đơn vị giao đề tài.",
+            "target_ranks": {
+              "chunk_0215": 1,
+              "chunk_0045": 6
+            },
+            "top4": [
+              {
+                "rank": 1,
+                "chunk_id": "chunk_0215",
+                "rrf_score": 1.0,
+                "text": "Điều  5. \tXét duyệt sinh viên được làm KLTN\nSV đủ điều kiện làm KLTN là các SV đáp ứng các yêu cầu được quy định trong Quy chế đào tạo theo học chế tín chỉ của nhà trường.\nNgoài các yêu cầu chung do trường quy định, Khoa"
+              },
+              {
+                "rank": 2,
+                "chunk_id": "chunk_0200",
+                "rrf_score": 0.666667,
+                "text": "Điều  4. \tXét duyệt đề tài KLTN\nKhoa chịu trách nhiệm xét duyệt đề tài KLTN. Việc xét duyệt phải đảm bảo các yêu cầu sau:\na.\tĐề tài có thể do giảng viên hay các doanh nghiệp đề xuất.\nb.\tĐề tài và đề cương nghiên cứu phải"
+              },
+              {
+                "rank": 3,
+                "chunk_id": "chunk_0190",
+                "rrf_score": 0.45,
+                "text": "Điều  31. Thực tập, khóa luận tốt nghiệp và chuyên đề tốt nghiệp\n1.  Thực tập\n-\tHọc phần Thực tập doanh nghiệp là học phần đặc biệt trong một số chương trình đào tạo của Trường. Theo đó, sinh viên đến thực tập tại doanh "
+              },
+              {
+                "rank": 4,
+                "chunk_id": "chunk_0276",
+                "rrf_score": 0.375,
+                "text": "Điều  9. \tHoàn thành KLTN \nSV phải bảo vệ KLTN trước hội đồng do Trường thành lập.\nđiều kiện để sinh viên được bảo vệ KLTN:\n–\tĐã hoàn thành tất cả các học phần của chương trình giáo dục theo ngành học của mình, bao gồm c"
+              }
+            ],
+            "timing": {
+              "embedding_s": 0.8283,
+              "qdrant_s": 2.0959,
+              "bm25_s": 0.0038,
+              "fusion_s": 0.0004,
+              "total_s": 2.9285
+            }
+          },
+          {
+            "query": "Danh sách sinh viên đủ điều kiện bảo vệ KLTN do ai xem xét và ai ra quyết định; mỗi năm có mấy đợt bảo vệ?",
+            "target_ranks": {
+              "chunk_0215": 3,
+              "chunk_0045": 1
+            },
+            "top4": [
+              {
+                "rank": 1,
+                "chunk_id": "chunk_0045",
+                "rrf_score": 1.0,
+                "text": "Điều  11. Tổ chức bảo vệ KLTN\n–\tHằng năm sẽ có 2 đợt bảo vệ khóa luận tốt nghiệp theo kế hoạch chung của Trường và được công bố vào đầu mỗi năm học. Khoa đề nghị thời gian tổ chức Hội đồng và gởi về phòng ĐTĐH chậm nhất "
+              },
+              {
+                "rank": 2,
+                "chunk_id": "chunk_0276",
+                "rrf_score": 0.666667,
+                "text": "Điều  9. \tHoàn thành KLTN \nSV phải bảo vệ KLTN trước hội đồng do Trường thành lập.\nđiều kiện để sinh viên được bảo vệ KLTN:\n–\tĐã hoàn thành tất cả các học phần của chương trình giáo dục theo ngành học của mình, bao gồm c"
+              },
+              {
+                "rank": 3,
+                "chunk_id": "chunk_0215",
+                "rrf_score": 0.5,
+                "text": "Điều  5. \tXét duyệt sinh viên được làm KLTN\nSV đủ điều kiện làm KLTN là các SV đáp ứng các yêu cầu được quy định trong Quy chế đào tạo theo học chế tín chỉ của nhà trường.\nNgoài các yêu cầu chung do trường quy định, Khoa"
+              },
+              {
+                "rank": 4,
+                "chunk_id": "chunk_0022",
+                "rrf_score": 0.366667,
+                "text": "Điều  10. \tThành lập hội đồng bảo vệ KLTN\nMỗi đợt bảo vệ, ứng với mỗi ngành (hoặc có thể là liên ngành khi cần thiết) theo đề nghị của Trưởng Khoa phụ trách ngành, Hiệu Trưởng sẽ ra quyết định thành lập một hay nhiều hội"
+              }
+            ],
+            "timing": {
+              "embedding_s": 0.823,
+              "qdrant_s": 2.0572,
+              "bm25_s": 0.0021,
+              "fusion_s": 0.0002,
+              "total_s": 2.8826
+            }
+          }
+        ],
+        "timing_total_s": 5.8111
+      }
+    },
+    {
+      "id": "q08",
+      "question": "Hội đồng bảo vệ KLTN cần gồm những ai, rồi sau khi bảo vệ xong sinh viên phải chỉnh sửa và nộp báo cáo hoặc file gì?",
+      "target_chunks": [
+        "chunk_0022",
+        "chunk_0008"
+      ],
+      "subqueries": [
+        "Thành phần, số lượng và tiêu chuẩn chủ tịch hội đồng bảo vệ khóa luận tốt nghiệp KLTN.",
+        "Sau khi bảo vệ KLTN, sinh viên chỉnh sửa và nộp báo cáo chính thức gồm những file, thông tin nào?"
+      ],
+      "single_query": {
+        "target_ranks": {
+          "chunk_0022": 3,
+          "chunk_0008": 2
+        },
+        "coverage_at_3": 2,
+        "coverage_at_5": 2,
+        "top6": [
+          {
+            "rank": 1,
+            "chunk_id": "chunk_0087",
+            "rrf_score": 0.833333,
+            "text": "Điều  15. \tSau khi bảo vệ trước hội đồng\nSinh viên phải hoàn chỉnh báo cáo KLTN theo góp ý của CBPB và Hội đồng. Báo cáo KLTN sau khi hiệu chỉnh sẽ được in có bìa cứng mạ vàng theo mẫu quy định, có xác nhận của CBPB về v"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "chunk_0008",
+            "rrf_score": 0.625,
+            "text": "Từ Học kỳ 1 năm học 2020-2021, Trường thay đổi quy trình nộp báo cáo khóa luận tốt nghiệp (KLTN) sau khi bảo vệ trước hội đồng như sau. \nBước 1: Sinh viên upload báo cáo khóa luận tốt nghiệp\n- Sau khi hoàn tất chỉnh sửa "
+          },
+          {
+            "rank": 3,
+            "chunk_id": "chunk_0022",
+            "rrf_score": 0.583333,
+            "text": "Điều  10. \tThành lập hội đồng bảo vệ KLTN\nMỗi đợt bảo vệ, ứng với mỗi ngành (hoặc có thể là liên ngành khi cần thiết) theo đề nghị của Trưởng Khoa phụ trách ngành, Hiệu Trưởng sẽ ra quyết định thành lập một hay nhiều hội"
+          },
+          {
+            "rank": 4,
+            "chunk_id": "chunk_0045",
+            "rrf_score": 0.416667,
+            "text": "Điều  11. Tổ chức bảo vệ KLTN\n–\tHằng năm sẽ có 2 đợt bảo vệ khóa luận tốt nghiệp theo kế hoạch chung của Trường và được công bố vào đầu mỗi năm học. Khoa đề nghị thời gian tổ chức Hội đồng và gởi về phòng ĐTĐH chậm nhất "
+          },
+          {
+            "rank": 5,
+            "chunk_id": "chunk_0276",
+            "rrf_score": 0.4,
+            "text": "Điều  9. \tHoàn thành KLTN \nSV phải bảo vệ KLTN trước hội đồng do Trường thành lập.\nđiều kiện để sinh viên được bảo vệ KLTN:\n–\tĐã hoàn thành tất cả các học phần của chương trình giáo dục theo ngành học của mình, bao gồm c"
+          },
+          {
+            "rank": 6,
+            "chunk_id": "chunk_0245",
+            "rrf_score": 0.309524,
+            "text": "Điều  7. \tNộp KLTN\nKhi hết thời gian thực hiện KLTN theo quy định của Trường, SV phải báo cáo việc thực hiện KLTN và kết quả cho CBHD. CBHD cho nhận xét theo mẫu Phiếu nhận xét của Trường.\nSau khi có ý kiến đồng ý của CB"
+          }
+        ],
+        "timing": {
+          "embedding_s": 0.7886,
+          "qdrant_s": 2.053,
+          "bm25_s": 0.0056,
+          "fusion_s": 0.0007,
+          "total_s": 2.8479
+        }
+      },
+      "decomposed": {
+        "target_ranks": {
+          "chunk_0022": 1,
+          "chunk_0008": 2
+        },
+        "coverage_at_3": 2,
+        "coverage_at_5": 2,
+        "top6": [
+          {
+            "rank": 1,
+            "chunk_id": "chunk_0022",
+            "rrf_score": 0.642857,
+            "text": "Điều  10. \tThành lập hội đồng bảo vệ KLTN\nMỗi đợt bảo vệ, ứng với mỗi ngành (hoặc có thể là liên ngành khi cần thiết) theo đề nghị của Trưởng Khoa phụ trách ngành, Hiệu Trưởng sẽ ra quyết định thành lập một hay nhiều hội"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "chunk_0008",
+            "rrf_score": 0.5625,
+            "text": "Từ Học kỳ 1 năm học 2020-2021, Trường thay đổi quy trình nộp báo cáo khóa luận tốt nghiệp (KLTN) sau khi bảo vệ trước hội đồng như sau. \nBước 1: Sinh viên upload báo cáo khóa luận tốt nghiệp\n- Sau khi hoàn tất chỉnh sửa "
+          },
+          {
+            "rank": 3,
+            "chunk_id": "chunk_0045",
+            "rrf_score": 0.5,
+            "text": "Điều  11. Tổ chức bảo vệ KLTN\n–\tHằng năm sẽ có 2 đợt bảo vệ khóa luận tốt nghiệp theo kế hoạch chung của Trường và được công bố vào đầu mỗi năm học. Khoa đề nghị thời gian tổ chức Hội đồng và gởi về phòng ĐTĐH chậm nhất "
+          },
+          {
+            "rank": 4,
+            "chunk_id": "chunk_0276",
+            "rrf_score": 0.45,
+            "text": "Điều  9. \tHoàn thành KLTN \nSV phải bảo vệ KLTN trước hội đồng do Trường thành lập.\nđiều kiện để sinh viên được bảo vệ KLTN:\n–\tĐã hoàn thành tất cả các học phần của chương trình giáo dục theo ngành học của mình, bao gồm c"
+          },
+          {
+            "rank": 5,
+            "chunk_id": "chunk_0087",
+            "rrf_score": 0.410256,
+            "text": "Điều  15. \tSau khi bảo vệ trước hội đồng\nSinh viên phải hoàn chỉnh báo cáo KLTN theo góp ý của CBPB và Hội đồng. Báo cáo KLTN sau khi hiệu chỉnh sẽ được in có bìa cứng mạ vàng theo mẫu quy định, có xác nhận của CBPB về v"
+          },
+          {
+            "rank": 6,
+            "chunk_id": "chunk_0245",
+            "rrf_score": 0.302632,
+            "text": "Điều  7. \tNộp KLTN\nKhi hết thời gian thực hiện KLTN theo quy định của Trường, SV phải báo cáo việc thực hiện KLTN và kết quả cho CBHD. CBHD cho nhận xét theo mẫu Phiếu nhận xét của Trường.\nSau khi có ý kiến đồng ý của CB"
+          }
+        ],
+        "subquery_results": [
+          {
+            "query": "Thành phần, số lượng và tiêu chuẩn chủ tịch hội đồng bảo vệ khóa luận tốt nghiệp KLTN.",
+            "target_ranks": {
+              "chunk_0022": 1,
+              "chunk_0008": 15
+            },
+            "top4": [
+              {
+                "rank": 1,
+                "chunk_id": "chunk_0022",
+                "rrf_score": 0.833333,
+                "text": "Điều  10. \tThành lập hội đồng bảo vệ KLTN\nMỗi đợt bảo vệ, ứng với mỗi ngành (hoặc có thể là liên ngành khi cần thiết) theo đề nghị của Trưởng Khoa phụ trách ngành, Hiệu Trưởng sẽ ra quyết định thành lập một hay nhiều hội"
+              },
+              {
+                "rank": 2,
+                "chunk_id": "chunk_0045",
+                "rrf_score": 0.833333,
+                "text": "Điều  11. Tổ chức bảo vệ KLTN\n–\tHằng năm sẽ có 2 đợt bảo vệ khóa luận tốt nghiệp theo kế hoạch chung của Trường và được công bố vào đầu mỗi năm học. Khoa đề nghị thời gian tổ chức Hội đồng và gởi về phòng ĐTĐH chậm nhất "
+              },
+              {
+                "rank": 3,
+                "chunk_id": "chunk_0276",
+                "rrf_score": 0.45,
+                "text": "Điều  9. \tHoàn thành KLTN \nSV phải bảo vệ KLTN trước hội đồng do Trường thành lập.\nđiều kiện để sinh viên được bảo vệ KLTN:\n–\tĐã hoàn thành tất cả các học phần của chương trình giáo dục theo ngành học của mình, bao gồm c"
+              },
+              {
+                "rank": 4,
+                "chunk_id": "chunk_0192",
+                "rrf_score": 0.416667,
+                "text": "Điều  32. Chấm thực tập, khóa luận tốt nghiệp\n1. Chấm thực tập doanh nghiệp :\nTrưởng khoa tổ chức hội đồng chấm kết quả thực tập doanh nghiệP. Số thành viên của hội đồng chấm thực tập doanh nghiệp là 3 người.\nĐiểm chấm t"
+              }
+            ],
+            "timing": {
+              "embedding_s": 0.8796,
+              "qdrant_s": 2.0995,
+              "bm25_s": 0.0015,
+              "fusion_s": 0.0002,
+              "total_s": 2.9808
+            }
+          },
+          {
+            "query": "Sau khi bảo vệ KLTN, sinh viên chỉnh sửa và nộp báo cáo chính thức gồm những file, thông tin nào?",
+            "target_ranks": {
+              "chunk_0022": 6,
+              "chunk_0008": 1
+            },
+            "top4": [
+              {
+                "rank": 1,
+                "chunk_id": "chunk_0008",
+                "rrf_score": 0.833333,
+                "text": "Từ Học kỳ 1 năm học 2020-2021, Trường thay đổi quy trình nộp báo cáo khóa luận tốt nghiệp (KLTN) sau khi bảo vệ trước hội đồng như sau. \nBước 1: Sinh viên upload báo cáo khóa luận tốt nghiệp\n- Sau khi hoàn tất chỉnh sửa "
+              },
+              {
+                "rank": 2,
+                "chunk_id": "chunk_0087",
+                "rrf_score": 0.833333,
+                "text": "Điều  15. \tSau khi bảo vệ trước hội đồng\nSinh viên phải hoàn chỉnh báo cáo KLTN theo góp ý của CBPB và Hội đồng. Báo cáo KLTN sau khi hiệu chỉnh sẽ được in có bìa cứng mạ vàng theo mẫu quy định, có xác nhận của CBPB về v"
+              },
+              {
+                "rank": 3,
+                "chunk_id": "chunk_0245",
+                "rrf_score": 0.5,
+                "text": "Điều  7. \tNộp KLTN\nKhi hết thời gian thực hiện KLTN theo quy định của Trường, SV phải báo cáo việc thực hiện KLTN và kết quả cho CBHD. CBHD cho nhận xét theo mẫu Phiếu nhận xét của Trường.\nSau khi có ý kiến đồng ý của CB"
+              },
+              {
+                "rank": 4,
+                "chunk_id": "chunk_0276",
+                "rrf_score": 0.333333,
+                "text": "Điều  9. \tHoàn thành KLTN \nSV phải bảo vệ KLTN trước hội đồng do Trường thành lập.\nđiều kiện để sinh viên được bảo vệ KLTN:\n–\tĐã hoàn thành tất cả các học phần của chương trình giáo dục theo ngành học của mình, bao gồm c"
+              }
+            ],
+            "timing": {
+              "embedding_s": 0.7559,
+              "qdrant_s": 2.0753,
+              "bm25_s": 0.004,
+              "fusion_s": 0.0004,
+              "total_s": 2.8356
+            }
+          }
+        ],
+        "timing_total_s": 5.8164
+      }
+    },
+    {
+      "id": "q09",
+      "question": "Giảng viên được phân công coi thi dựa trên nghĩa vụ và định mức thế nào; đến ngày thi cán bộ coi thi cần có mặt trước bao lâu và làm những gì?",
+      "target_chunks": [
+        "chunk_0006",
+        "chunk_0059"
+      ],
+      "subqueries": [
+        "Nguyên tắc phân công cán bộ coi thi, số lượt nghĩa vụ và cách tính định mức coi thi của giảng viên.",
+        "Cán bộ coi thi cần có mặt trước giờ thi bao lâu và các trách nhiệm trong phòng thi là gì?"
+      ],
+      "single_query": {
+        "target_ranks": {
+          "chunk_0006": 1,
+          "chunk_0059": 3
+        },
+        "coverage_at_3": 2,
+        "coverage_at_5": 2,
+        "top6": [
+          {
+            "rank": 1,
+            "chunk_id": "chunk_0006",
+            "rrf_score": 0.833333,
+            "text": "IV. NGUYÊN TẮC PHÂN CÔNG CÁN BỘ COI THI\n- Cán bộ giảng dạy lý thuyết, thực hành những môn học có tổ chức thi tập trung trong đợt thi thì có trách nhiệm tham gia coi thi.\n- Tổng số lượt coi thi của GV = Số lượt coi thi th"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "chunk_0009",
+            "rrf_score": 0.75,
+            "text": "V. NỘI DUNG QUY TRÌNH\nQuy trình phân công cán bộ coi thi gồm 3 giai đoạn tương ứng với 3 quy trình thành phần: Đăng ký coi thi, Phân công cán bộ coi thi và Tổng kết coi thi. Chi tiết các quy trình như sau.\n1. Quy trình đ"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "chunk_0059",
+            "rrf_score": 0.583333,
+            "text": "Điều  12. Trách nhiệm của cán bộ coi thi\n1. CBCT phải có mặt tại địa điểm tập trung của đơn vị tổ chức thi ít nhất 15 phút trước giờ bắt đầu thi để nhận danh sách thi, giấy thi, giấy nháp, túi đề thi (yêu cầu kiểm tra kỹ"
+          },
+          {
+            "rank": 4,
+            "chunk_id": "chunk_0039",
+            "rrf_score": 0.366667,
+            "text": "Điều  11. Quy trình chuẩn bị cho kỳ thi\n1. Đầu vào, đầu ra\nĐầu vào: Thời khóa biểu của học kỳ, thông tin môn học ghi trong đề cương môn học, ĐKHP của SV.\nĐầu ra: Lịch thi, danh sách phân công CBCT, danh sách SV các phòng"
+          },
+          {
+            "rank": 5,
+            "chunk_id": "chunk_0040",
+            "rrf_score": 0.309524,
+            "text": "Điều  11. Quy trình chuẩn bị cho kỳ thi\n1. Đầu vào, đầu ra\nĐầu vào: Thời khóa biểu của học kỳ, thông tin môn học ghi trong đề cương môn học, ĐKHP của SV.\nĐầu ra: Lịch thi, danh sách phân công CBCT, danh sách SV các phòng"
+          },
+          {
+            "rank": 6,
+            "chunk_id": "chunk_0004",
+            "rrf_score": 0.258824,
+            "text": "I. MỤC ĐÍCH\nQuy trình này nhằm quy định chi tiết cách thực hiện công tác phân công cán bộ coi thi đối với các đợt thi tập trung (giữa kỳ, cuối kỳ) hệ đại học chính quy tại Trường Đại học Công nghệ Thông tin, đảm bảo sự p"
+          }
+        ],
+        "timing": {
+          "embedding_s": 0.7871,
+          "qdrant_s": 2.0694,
+          "bm25_s": 0.0079,
+          "fusion_s": 0.0009,
+          "total_s": 2.8653
+        }
+      },
+      "decomposed": {
+        "target_ranks": {
+          "chunk_0006": 2,
+          "chunk_0059": 3
+        },
+        "coverage_at_3": 2,
+        "coverage_at_5": 2,
+        "top6": [
+          {
+            "rank": 1,
+            "chunk_id": "chunk_0009",
+            "rrf_score": 0.666667,
+            "text": "V. NỘI DUNG QUY TRÌNH\nQuy trình phân công cán bộ coi thi gồm 3 giai đoạn tương ứng với 3 quy trình thành phần: Đăng ký coi thi, Phân công cán bộ coi thi và Tổng kết coi thi. Chi tiết các quy trình như sau.\n1. Quy trình đ"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "chunk_0006",
+            "rrf_score": 0.642857,
+            "text": "IV. NGUYÊN TẮC PHÂN CÔNG CÁN BỘ COI THI\n- Cán bộ giảng dạy lý thuyết, thực hành những môn học có tổ chức thi tập trung trong đợt thi thì có trách nhiệm tham gia coi thi.\n- Tổng số lượt coi thi của GV = Số lượt coi thi th"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "chunk_0059",
+            "rrf_score": 0.611111,
+            "text": "Điều  12. Trách nhiệm của cán bộ coi thi\n1. CBCT phải có mặt tại địa điểm tập trung của đơn vị tổ chức thi ít nhất 15 phút trước giờ bắt đầu thi để nhận danh sách thi, giấy thi, giấy nháp, túi đề thi (yêu cầu kiểm tra kỹ"
+          },
+          {
+            "rank": 4,
+            "chunk_id": "chunk_0039",
+            "rrf_score": 0.333333,
+            "text": "Điều  11. Quy trình chuẩn bị cho kỳ thi\n1. Đầu vào, đầu ra\nĐầu vào: Thời khóa biểu của học kỳ, thông tin môn học ghi trong đề cương môn học, ĐKHP của SV.\nĐầu ra: Lịch thi, danh sách phân công CBCT, danh sách SV các phòng"
+          },
+          {
+            "rank": 5,
+            "chunk_id": "chunk_0004",
+            "rrf_score": 0.316667,
+            "text": "I. MỤC ĐÍCH\nQuy trình này nhằm quy định chi tiết cách thực hiện công tác phân công cán bộ coi thi đối với các đợt thi tập trung (giữa kỳ, cuối kỳ) hệ đại học chính quy tại Trường Đại học Công nghệ Thông tin, đảm bảo sự p"
+          },
+          {
+            "rank": 6,
+            "chunk_id": "chunk_0269",
+            "rrf_score": 0.283333,
+            "text": "Điều  8. Ra đề thi và in đề thi\n1. Đơn vị quản lý chuyên môn của môn học (Khoa/Bộ môn/Tổ phụ trách môn học) chịu trách nhiệm cử cán bộ ra đề thi và đáp án theo thang điểm 10 kèm các điểm chi tiết. Cán bộ ra đề thi và đơn"
+          }
+        ],
+        "subquery_results": [
+          {
+            "query": "Nguyên tắc phân công cán bộ coi thi, số lượt nghĩa vụ và cách tính định mức coi thi của giảng viên.",
+            "target_ranks": {
+              "chunk_0006": 1,
+              "chunk_0059": 8
+            },
+            "top4": [
+              {
+                "rank": 1,
+                "chunk_id": "chunk_0006",
+                "rrf_score": 1.0,
+                "text": "IV. NGUYÊN TẮC PHÂN CÔNG CÁN BỘ COI THI\n- Cán bộ giảng dạy lý thuyết, thực hành những môn học có tổ chức thi tập trung trong đợt thi thì có trách nhiệm tham gia coi thi.\n- Tổng số lượt coi thi của GV = Số lượt coi thi th"
+              },
+              {
+                "rank": 2,
+                "chunk_id": "chunk_0009",
+                "rrf_score": 0.666667,
+                "text": "V. NỘI DUNG QUY TRÌNH\nQuy trình phân công cán bộ coi thi gồm 3 giai đoạn tương ứng với 3 quy trình thành phần: Đăng ký coi thi, Phân công cán bộ coi thi và Tổng kết coi thi. Chi tiết các quy trình như sau.\n1. Quy trình đ"
+              },
+              {
+                "rank": 3,
+                "chunk_id": "chunk_0004",
+                "rrf_score": 0.5,
+                "text": "I. MỤC ĐÍCH\nQuy trình này nhằm quy định chi tiết cách thực hiện công tác phân công cán bộ coi thi đối với các đợt thi tập trung (giữa kỳ, cuối kỳ) hệ đại học chính quy tại Trường Đại học Công nghệ Thông tin, đảm bảo sự p"
+              },
+              {
+                "rank": 4,
+                "chunk_id": "chunk_0251",
+                "rrf_score": 0.311111,
+                "text": "Điều  7. Phân công cán bộ coi thi (CBCT)\nThực hiện theo quyết định hiện hành về việc ban hành Quy trình phân công CBCT cho các đợt thi tập trung hệ đại học chính quy."
+              }
+            ],
+            "timing": {
+              "embedding_s": 0.7883,
+              "qdrant_s": 2.0946,
+              "bm25_s": 0.0113,
+              "fusion_s": 0.0008,
+              "total_s": 2.8949
+            }
+          },
+          {
+            "query": "Cán bộ coi thi cần có mặt trước giờ thi bao lâu và các trách nhiệm trong phòng thi là gì?",
+            "target_ranks": {
+              "chunk_0006": 6,
+              "chunk_0059": 1
+            },
+            "top4": [
+              {
+                "rank": 1,
+                "chunk_id": "chunk_0059",
+                "rrf_score": 1.0,
+                "text": "Điều  12. Trách nhiệm của cán bộ coi thi\n1. CBCT phải có mặt tại địa điểm tập trung của đơn vị tổ chức thi ít nhất 15 phút trước giờ bắt đầu thi để nhận danh sách thi, giấy thi, giấy nháp, túi đề thi (yêu cầu kiểm tra kỹ"
+              },
+              {
+                "rank": 2,
+                "chunk_id": "chunk_0009",
+                "rrf_score": 0.583333,
+                "text": "V. NỘI DUNG QUY TRÌNH\nQuy trình phân công cán bộ coi thi gồm 3 giai đoạn tương ứng với 3 quy trình thành phần: Đăng ký coi thi, Phân công cán bộ coi thi và Tổng kết coi thi. Chi tiết các quy trình như sau.\n1. Quy trình đ"
+              },
+              {
+                "rank": 3,
+                "chunk_id": "chunk_0072",
+                "rrf_score": 0.458333,
+                "text": "Điều  13. Trách nhiệm của sinh viên dự thi\n1. SV phải có mặt tại phòng thi trước 15 phút theo thời gian ghi trong lịch thi do P.ĐTĐH công bố. SV đến chậm quá 15 phút sau khi đã bóc đề thi thì không được dự thi.\n2. Khi và"
+              },
+              {
+                "rank": 4,
+                "chunk_id": "chunk_0269",
+                "rrf_score": 0.392857,
+                "text": "Điều  8. Ra đề thi và in đề thi\n1. Đơn vị quản lý chuyên môn của môn học (Khoa/Bộ môn/Tổ phụ trách môn học) chịu trách nhiệm cử cán bộ ra đề thi và đáp án theo thang điểm 10 kèm các điểm chi tiết. Cán bộ ra đề thi và đơn"
+              }
+            ],
+            "timing": {
+              "embedding_s": 0.8997,
+              "qdrant_s": 2.1015,
+              "bm25_s": 0.0039,
+              "fusion_s": 0.0005,
+              "total_s": 3.0056
+            }
+          }
+        ],
+        "timing_total_s": 5.9005
+      }
+    },
+    {
+      "id": "q10",
+      "question": "Học phí học mới, học lại hoặc cải thiện và học phí gia hạn khác nhau thế nào; cách tính mỗi loại ra sao?",
+      "target_chunks": [
+        "chunk_0027",
+        "chunk_0080",
+        "chunk_0007"
+      ],
+      "subqueries": [
+        "Công thức tính học phí theo tín chỉ học mới, học lại và học cải thiện; khi nào công bố đơn giá.",
+        "Ai quy định đơn giá tín chỉ học lại, học cải thiện và học phí gia hạn?",
+        "Sinh viên quá thời gian thiết kế chương trình phải đóng học phí gia hạn theo hệ số từng học kỳ thế nào?"
+      ],
+      "single_query": {
+        "target_ranks": {
+          "chunk_0027": 1,
+          "chunk_0080": 2,
+          "chunk_0007": 5
+        },
+        "coverage_at_3": 2,
+        "coverage_at_5": 3,
+        "top6": [
+          {
+            "rank": 1,
+            "chunk_id": "chunk_0027",
+            "rrf_score": 0.833333,
+            "text": "Điều  10. Nguyên tắc xác định học phí\nHọc phí được thu theo từng học kỳ và được tính theo công thức sau:\nHọc phí = HPTCHM × TCHPHM + HPTCHL × TCHPHL + HPTCCT × TCHPCT\nTrong đó: \n-\tHPTCHM: mức học phí cho loại tín chỉ học"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "chunk_0080",
+            "rrf_score": 0.833333,
+            "text": "Điều  14. Học phí\nHọc phí khóa học được công bố vào đầu khóa và không thay đổi trong toàn khóa học. Học phí này không bao gồm học phí học lại, học cải thiện và học phí gia hạn.\nĐơn giá tín chỉ học lại, học cải thiện và h"
+          },
+          {
+            "rank": 3,
+            "chunk_id": "chunk_0208",
+            "rrf_score": 0.416667,
+            "text": "Điều  4. Tín chỉ học tập – Tín chỉ học phí\n1. Tín chỉ học tập:\n-        Tín chỉ học tập: là đơn vị dùng để xác định thời gian, khối lượng học tập của sinh viên và khối lượng giảng dạy của giảng viên, đồng thời là đơn vị "
+          },
+          {
+            "rank": 4,
+            "chunk_id": "chunk_0102",
+            "rrf_score": 0.325,
+            "text": "Điều  16. Đăng ký học tập, học lại và học cải thiện\n1. \tSinh viên được phép đăng ký học những môn học được Trường mở lớp trong học kỳ.\n2. \tHọc lại: Sinh viên phải đăng ký học lại các môn học chưa đạt (có điểm tổng kết mô"
+          },
+          {
+            "rank": 5,
+            "chunk_id": "chunk_0007",
+            "rrf_score": 0.3125,
+            "text": "Thông báo\nThời điểm và mức thu học phí gia hạn đối với sinh viên hệ đại học chính quy\nCăn cứ quyết định số 546/QĐ-ĐHCNTT, ngày 30/08/2019 của Hiệu trưởng Trường Đại học Công nghệ Thông tin (ĐHCNTT) về việc ban hành quy c"
+          },
+          {
+            "rank": 6,
+            "chunk_id": "chunk_0085",
+            "rrf_score": 0.3,
+            "text": "Điều  14. Đăng ký học tập\nSinh viên được đăng ký học và thi các môn học trong chương trình đào tạo do bất kỳ một CSĐT nào thuộc ĐHQG-HCM hoặc hệ thống các trường thành viên của ASEAN University Network tổ chức giảng dạy."
+          }
+        ],
+        "timing": {
+          "embedding_s": 0.9118,
+          "qdrant_s": 2.1098,
+          "bm25_s": 0.0054,
+          "fusion_s": 0.0005,
+          "total_s": 3.0275
+        }
+      },
+      "decomposed": {
+        "target_ranks": {
+          "chunk_0027": 3,
+          "chunk_0080": 1,
+          "chunk_0007": 4
+        },
+        "coverage_at_3": 2,
+        "coverage_at_5": 3,
+        "top6": [
+          {
+            "rank": 1,
+            "chunk_id": "chunk_0080",
+            "rrf_score": 0.958333,
+            "text": "Điều  14. Học phí\nHọc phí khóa học được công bố vào đầu khóa và không thay đổi trong toàn khóa học. Học phí này không bao gồm học phí học lại, học cải thiện và học phí gia hạn.\nĐơn giá tín chỉ học lại, học cải thiện và h"
+          },
+          {
+            "rank": 2,
+            "chunk_id": "chunk_0208",
+            "rrf_score": 0.916667,
+            "text": "Điều  4. Tín chỉ học tập – Tín chỉ học phí\n1. Tín chỉ học tập:\n-        Tín chỉ học tập: là đơn vị dùng để xác định thời gian, khối lượng học tập của sinh viên và khối lượng giảng dạy của giảng viên, đồng thời là đơn vị "
+          },
+          {
+            "rank": 3,
+            "chunk_id": "chunk_0027",
+            "rrf_score": 0.826923,
+            "text": "Điều  10. Nguyên tắc xác định học phí\nHọc phí được thu theo từng học kỳ và được tính theo công thức sau:\nHọc phí = HPTCHM × TCHPHM + HPTCHL × TCHPHL + HPTCCT × TCHPCT\nTrong đó: \n-\tHPTCHM: mức học phí cho loại tín chỉ học"
+          },
+          {
+            "rank": 4,
+            "chunk_id": "chunk_0007",
+            "rrf_score": 0.783333,
+            "text": "Thông báo\nThời điểm và mức thu học phí gia hạn đối với sinh viên hệ đại học chính quy\nCăn cứ quyết định số 546/QĐ-ĐHCNTT, ngày 30/08/2019 của Hiệu trưởng Trường Đại học Công nghệ Thông tin (ĐHCNTT) về việc ban hành quy c"
+          },
+          {
+            "rank": 5,
+            "chunk_id": "chunk_0085",
+            "rrf_score": 0.616667,
+            "text": "Điều  14. Đăng ký học tập\nSinh viên được đăng ký học và thi các môn học trong chương trình đào tạo do bất kỳ một CSĐT nào thuộc ĐHQG-HCM hoặc hệ thống các trường thành viên của ASEAN University Network tổ chức giảng dạy."
+          },
+          {
+            "rank": 6,
+            "chunk_id": "chunk_0205",
+            "rrf_score": 0.434524,
+            "text": "Điều  4. Quy định về học phí                                         \n- Trường hợp lớp ngoài giờ hành chính mở chung cho các chương trình đào tạo: \n+ Áp dụng một mức đơn giá học phí/tín chỉ;\n+ Đơn giá học phí/tín chỉ đượ"
+          }
+        ],
+        "subquery_results": [
+          {
+            "query": "Công thức tính học phí theo tín chỉ học mới, học lại và học cải thiện; khi nào công bố đơn giá.",
+            "target_ranks": {
+              "chunk_0027": 1,
+              "chunk_0080": 2,
+              "chunk_0007": 11
+            },
+            "top4": [
+              {
+                "rank": 1,
+                "chunk_id": "chunk_0027",
+                "rrf_score": 1.0,
+                "text": "Điều  10. Nguyên tắc xác định học phí\nHọc phí được thu theo từng học kỳ và được tính theo công thức sau:\nHọc phí = HPTCHM × TCHPHM + HPTCHL × TCHPHL + HPTCCT × TCHPCT\nTrong đó: \n-\tHPTCHM: mức học phí cho loại tín chỉ học"
+              },
+              {
+                "rank": 2,
+                "chunk_id": "chunk_0080",
+                "rrf_score": 0.666667,
+                "text": "Điều  14. Học phí\nHọc phí khóa học được công bố vào đầu khóa và không thay đổi trong toàn khóa học. Học phí này không bao gồm học phí học lại, học cải thiện và học phí gia hạn.\nĐơn giá tín chỉ học lại, học cải thiện và h"
+              },
+              {
+                "rank": 3,
+                "chunk_id": "chunk_0208",
+                "rrf_score": 0.45,
+                "text": "Điều  4. Tín chỉ học tập – Tín chỉ học phí\n1. Tín chỉ học tập:\n-        Tín chỉ học tập: là đơn vị dùng để xác định thời gian, khối lượng học tập của sinh viên và khối lượng giảng dạy của giảng viên, đồng thời là đơn vị "
+              },
+              {
+                "rank": 4,
+                "chunk_id": "chunk_0085",
+                "rrf_score": 0.361111,
+                "text": "Điều  14. Đăng ký học tập\nSinh viên được đăng ký học và thi các môn học trong chương trình đào tạo do bất kỳ một CSĐT nào thuộc ĐHQG-HCM hoặc hệ thống các trường thành viên của ASEAN University Network tổ chức giảng dạy."
+              }
+            ],
+            "timing": {
+              "embedding_s": 0.8525,
+              "qdrant_s": 2.0568,
+              "bm25_s": 0.0018,
+              "fusion_s": 0.0005,
+              "total_s": 2.9116
+            }
+          },
+          {
+            "query": "Ai quy định đơn giá tín chỉ học lại, học cải thiện và học phí gia hạn?",
+            "target_ranks": {
+              "chunk_0027": 3,
+              "chunk_0080": 1,
+              "chunk_0007": 4
+            },
+            "top4": [
+              {
+                "rank": 1,
+                "chunk_id": "chunk_0080",
+                "rrf_score": 1.0,
+                "text": "Điều  14. Học phí\nHọc phí khóa học được công bố vào đầu khóa và không thay đổi trong toàn khóa học. Học phí này không bao gồm học phí học lại, học cải thiện và học phí gia hạn.\nĐơn giá tín chỉ học lại, học cải thiện và h"
+              },
+              {
+                "rank": 2,
+                "chunk_id": "chunk_0208",
+                "rrf_score": 0.533333,
+                "text": "Điều  4. Tín chỉ học tập – Tín chỉ học phí\n1. Tín chỉ học tập:\n-        Tín chỉ học tập: là đơn vị dùng để xác định thời gian, khối lượng học tập của sinh viên và khối lượng giảng dạy của giảng viên, đồng thời là đơn vị "
+              },
+              {
+                "rank": 3,
+                "chunk_id": "chunk_0027",
+                "rrf_score": 0.5,
+                "text": "Điều  10. Nguyên tắc xác định học phí\nHọc phí được thu theo từng học kỳ và được tính theo công thức sau:\nHọc phí = HPTCHM × TCHPHM + HPTCHL × TCHPHL + HPTCCT × TCHPCT\nTrong đó: \n-\tHPTCHM: mức học phí cho loại tín chỉ học"
+              },
+              {
+                "rank": 4,
+                "chunk_id": "chunk_0007",
+                "rrf_score": 0.416667,
+                "text": "Thông báo\nThời điểm và mức thu học phí gia hạn đối với sinh viên hệ đại học chính quy\nCăn cứ quyết định số 546/QĐ-ĐHCNTT, ngày 30/08/2019 của Hiệu trưởng Trường Đại học Công nghệ Thông tin (ĐHCNTT) về việc ban hành quy c"
+              }
+            ],
+            "timing": {
+              "embedding_s": 0.8186,
+              "qdrant_s": 2.0735,
+              "bm25_s": 0.0032,
+              "fusion_s": 0.0004,
+              "total_s": 2.8958
+            }
+          },
+          {
+            "query": "Sinh viên quá thời gian thiết kế chương trình phải đóng học phí gia hạn theo hệ số từng học kỳ thế nào?",
+            "target_ranks": {
+              "chunk_0027": 12,
+              "chunk_0080": 7,
+              "chunk_0007": 1
+            },
+            "top4": [
+              {
+                "rank": 1,
+                "chunk_id": "chunk_0007",
+                "rrf_score": 0.833333,
+                "text": "Thông báo\nThời điểm và mức thu học phí gia hạn đối với sinh viên hệ đại học chính quy\nCăn cứ quyết định số 546/QĐ-ĐHCNTT, ngày 30/08/2019 của Hiệu trưởng Trường Đại học Công nghệ Thông tin (ĐHCNTT) về việc ban hành quy c"
+              },
+              {
+                "rank": 2,
+                "chunk_id": "chunk_0208",
+                "rrf_score": 0.833333,
+                "text": "Điều  4. Tín chỉ học tập – Tín chỉ học phí\n1. Tín chỉ học tập:\n-        Tín chỉ học tập: là đơn vị dùng để xác định thời gian, khối lượng học tập của sinh viên và khối lượng giảng dạy của giảng viên, đồng thời là đơn vị "
+              },
+              {
+                "rank": 3,
+                "chunk_id": "chunk_0085",
+                "rrf_score": 0.308824,
+                "text": "Điều  14. Đăng ký học tập\nSinh viên được đăng ký học và thi các môn học trong chương trình đào tạo do bất kỳ một CSĐT nào thuộc ĐHQG-HCM hoặc hệ thống các trường thành viên của ASEAN University Network tổ chức giảng dạy."
+              },
+              {
+                "rank": 4,
+                "chunk_id": "chunk_0185",
+                "rrf_score": 0.290909,
+                "text": "Điều  3. Quy định về tổ chức đào tạo \n1) Đăng ký học phần\n- Các đối tượng được đăng ký học các lớp học phần mở theo quy định này: \na) Sinh viên chính quy đã quá hạn theo thiết kế chương trình đào tạo;  \nb) Sinh viên chín"
+              }
+            ],
+            "timing": {
+              "embedding_s": 0.7964,
+              "qdrant_s": 2.058,
+              "bm25_s": 0.0029,
+              "fusion_s": 0.0002,
+              "total_s": 2.8575
+            }
+          }
+        ],
+        "timing_total_s": 8.6649
+      }
+    }
+  ]
+}

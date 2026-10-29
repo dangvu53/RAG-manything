@@ -1,0 +1,209 @@
+{
+  "created_at": "2026-10-28T08:14:36.793756+00:00",
+  "evaluator_base_url": "https://openrouter.ai/api/v1",
+  "evaluator_model": "openai/gpt-4o-mini",
+  "embedding_model": "openai/text-embedding-3-small",
+  "row_count": 30,
+  "averages": {
+    "faithfulness": 0.848015873015873,
+    "answer_relevancy": 0.4157562083162126,
+    "factual_correctness(mode=f1)": 0.49933333333333335,
+    "semantic_similarity": 0.747975198334256
+  },
+  "missing_score_counts": {
+    "faithfulness": 0,
+    "answer_relevancy": 0,
+    "factual_correctness(mode=f1)": 0,
+    "semantic_similarity": 0
+  },
+  "latency_ms": {
+    "count": 30,
+    "mean": 7849.63,
+    "p50": 7588.585,
+    "p95": 16154.874999999993,
+    "min": 1150.0,
+    "max": 24258.34
+  },
+  "scores": [
+    {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.4010766475569168,
+      "factual_correctness(mode=f1)": 0.5,
+      "semantic_similarity": 0.74718403155691
+    },
+    {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.4318145177665739,
+      "factual_correctness(mode=f1)": 0.67,
+      "semantic_similarity": 0.8404265989189734
+    },
+    {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.306475688064217,
+      "factual_correctness(mode=f1)": 0.67,
+      "semantic_similarity": 0.9475286006353936
+    },
+    {
+      "faithfulness": 0.8333333333333334,
+      "answer_relevancy": 0.0,
+      "factual_correctness(mode=f1)": 0.22,
+      "semantic_similarity": 0.7227793816845437
+    },
+    {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.4578452351131935,
+      "factual_correctness(mode=f1)": 0.67,
+      "semantic_similarity": 0.7148380534162617
+    },
+    {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.27773280462579064,
+      "factual_correctness(mode=f1)": 0.18,
+      "semantic_similarity": 0.6374199054703549
+    },
+    {
+      "faithfulness": 0.8571428571428571,
+      "answer_relevancy": 0.0,
+      "factual_correctness(mode=f1)": 0.29,
+      "semantic_similarity": 0.7804452610000928
+    },
+    {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.3867003007529662,
+      "factual_correctness(mode=f1)": 0.4,
+      "semantic_similarity": 0.722108656719392
+    },
+    {
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "factual_correctness(mode=f1)": 0.0,
+      "semantic_similarity": 0.3404702075201207
+    },
+    {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.4543585695301781,
+      "factual_correctness(mode=f1)": 0.0,
+      "semantic_similarity": 0.8764087066228261
+    },
+    {
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.5613244365096942,
+      "factual_correctness(mode=f1)": 0.4,
+      "semantic_similarity": 0.7235642445347696
+    },
+    {
+      "faithfulness": 0.6666666666666666,
+      "answer_relevancy": 0.5148703823787245,
+      "factual_correctness(mode=f1)": 0.0,
+      "semantic_similarity": 0.4970003142004531
+    },
+    {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.5187798120245061,
+      "factual_correctness(mode=f1)": 1.0,
+      "semantic_similarity": 0.926454570111602
+    },
+    {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.6798891161485607,
+      "factual_correctness(mode=f1)": 0.0,
+      "semantic_similarity": 0.6983671735587254
+    },
+    {
+      "faithfulness": 0.6666666666666666,
+      "answer_relevancy": 0.6051112890748125,
+      "factual_correctness(mode=f1)": 0.8,
+      "semantic_similarity": 0.812255765132362
+    },
+    {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.3791259121115389,
+      "factual_correctness(mode=f1)": 0.67,
+      "semantic_similarity": 0.7288387544077182
+    },
+    {
+      "faithfulness": 0.75,
+      "answer_relevancy": 0.7925655000416645,
+      "factual_correctness(mode=f1)": 0.17,
+      "semantic_similarity": 0.6220261075773594
+    },
+    {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "factual_correctness(mode=f1)": 0.67,
+      "semantic_similarity": 0.7767426092179425
+    },
+    {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.45094657480571354,
+      "factual_correctness(mode=f1)": 0.89,
+      "semantic_similarity": 0.7712853169325239
+    },
+    {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.4281304365205795,
+      "factual_correctness(mode=f1)": 1.0,
+      "semantic_similarity": 0.6956245525291503
+    },
+    {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.42973904527438017,
+      "factual_correctness(mode=f1)": 0.57,
+      "semantic_similarity": 0.7292236118038333
+    },
+    {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.5887954217219304,
+      "factual_correctness(mode=f1)": 0.0,
+      "semantic_similarity": 0.7343689305792874
+    },
+    {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.8404583647729846,
+      "factual_correctness(mode=f1)": 0.67,
+      "semantic_similarity": 0.8787464217591288
+    },
+    {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.23053808620288266,
+      "factual_correctness(mode=f1)": 0.33,
+      "semantic_similarity": 0.7363752346956149
+    },
+    {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.39246225667760765,
+      "factual_correctness(mode=f1)": 1.0,
+      "semantic_similarity": 0.8430084635911539
+    },
+    {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.4113460314667487,
+      "factual_correctness(mode=f1)": 0.0,
+      "semantic_similarity": 0.6808938783623115
+    },
+    {
+      "faithfulness": 0.6666666666666666,
+      "answer_relevancy": 0.4122514631843814,
+      "factual_correctness(mode=f1)": 0.5,
+      "semantic_similarity": 0.7573102745417186
+    },
+    {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.4239136018731298,
+      "factual_correctness(mode=f1)": 0.8,
+      "semantic_similarity": 0.8768806003526046
+    },
+    {
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.4667217422905095,
+      "factual_correctness(mode=f1)": 0.91,
+      "semantic_similarity": 0.8072913017120341
+    },
+    {
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.6297130129961931,
+      "factual_correctness(mode=f1)": 1.0,
+      "semantic_similarity": 0.8133884208825153
+    }
+  ]
+}

@@ -11,6 +11,7 @@ def settings():
         qwen_api_token="test-token", openai_api_key="test-openai",
         openai_input_guardrail_model="test-input-guardrail",
         openai_output_guardrail_model="test-output-guardrail",
+        input_guardrail_enabled=True, output_guardrail_enabled=True,
         langsmith_tracing=False,
     )
 

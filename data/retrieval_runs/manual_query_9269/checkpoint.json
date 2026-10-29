@@ -1,0 +1,81 @@
+[
+  {
+    "query_number": 1,
+    "source_index": "9269",
+    "split": "train",
+    "question": "Nếu các thành viên muốn xem xét, trao đổi thêm về đề tài thì có khả năng không?",
+    "reference_extractive_answer": "Chủ tịch Hội đồng có thể họp các thành viên để xem xét, trao đổi thêm về kết quả bảo vệ",
+    "reference_abstractive_answer": "Chủ tịch Hội đồng có thể họp các thành viên để xem xét, trao đổi thêm về kết quả bảo vệ.",
+    "status": "ok",
+    "hits": [
+      {
+        "point_id": 45,
+        "chunk_id": "chunk_0045",
+        "payload": {
+          "text": "Điều  11. Tổ chức bảo vệ KLTN\n–\tHằng năm sẽ có 2 đợt bảo vệ khóa luận tốt nghiệp theo kế hoạch chung của Trường và được công bố vào đầu mỗi năm học. Khoa đề nghị thời gian tổ chức Hội đồng và gởi về phòng ĐTĐH chậm nhất 7 ngày sau thời hạn thực hiện KLTN đã hết.\n–\tDanh sách sinh viên đủ điều kiện bảo vệ KLTN trước Hội đồng do P. ĐTĐH xem xét, đề nghị và Hiệu trưởng ra quyết định.\n–\tCác thành viên Hội đồng phải có mặt đầy đủ khi Hội đồng họp đánh giá các KLTN.\n–\tBuổi bảo vệ KLTN do chủ tịch Hội đồng chủ trì. Việc bảo vệ phải được hoãn lại khi có nhiều hơn 1 thành viên hội đồng vắng mặt. Trong trường hợp có một thành viên Hội đồng vắng mặt đột xuất, nhưng không phải chủ tịch hoặc thư ký thì chủ tịch Hội đồng quyết định việc tiếp tục hay hoãn buổi bảo vệ căn cứ vào lĩnh vực chuyên môn của đề tài và tình hình thực tế có phù hợp để Hội đồng tiếp tục làm việc hay không.\n–\tCBHD và CBPB nếu không phải là thành viên Hội đồng phải gửi bản nhận xét bằng văn bản có chữ ký kèm ý kiến đánh giá xếp loại và điểm cụ thể dành cho KLTN cho thư ký Hội đồng trước khi Hội đồng bắt đầu làm việc.\n–\tQui trình tổ chức bảo vệ KLTN gồm những bước cơ bản sau:\n\tThư ký đọc quyết định thành lập hội đồng, danh sách sinh viên và tên đề tài, tên CBHD và CBPB.\n\tChủ tịch hội đồng phát biểu, xác định các quy định làm việc thống nhất cho toàn hội đồng.\n\tThư ký ghi biên bản đầy đủ họ tên các sinh viên tham gia thực hiện đề tài, nội dung trao đổi, thảo luận trong buổi bảo vệ.\n\tSinh viên trình bày đề tài không quá 15 phút.\n\tCBPB (hoặc thư ký) đọc nhận xét đề tài\n\tSinh viên trả lời các câu hỏi của CBPB và hội đồng.\n\tCBHD (hoặc thư ký) đọc nhận xét đề tài \n\tHội đồng đánh giá theo điểm cho từng SV trên phiếu chấm theo mẫu của Trường.\n\tThư ký tập hợp phiếu nhận xét của CBHD, CBPB và phiếu chấm của các thành viên Hội đồng để tính điểm trung bình của đề tài.\n\tChủ tịch Hội đồng có thể họp các thành viên để xem xét, trao đổi thêm về kết quả bảo vệ. Kết quả chính thức phải được công bố trước khi Hội đồng tuyên bố kết thúc buổi bảo vệ.",
+          "chunk_id": "chunk_0045",
+          "source_index": "9220"
+        },
+        "dense_rank": 1,
+        "dense_score": 0.43810427,
+        "bm25_rank": 1,
+        "bm25_score": 24.30621009811097,
+        "rrf_score": 1.0,
+        "rank": 1
+      },
+      {
+        "point_id": 200,
+        "chunk_id": "chunk_0200",
+        "payload": {
+          "text": "Điều  4. \tXét duyệt đề tài KLTN\nKhoa chịu trách nhiệm xét duyệt đề tài KLTN. Việc xét duyệt phải đảm bảo các yêu cầu sau:\na.\tĐề tài có thể do giảng viên hay các doanh nghiệp đề xuất.\nb.\tĐề tài và đề cương nghiên cứu phải đảm bảo:\n- \tTính khoa học, tính thực tiễn của đề tài;\n- \tTính khả thi của đề tài (điều kiện thực hiện, thời gian, khối lượng…);\n- \tĐề tài phù hợp với mục tiêu đào tạo và chuẩn đầu ra của ngành đào tạo tương ứng;\nc.\tCác đề tài đã qua xét duyệt phải được công bố để sinh viên đăng ký. \nd.\tMỗi đề tài KLTN được giao cho từ 1 đến 2 SV thực hiện với sự phân công trách nhiệm cụ thể cho từng SV có ghi rõ trong đề cương nghiên cứu.\ne.\tMỗi đề tài KLTN phải do tối thiểu 1 CBHD có học vị từ thạc sĩ trở lên hướng dẫn, nếu đề tài do doanh nghiệp đề xuất thì có thể có thêm 1 đại diện của doanh nghiệp đồng hướng dẫn.\nf.\tCBHD đề tài không được là người có quan hệ ruột thịt với SV thực hiện (cha, mẹ, vợ, chồng, anh, chị, em ruột).\ng.\tCBHD được hướng dẫn tối đa 5 đề tài hoặc10 SV trong mỗi đợt giao đề tài KLTN.\nh.\tĐối với các đề tài có sử dụng dữ liệu hoặc tư liệu của doanh nghiệp, CBHD có trách nhiệm kiểm tra việc thực hiện các qui định về tác quyền của đơn vị cung cấp dữ liệu hoặc tư liệu liên quan.",
+          "chunk_id": "chunk_0200",
+          "source_index": "9415"
+        },
+        "dense_rank": 2,
+        "dense_score": 0.41565007,
+        "bm25_rank": 5,
+        "bm25_score": 18.372251278508205,
+        "rrf_score": 0.5,
+        "rank": 2
+      },
+      {
+        "point_id": 51,
+        "chunk_id": "chunk_0051",
+        "payload": {
+          "text": "Điều  12. \tĐánh giá kết quả KLTN\n–\tViệc đánh giá KLTN căn cứ vào các yếu tố cơ bản sau:\n\tBáo cáo KLTN có đáp ứng các qui định của Trường và Khoa hay không; cần nêu rõ ưu, khuyết điểm.\n\tNhận xét về tính mới, tính khoa học, tính sáng tạo, tính thực tiễn của đề tài, nội dung, phương pháp nghiên cứu đề tài.\n\tKhả năng, bản lĩnh xử lý và giải quyết vấn đề của sinh viên. Triển vọng của kết quả nghiên cứu\n–\tĐiểm chấm KLTN cho theo thang điểm 10 (lẻ đến 0,5) của mỗi thành viên hội đồng, CBHD và CBPB. Điểm tổng kết là trung bình cộng (làm tròn đến 0,1) của:\n\tĐiểm hệ số 1 của tất cả thành viên Hội đồngcó mặt trong buổi bảo vệ (ngoại trừ CBHD và CBPB nếu CBHD và CBPB có trong Hội đồng).\n\tĐiểm hệ số 2 của CBHD và CBPB.\n\tVí dụ: (với số thành viên Hội đồng là 3)\n•\tTrường hợp CBHD và CBPB đều không có trong Hội đồng\nĐiểm KLTN = (TV1+TV2+TV3+CBHD*2+CBPB*2)/7\n•\tTrường hợp CBHD hoặc CBPB có trong Hội đồng\nĐiểm KLTN = (TV1+TV2+CBHD*2+CBPB*2)/6\n•\tTrường hợp CBHD và CBPB đều có trong Hội đồng\nĐiểm KLTN = (TV+CBHD*2+CBPB*2)/5\n–\tNếu điểm của thành viên Hội đồng hoặc CBHD hoặc CBPB sai biệt từ 2 điểm trở lên so với điểm tổng kết thì Hội đồng phải họp thảo luận để thống nhất, nếu kết quả vẫn không thay đổi thì Hội đồng không công nhận điểm của thành viên hoặc CBHD hoặc CBPB đó. Điểm không công nhận sẽ không được tính vào điểm tổng kết của KLTN.",
+          "chunk_id": "chunk_0051",
+          "source_index": "9281"
+        },
+        "dense_rank": 10,
+        "dense_score": 0.37452376,
+        "bm25_rank": 2,
+        "bm25_score": 20.803864745571218,
+        "rrf_score": 0.4242424242424242,
+        "rank": 3
+      }
+    ],
+    "answer_result": {
+      "answer": "Theo Điều 11, buổi bảo vệ KLTN do Chủ tịch Hội đồng chủ trì. Việc bảo vệ phải được hoãn lại khi có nhiều hơn 1 thành viên hội đồng vắng mặt. Trong trường hợp có một thành viên Hội đồng vắng mặt đột xuất, nhưng không phải chủ tịch hoặc thư ký thì chủ tịch Hội đồng quyết định việc tiếp tục hay hoãn buổi bảo vệ căn cứ vào lĩnh vực chuyên môn của đề tài và tình hình thực tế có phù hợp để Hội đồng tiếp tục làm việc hay không [chunk_0045]. Do đó, nếu các thành viên muốn xem xét, trao đổi thêm về đề tài thì có khả năng không, tùy thuộc vào quyết định của Chủ tịch Hội đồng dựa trên các yếu tố đã nêu.",
+      "citations": [
+        {
+          "chunk_id": "chunk_0045",
+          "source": null
+        }
+      ],
+      "status": "answered",
+      "reason": null,
+      "prompt_version": "answer-v1",
+      "model": "Qwen/Qwen3-4B",
+      "rewritten_question": "Nếu các thành viên muốn xem xét, trao đổi thêm về đề tài thì có khả năng không?",
+      "latency_ms": 15927.56
+    },
+    "timings_s": {
+      "query_embedding_api": 1.5882,
+      "qdrant_dense_search": 2.1401,
+      "bm25_search": 0.0019,
+      "rrf_fusion": 0.0002,
+      "prompt_and_answer": 15.9276,
+      "end_to_end": 19.6607
+    }
+  }
+]

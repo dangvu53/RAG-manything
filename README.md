@@ -384,6 +384,13 @@ Each run creates a timestamped directory under `data/retrieval_runs/` containing
 `checkpoint.json`, `per_query.json`, and `summary.json`. Both result files are
 formatted JSON arrays for direct inspection in an editor.
 
+Use `--query-index 9269` to run one benchmark row or `--question "..."` for a
+free-form question. `--enable-input-guardrail` checks and may rewrite the
+question before retrieval; `--enable-output-guardrail` checks the generated
+answer. The two flags are independent. The runner records the original and
+retrieval questions, blocked/answered counts, and per-stage timings. The
+guardrail flags can be used without editing `.env`.
+
 ## Guardrail và citation
 
 - GPT-4o mini trả structured output gồm **allowed**, **reason** và **rewritten_question**.

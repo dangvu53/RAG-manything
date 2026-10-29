@@ -1,0 +1,20 @@
+& "D:\AI Engineer Fresher - TPBank\.venv\Scripts\python.exe" `
+  .\scripts\run_qwen_rag_batch.py `
+  --query-index 9269 `
+  --limit 1 `
+  --top-k 1 `
+  --dense-candidates 100 `
+  --bm25-candidates 100 `
+  --rrf-k 2 `
+  --run-name manual_query_9269
+
+
+
+
+& "D:\AI Engineer Fresher - TPBank\.venv\Scripts\python.exe" `
+  .\scripts\run_qwen_rag_batch.py `
+  --question "Ai là người quyết định học phí cho mỗi tín chỉ khi mình học lại hoặc học cải thiện vậy?" `
+  --top-k 3 `
+  --dense-candidates 100 `
+  --bm25-candidates 100 `
+  --rrf-k 2

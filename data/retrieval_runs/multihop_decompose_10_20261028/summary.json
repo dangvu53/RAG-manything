@@ -1,0 +1,19 @@
+{
+  "query_count": 10,
+  "corpus_chunks": 297,
+  "dense_candidates": 100,
+  "bm25_candidates": 100,
+  "per_query_rrf_k": 2,
+  "cross_query_fusion": "RRF k=2 over each subquery hybrid ranking",
+  "final_k_checked": [
+    3,
+    5
+  ],
+  "mean_evidence_coverage_at_3_single": 0.8667,
+  "mean_evidence_coverage_at_3_decomposed": 0.9667,
+  "complete_evidence_cases_at_3_single": 7,
+  "complete_evidence_cases_at_3_decomposed": 9,
+  "mean_retrieval_time_s_single": 2.9109,
+  "mean_retrieval_time_s_decomposed": 6.1251,
+  "answer_generation_run": false
+}

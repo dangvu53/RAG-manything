@@ -31,11 +31,12 @@ class EvaluationSettings(BaseSettings):
     openai_base_url: str = "https://api.openai.com/v1"
     openai_eval_model: str = Field(min_length=1)
     openai_embedding_model: str = "text-embedding-3-small"
-    openai_timeout_seconds: float = Field(default=30, gt=0)
+    openai_timeout_seconds: float = Field(default=120, gt=0)
 
 
 def load_rows(path: Path, require_response: bool = True) -> list[EvaluationRow]:
-    content = path.read_text(encoding="utf-8").strip()
+    # Accept files saved by Windows tools that prepend a UTF-8 BOM.
+    content = path.read_text(encoding="utf-8-sig").strip()
     try:
         parsed = json.loads(content)
         payloads = parsed if isinstance(parsed, list) else [parsed]
@@ -100,10 +101,10 @@ def run_evaluation(rows: list[EvaluationRow], settings: EvaluationSettings) -> d
     from ragas import EvaluationDataset, evaluate
     from ragas.embeddings import LangchainEmbeddingsWrapper
     from ragas.llms import LangchainLLMWrapper
-    from ragas.metrics.collections import (
-        AnswerRelevancy,
+    from ragas.metrics import (
         FactualCorrectness,
         Faithfulness,
+        ResponseRelevancy,
         SemanticSimilarity,
     )
     from ragas.run_config import RunConfig
@@ -123,19 +124,30 @@ def run_evaluation(rows: list[EvaluationRow], settings: EvaluationSettings) -> d
         result = evaluate(
             dataset=EvaluationDataset.from_list([row.model_dump() for row in rows]),
             metrics=[
-                Faithfulness(),
-                AnswerRelevancy(),
-                FactualCorrectness(),
-                SemanticSimilarity(),
+                Faithfulness(llm=llm),
+                ResponseRelevancy(llm=llm, embeddings=embeddings),
+                FactualCorrectness(llm=llm),
+                SemanticSimilarity(embeddings=embeddings),
             ],
-            llm=llm, embeddings=embeddings,
-            run_config=RunConfig(timeout=settings.openai_timeout_seconds, max_retries=1),
-            raise_exceptions=True,
+            run_config=RunConfig(
+                timeout=int(settings.openai_timeout_seconds),
+                max_retries=1,
+                max_workers=8,
+            ),
+            # Preserve successful metric results if a single provider request fails.
+            raise_exceptions=False,
         )
     scores = result.scores
     names = list(scores[0])
     per_row = [
-        {name: float(score[name]) if math.isfinite(float(score[name])) else None for name in names}
+        {
+            name: (
+                float(score[name])
+                if score[name] is not None and math.isfinite(float(score[name]))
+                else None
+            )
+            for name in names
+        }
         for score in scores
     ]
     averages = {}
@@ -149,6 +161,10 @@ def run_evaluation(rows: list[EvaluationRow], settings: EvaluationSettings) -> d
         "embedding_model": settings.openai_embedding_model,
         "row_count": len(rows),
         "averages": averages,
+        "missing_score_counts": {
+            name: sum(score[name] is None for score in per_row)
+            for name in names
+        },
         "latency_ms": latency_summary(rows),
         "scores": per_row,
     }

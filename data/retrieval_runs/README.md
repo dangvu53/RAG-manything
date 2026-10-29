@@ -83,3 +83,13 @@ on the training portion; on the 313-query holdout, full-query fusion improved
 
 Future dense, sparse, TF-IDF/BM25, fusion, query-processing, or reranking
 experiments should use distinct run names and retain their outputs here.
+
+## Qwen answer experiments (2026-10-28)
+
+The `qwen_bm25_rrf_prompt_answer_30_20261028_135958/` run records 30
+sequential Qwen dense + local BM25 RRF answers with guardrails disabled. The
+`qwen_guardrails_both_30_20261028_v2/` run uses the same 30-query setup with
+both guardrails enabled; its summary reports 25 answered and 5 blocked queries.
+Other dated directories contain single-query checks, retrieval comparisons,
+and query-rewrite diagnostics. These are exploratory runs, not a new retrieval
+baseline. Each run's `summary.json` records its own configuration and timing.

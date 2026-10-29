@@ -27,9 +27,10 @@ if str(SCRIPTS_ROOT) not in sys.path:
     sys.path.insert(0, str(SCRIPTS_ROOT))
 
 from evaluate_bm25_retrieval import BM25Index  # noqa: E402
+from rag_manything.answer.guardrails import INVALID_QUESTION_MESSAGE, OpenAIGuardrail  # noqa: E402
 from rag_manything.answer.service import AnswerService  # noqa: E402
 from rag_manything.config import Settings  # noqa: E402
-from rag_manything.models import RetrievedChunk  # noqa: E402
+from rag_manything.models import AnswerResult, RetrievedChunk  # noqa: E402
 
 DEFAULT_QUERIES = (
     PROJECT_ROOT
@@ -69,11 +70,19 @@ def post_json(
         raise RuntimeError(f"Connection failed: {exc.reason}") from exc
 
 
-def load_queries(path: Path, limit: int) -> list[dict[str, str]]:
+def load_queries(
+    path: Path,
+    limit: int,
+    query_index: str | None = None,
+) -> list[dict[str, str]]:
     with path.open("r", encoding="utf-8-sig", newline="") as stream:
         rows = [dict(row) for row in csv.DictReader(stream)]
     rows = [row for row in rows if str(row.get("question", "")).strip()]
+    if query_index is not None:
+        rows = [row for row in rows if str(row.get("index", "")).strip() == query_index]
     if not rows:
+        if query_index is not None:
+            raise ValueError(f"No question with index {query_index} found in {path}")
         raise ValueError(f"No non-empty questions found in {path}")
     return rows[:limit]
 
@@ -156,6 +165,27 @@ def percentile(values: list[float], fraction: float) -> float | None:
     return round(ordered[index], 4)
 
 
+def persist_record(
+    records: list[dict[str, Any]],
+    record: dict[str, Any],
+    checkpoint_path: Path,
+    position: int,
+    total: int,
+) -> None:
+    records.append(record)
+    checkpoint_path.write_text(
+        json.dumps(records, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    print(
+        f"[{position}/{total}] {record['status']} | "
+        f"{record['timings_s']['end_to_end']:.2f}s"
+    )
+    if record["status"] in {"ok", "blocked"}:
+        print("Answer:")
+        print(record["answer_result"].get("answer", ""))
+
+
 def main() -> int:
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8")
@@ -164,6 +194,15 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--queries", type=Path, default=DEFAULT_QUERIES)
     parser.add_argument("--limit", type=int, default=30)
+    query_source = parser.add_mutually_exclusive_group()
+    query_source.add_argument(
+        "--query-index",
+        help="Run only the row whose source index matches this value",
+    )
+    query_source.add_argument(
+        "--question",
+        help="Run one free-form question instead of a benchmark row",
+    )
     parser.add_argument("--collection", default=os.getenv(
         "QWEN_QDRANT_COLLECTION", "virhe4qa_qwen_api_30_fdd19f"
     ))
@@ -177,6 +216,16 @@ def main() -> int:
     parser.add_argument("--rrf-k", type=float, default=2.0)
     parser.add_argument("--timeout", type=float, default=600)
     parser.add_argument("--run-name")
+    parser.add_argument(
+        "--enable-input-guardrail",
+        action="store_true",
+        help="Enable the OpenAI input safety check and query rewrite for this run",
+    )
+    parser.add_argument(
+        "--enable-output-guardrail",
+        action="store_true",
+        help="Enable the OpenAI output safety and grounding check for this run",
+    )
     args = parser.parse_args()
     if (
         args.limit < 1
@@ -198,10 +247,27 @@ def main() -> int:
     os.environ["QWEN_API_TOKEN"] = rag_api_key
 
     settings = Settings()
-    if settings.input_guardrail_enabled or settings.output_guardrail_enabled:
-        parser.error("Set INPUT_GUARDRAIL_ENABLED=false and OUTPUT_GUARDRAIL_ENABLED=false")
+    # Keep .env untouched: explicit CLI flags opt the benchmark into guardrails.
+    settings = settings.model_copy(update={
+        "input_guardrail_enabled": (
+            settings.input_guardrail_enabled or args.enable_input_guardrail
+        ),
+        "output_guardrail_enabled": (
+            settings.output_guardrail_enabled or args.enable_output_guardrail
+        ),
+    })
 
-    query_rows = load_queries(args.queries.resolve(), args.limit)
+    if args.question is not None:
+        question = args.question.strip()
+        if not question:
+            parser.error("--question must not be empty")
+        query_rows = [{"question": question}]
+    else:
+        query_rows = load_queries(
+            args.queries.resolve(),
+            args.limit,
+            query_index=args.query_index,
+        )
     bm25_corpus = load_bm25_corpus(args.bm25_corpus.resolve())
     bm25_index_started = time.perf_counter()
     bm25_index = BM25Index(
@@ -227,23 +293,78 @@ def main() -> int:
 
     records: list[dict[str, Any]] = []
     run_started = time.perf_counter()
-    with AnswerService(settings) as answer_service:
+    input_guardrail = (
+        OpenAIGuardrail(settings) if settings.input_guardrail_enabled else None
+    )
+    # This runner does retrieval itself, so the input guardrail must run before
+    # embedding/search. Disable the service's input check to avoid calling it twice.
+    answer_settings = settings.model_copy(update={"input_guardrail_enabled": False})
+    with AnswerService(answer_settings) as answer_service:
         for position, row in enumerate(query_rows, start=1):
             question = str(row["question"]).strip()
             query_started = time.perf_counter()
+            input_guardrail_s = 0.0
             record: dict[str, Any] = {
                 "query_number": position,
                 "source_index": row.get("index"),
                 "split": row.get("split"),
                 "question": question,
+                "gold_context": row.get("context"),
+                "gold_answer": (
+                    row.get("abstractive answer") or row.get("extractive answer")
+                ),
                 "reference_extractive_answer": row.get("extractive answer"),
                 "reference_abstractive_answer": row.get("abstractive answer"),
             }
             try:
+                retrieval_query = question
+                if not question or len(question) > settings.max_question_chars:
+                    blocked = AnswerResult(
+                        answer=INVALID_QUESTION_MESSAGE,
+                        status="blocked",
+                        reason="invalid_question",
+                        model=settings.qwen_model,
+                    )
+                    record.update({
+                        "status": "blocked",
+                        "retrieval_query": None,
+                        "answer_result": blocked.model_dump(mode="json"),
+                        "timings_s": {
+                            "input_guardrail": 0.0,
+                            "end_to_end": round(time.perf_counter() - query_started, 4),
+                        },
+                    })
+                    persist_record(records, record, checkpoint_path, position, len(query_rows))
+                    continue
+
+                if input_guardrail is not None:
+                    started = time.perf_counter()
+                    decision = input_guardrail.check_input(question)
+                    input_guardrail_s = time.perf_counter() - started
+                    if not decision.allowed:
+                        blocked = AnswerResult(
+                            answer=INVALID_QUESTION_MESSAGE,
+                            status="blocked",
+                            reason=decision.reason,
+                            model=settings.qwen_model,
+                        )
+                        record.update({
+                            "status": "blocked",
+                            "retrieval_query": None,
+                            "answer_result": blocked.model_dump(mode="json"),
+                            "timings_s": {
+                                "input_guardrail": round(input_guardrail_s, 4),
+                                "end_to_end": round(time.perf_counter() - query_started, 4),
+                            },
+                        })
+                        persist_record(records, record, checkpoint_path, position, len(query_rows))
+                        continue
+                    retrieval_query = decision.rewritten_question or question
+
                 started = time.perf_counter()
                 embedding_response = post_json(
                     f"{rag_api_url}/v1/embeddings",
-                    {"texts": [question], "is_query": True},
+                    {"texts": [retrieval_query], "is_query": True},
                     headers=auth_headers,
                     timeout=args.timeout,
                 )
@@ -273,7 +394,7 @@ def main() -> int:
                     raise RuntimeError("Qdrant returned no retrieval hits")
 
                 started = time.perf_counter()
-                bm25_scores = bm25_index.scores(question)
+                bm25_scores = bm25_index.scores(retrieval_query)
                 bm25_order = sorted(
                     range(len(bm25_corpus)),
                     key=lambda index: (-bm25_scores[index], bm25_corpus[index]["chunk_id"]),
@@ -307,13 +428,15 @@ def main() -> int:
                     ))
 
                 started = time.perf_counter()
-                answer = answer_service.answer(question, chunks)
+                answer = answer_service.answer(retrieval_query, chunks)
                 answer_s = time.perf_counter() - started
                 record.update({
-                    "status": "ok",
+                    "status": "blocked" if answer.status == "blocked" else "ok",
+                    "retrieval_query": retrieval_query,
                     "hits": hits,
                     "answer_result": answer.model_dump(mode="json"),
                     "timings_s": {
+                        "input_guardrail": round(input_guardrail_s, 4),
                         "query_embedding_api": round(embedding_s, 4),
                         "qdrant_dense_search": round(search_s, 4),
                         "bm25_search": round(bm25_s, 4),
@@ -328,22 +451,29 @@ def main() -> int:
                     "error_type": type(exc).__name__,
                     "error": str(exc)[:500],
                     "timings_s": {
+                        "input_guardrail": round(input_guardrail_s, 4),
                         "end_to_end": round(time.perf_counter() - query_started, 4),
                     },
                 })
 
-            records.append(record)
-            checkpoint_path.write_text(
-                json.dumps(records, ensure_ascii=False, indent=2) + "\n",
-                encoding="utf-8",
-            )
-            print(
-                f"[{position}/{len(query_rows)}] {record['status']} | "
-                f"{record['timings_s']['end_to_end']:.2f}s"
-            )
+            persist_record(records, record, checkpoint_path, position, len(query_rows))
 
-    completed = [record for record in records if record["status"] == "ok"]
+    if input_guardrail is not None:
+        input_guardrail.close()
+
+    completed = [record for record in records if record["status"] != "error"]
+    answered = [record for record in records if record["status"] == "ok"]
+    blocked = [record for record in records if record["status"] == "blocked"]
     durations = [record["timings_s"]["end_to_end"] for record in completed]
+    pipeline_stages = []
+    if settings.input_guardrail_enabled:
+        pipeline_stages.append("Input guardrail/query rewrite")
+    pipeline_stages.extend([
+        "Qwen dense + local BM25 -> RRF",
+        "PromptBuilder -> Qwen generate",
+    ])
+    if settings.output_guardrail_enabled:
+        pipeline_stages.append("Output guardrail")
     summary = {
         "run_name": run_name,
         "output_dir": str(output_dir),
@@ -351,6 +481,8 @@ def main() -> int:
         "collection": args.collection,
         "requested_queries": len(query_rows),
         "completed_queries": len(completed),
+        "answered_queries": len(answered),
+        "blocked_queries": len(blocked),
         "error_queries": len(records) - len(completed),
         "top_k": args.top_k,
         "dense_candidates": args.dense_candidates,
@@ -363,8 +495,12 @@ def main() -> int:
             "index_build_seconds": round(bm25_index_s, 4),
         },
         "fusion": {"method": "rrf", "k": args.rrf_k, "weights": [1.0, 1.0]},
-        "guardrails_enabled": False,
-        "pipeline": "Qwen dense + local BM25 -> RRF -> PromptBuilder -> Qwen generate",
+        "guardrails_enabled": (
+            settings.input_guardrail_enabled or settings.output_guardrail_enabled
+        ),
+        "input_guardrail_enabled": settings.input_guardrail_enabled,
+        "output_guardrail_enabled": settings.output_guardrail_enabled,
+        "pipeline": " -> ".join(pipeline_stages),
         "timing_s": {
             "total": round(time.perf_counter() - run_started, 4),
             "mean_per_completed_query": round(statistics.mean(durations), 4) if durations else None,

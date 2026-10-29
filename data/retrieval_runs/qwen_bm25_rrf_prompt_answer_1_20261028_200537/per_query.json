@@ -1,0 +1,19 @@
+[
+  {
+    "query_number": 1,
+    "source_index": null,
+    "split": null,
+    "question": "Ai là người quyết định học phí cho mỗi tín chỉ khi mình học lại hoặc học cải thiện vậy?",
+    "gold_context": null,
+    "gold_answer": null,
+    "reference_extractive_answer": null,
+    "reference_abstractive_answer": null,
+    "status": "error",
+    "error_type": "RuntimeError",
+    "error": "HTTP 404: The endpoint superadditional-lisha-nonmenially.ngrok-free.dev is offline.\r\n\r\nERR_NGROK_3200\r\n",
+    "timings_s": {
+      "input_guardrail": 0.0,
+      "end_to_end": 0.2557
+    }
+  }
+]

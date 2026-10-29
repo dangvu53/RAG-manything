@@ -1,0 +1,35 @@
+{
+  "run_name": "q9269_top1_print",
+  "output_dir": "D:\\AI Engineer Fresher - TPBank\\RAG-manything\\data\\retrieval_runs\\q9269_top1_print",
+  "queries_file": "D:\\AI Engineer Fresher - TPBank\\RAG-manything\\data\\virhe4qa_subset\\ViRHE4QA_v2_all_contexts_297\\queries_100.csv",
+  "collection": "virhe4qa_qwen_api_30_fdd19f",
+  "requested_queries": 1,
+  "completed_queries": 1,
+  "error_queries": 0,
+  "top_k": 1,
+  "dense_candidates": 100,
+  "bm25_candidates": 100,
+  "bm25": {
+    "corpus": "D:\\AI Engineer Fresher - TPBank\\RAG-manything\\data\\kaggle_artifacts\\virhe4qa_model_sweep\\chunks_manifest.csv",
+    "document_count": 297,
+    "k1": 1.5,
+    "b": 0.75,
+    "index_build_seconds": 0.021
+  },
+  "fusion": {
+    "method": "rrf",
+    "k": 2.0,
+    "weights": [
+      1.0,
+      1.0
+    ]
+  },
+  "guardrails_enabled": false,
+  "pipeline": "Qwen dense + local BM25 -> RRF -> PromptBuilder -> Qwen generate",
+  "timing_s": {
+    "total": 9.9075,
+    "mean_per_completed_query": 9.8335,
+    "p50": 9.8335,
+    "p95": 9.8335
+  }
+}

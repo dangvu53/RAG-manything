@@ -1,0 +1,53 @@
+[
+  {
+    "query_number": 1,
+    "source_index": "9269",
+    "split": "train",
+    "question": "Nếu các thành viên muốn xem xét, trao đổi thêm về đề tài thì có khả năng không?",
+    "gold_context": "Điều  11. Tổ chức bảo vệ KLTN\r\n–\tHằng năm sẽ có 2 đợt bảo vệ khóa luận tốt nghiệp theo kế hoạch chung của Trường và được công bố vào đầu mỗi năm học. Khoa đề nghị thời gian tổ chức Hội đồng và gởi về phòng ĐTĐH chậm nhất 7 ngày sau thời hạn thực hiện KLTN đã hết.\r\n–\tDanh sách sinh viên đủ điều kiện bảo vệ KLTN trước Hội đồng do P. ĐTĐH xem xét, đề nghị và Hiệu trưởng ra quyết định.\r\n–\tCác thành viên Hội đồng phải có mặt đầy đủ khi Hội đồng họp đánh giá các KLTN.\r\n–\tBuổi bảo vệ KLTN do chủ tịch Hội đồng chủ trì. Việc bảo vệ phải được hoãn lại khi có nhiều hơn 1 thành viên hội đồng vắng mặt. Trong trường hợp có một thành viên Hội đồng vắng mặt đột xuất, nhưng không phải chủ tịch hoặc thư ký thì chủ tịch Hội đồng quyết định việc tiếp tục hay hoãn buổi bảo vệ căn cứ vào lĩnh vực chuyên môn của đề tài và tình hình thực tế có phù hợp để Hội đồng tiếp tục làm việc hay không.\r\n–\tCBHD và CBPB nếu không phải là thành viên Hội đồng phải gửi bản nhận xét bằng văn bản có chữ ký kèm ý kiến đánh giá xếp loại và điểm cụ thể dành cho KLTN cho thư ký Hội đồng trước khi Hội đồng bắt đầu làm việc.\r\n–\tQui trình tổ chức bảo vệ KLTN gồm những bước cơ bản sau:\r\n\tThư ký đọc quyết định thành lập hội đồng, danh sách sinh viên và tên đề tài, tên CBHD và CBPB.\r\n\tChủ tịch hội đồng phát biểu, xác định các quy định làm việc thống nhất cho toàn hội đồng.\r\n\tThư ký ghi biên bản đầy đủ họ tên các sinh viên tham gia thực hiện đề tài, nội dung trao đổi, thảo luận trong buổi bảo vệ.\r\n\tSinh viên trình bày đề tài không quá 15 phút.\r\n\tCBPB (hoặc thư ký) đọc nhận xét đề tài\r\n\tSinh viên trả lời các câu hỏi của CBPB và hội đồng.\r\n\tCBHD (hoặc thư ký) đọc nhận xét đề tài \r\n\tHội đồng đánh giá theo điểm cho từng SV trên phiếu chấm theo mẫu của Trường.\r\n\tThư ký tập hợp phiếu nhận xét của CBHD, CBPB và phiếu chấm của các thành viên Hội đồng để tính điểm trung bình của đề tài.\r\n\tChủ tịch Hội đồng có thể họp các thành viên để xem xét, trao đổi thêm về kết quả bảo vệ. Kết quả chính thức phải được công bố trước khi Hội đồng tuyên bố kết thúc buổi bảo vệ.\r\n\r\n",
+    "gold_answer": "Chủ tịch Hội đồng có thể họp các thành viên để xem xét, trao đổi thêm về kết quả bảo vệ.",
+    "reference_extractive_answer": "Chủ tịch Hội đồng có thể họp các thành viên để xem xét, trao đổi thêm về kết quả bảo vệ",
+    "reference_abstractive_answer": "Chủ tịch Hội đồng có thể họp các thành viên để xem xét, trao đổi thêm về kết quả bảo vệ.",
+    "status": "ok",
+    "hits": [
+      {
+        "point_id": 45,
+        "chunk_id": "chunk_0045",
+        "payload": {
+          "text": "Điều  11. Tổ chức bảo vệ KLTN\n–\tHằng năm sẽ có 2 đợt bảo vệ khóa luận tốt nghiệp theo kế hoạch chung của Trường và được công bố vào đầu mỗi năm học. Khoa đề nghị thời gian tổ chức Hội đồng và gởi về phòng ĐTĐH chậm nhất 7 ngày sau thời hạn thực hiện KLTN đã hết.\n–\tDanh sách sinh viên đủ điều kiện bảo vệ KLTN trước Hội đồng do P. ĐTĐH xem xét, đề nghị và Hiệu trưởng ra quyết định.\n–\tCác thành viên Hội đồng phải có mặt đầy đủ khi Hội đồng họp đánh giá các KLTN.\n–\tBuổi bảo vệ KLTN do chủ tịch Hội đồng chủ trì. Việc bảo vệ phải được hoãn lại khi có nhiều hơn 1 thành viên hội đồng vắng mặt. Trong trường hợp có một thành viên Hội đồng vắng mặt đột xuất, nhưng không phải chủ tịch hoặc thư ký thì chủ tịch Hội đồng quyết định việc tiếp tục hay hoãn buổi bảo vệ căn cứ vào lĩnh vực chuyên môn của đề tài và tình hình thực tế có phù hợp để Hội đồng tiếp tục làm việc hay không.\n–\tCBHD và CBPB nếu không phải là thành viên Hội đồng phải gửi bản nhận xét bằng văn bản có chữ ký kèm ý kiến đánh giá xếp loại và điểm cụ thể dành cho KLTN cho thư ký Hội đồng trước khi Hội đồng bắt đầu làm việc.\n–\tQui trình tổ chức bảo vệ KLTN gồm những bước cơ bản sau:\n\tThư ký đọc quyết định thành lập hội đồng, danh sách sinh viên và tên đề tài, tên CBHD và CBPB.\n\tChủ tịch hội đồng phát biểu, xác định các quy định làm việc thống nhất cho toàn hội đồng.\n\tThư ký ghi biên bản đầy đủ họ tên các sinh viên tham gia thực hiện đề tài, nội dung trao đổi, thảo luận trong buổi bảo vệ.\n\tSinh viên trình bày đề tài không quá 15 phút.\n\tCBPB (hoặc thư ký) đọc nhận xét đề tài\n\tSinh viên trả lời các câu hỏi của CBPB và hội đồng.\n\tCBHD (hoặc thư ký) đọc nhận xét đề tài \n\tHội đồng đánh giá theo điểm cho từng SV trên phiếu chấm theo mẫu của Trường.\n\tThư ký tập hợp phiếu nhận xét của CBHD, CBPB và phiếu chấm của các thành viên Hội đồng để tính điểm trung bình của đề tài.\n\tChủ tịch Hội đồng có thể họp các thành viên để xem xét, trao đổi thêm về kết quả bảo vệ. Kết quả chính thức phải được công bố trước khi Hội đồng tuyên bố kết thúc buổi bảo vệ.",
+          "chunk_id": "chunk_0045",
+          "source_index": "9220"
+        },
+        "dense_rank": 1,
+        "dense_score": 0.43810427,
+        "bm25_rank": 1,
+        "bm25_score": 24.30621009811097,
+        "rrf_score": 1.0,
+        "rank": 1
+      }
+    ],
+    "answer_result": {
+      "answer": "Theo quy định, Chủ tịch Hội đồng có thể họp các thành viên để xem xét, trao đổi thêm về kết quả bảo vệ. Do đó, nếu các thành viên muốn xem xét, trao đổi thêm về đề tài, họ có khả năng làm như vậy [chunk_0045].",
+      "citations": [
+        {
+          "chunk_id": "chunk_0045",
+          "source": null
+        }
+      ],
+      "status": "answered",
+      "reason": null,
+      "prompt_version": "answer-v1",
+      "model": "Qwen/Qwen3-4B",
+      "rewritten_question": "Nếu các thành viên muốn xem xét, trao đổi thêm về đề tài thì có khả năng không?",
+      "latency_ms": 6695.9
+    },
+    "timings_s": {
+      "query_embedding_api": 1.0555,
+      "qdrant_dense_search": 2.1316,
+      "bm25_search": 0.0049,
+      "rrf_fusion": 0.0006,
+      "prompt_and_answer": 6.696,
+      "end_to_end": 9.889
+    }
+  }
+]
